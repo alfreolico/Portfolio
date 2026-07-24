@@ -1,8 +1,6 @@
-const copyrightElementDOM = document.querySelector('.footer__copy span');
-const currentYear = new Date().getFullYear();
-
 function updateCopyRightYear() {
-	copyrightElementDOM.textContent = `${currentYear} `;
+	const copyrightElementDOM = document.querySelector('[data-current-year]');
+	if (copyrightElementDOM) copyrightElementDOM.textContent = new Date().getFullYear();
 }
 
 export default updateCopyRightYear;

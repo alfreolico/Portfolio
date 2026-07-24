@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-beta-brown-86.vercel.app/sitemap.xml

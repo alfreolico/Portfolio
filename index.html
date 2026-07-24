@@ -1,651 +1,89 @@
-<!DOCTYPE html>
-<html lang="es">
-
+<!doctype html>
+<html lang="es" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content="palabra-uno, palabra-dos, palabra-tres">
-  <meta name="description" content="No más de 165 caracteres">
-  <meta name="author" content="Alfredo Brambila">
-  <!-- Fuente -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio de Alfredo Brambila, desarrollador web con formación en ingeniería. Aplicaciones, dashboards e interfaces orientadas a procesos y datos.">
+  <title>Alfredo Brambila | Desarrollador web e ingeniero</title>
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+  <link rel="canonical" href="https://portfolio-beta-brown-86.vercel.app/">
+  <link rel="alternate" hreflang="es" href="https://portfolio-beta-brown-86.vercel.app/">
+  <link rel="alternate" hreflang="en" href="https://portfolio-beta-brown-86.vercel.app/en/">
+  <link rel="alternate" hreflang="x-default" href="https://portfolio-beta-brown-86.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Alfredo Brambila">
+  <meta property="og:title" content="Alfredo Brambila | Desarrollador web e ingeniero">
+  <meta property="og:description" content="Portfolio de Alfredo Brambila, desarrollador web con formación en ingeniería. Aplicaciones, dashboards e interfaces orientadas a procesos y datos.">
+  <meta property="og:url" content="https://portfolio-beta-brown-86.vercel.app/">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Alfredo Brambila | Desarrollador web e ingeniero">
+  <meta name="twitter:description" content="Portfolio de Alfredo Brambila, desarrollador web con formación en ingeniería. Aplicaciones, dashboards e interfaces orientadas a procesos y datos.">
+  <meta name="theme-color" content="#07111f">
+  <meta name="theme-color" content="#eff8fc" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#07111f" media="(prefers-color-scheme: dark)">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alfredo Brambila",
+    "url": "https://portfolio-beta-brown-86.vercel.app/",
+    "jobTitle": "Desarrollador web",
+    "email": "mailto:alfreolico.brambila@gmail.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/alfredo-brambila-arias/",
+      "https://github.com/alfreolico"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mérida",
+      "addressRegion": "Yucatán",
+      "addressCountry": "MX"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&display=swap"
-    rel="stylesheet">
-  <title>Portafolio</title>
-  <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
-  <!-- Iconos -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/img/logo.png" type="image/png">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- JS -->
   <script type="module" src="assets/js/main.js"></script>
-  <!-- Email JS -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-  </script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init({
-        publicKey: "RbYw5CpnvBo1n4MCG",
-      });
-    })();
-  </script>
 </head>
-
 <body>
-  <!-- Loader -->
-  <div class="loader flex--container">
-
-  </div>
-  <header class="header">
-    <nav class="navbar grid--container flex--container">
-      <a class="navbar__logo flex--container" href="#"><i class='bx bx-atom'></i></i>Alfreolico</a>
-
-      <div id="nav" class="navbar__menu">
-        <a href="#close"><i class="bx bx-x btn__close navbar__icon flex--container"></i></a>
-
-        <ul class="navbar__list flex--container">
-          <li class="navbar__item">
-            <a class="navbar__link active" href="#home">Inicio</a>
-          </li>
-          <li class="navbar__item">
-            <a class="navbar__link" href="#about">Acerca de Mí</a>
-          </li>
-          <li class="navbar__item">
-            <a class="navbar__link" href="#skills">Habilidades</a>
-          </li>
-          <li class="navbar__item">
-            <a class="navbar__link" href="#projects">Portafolio</a>
-          </li>
-          <li class="navbar__item">
-            <a class="navbar__link" href="#contact">Contacto</a>
-          </li>
-        </ul>
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+  <header class="site-header"><nav class="site-nav" aria-label="Navegación principal">
+    <a class="brand" href="./"><span class="brand__mark" aria-hidden="true">A</span>Alfreolico</a>
+    <div id="site-menu" class="site-menu" data-site-menu data-open="false"><ul class="site-menu__list">
+      <li><a class="site-menu__link" href="./" aria-current="page">Inicio</a></li><li><a class="site-menu__link" href="profile/">Perfil</a></li><li><a class="site-menu__link" href="capabilities/">Capacidades</a></li><li><a class="site-menu__link" href="projects/">Proyectos</a></li><li><a class="site-menu__link" href="services/">Servicios</a></li><li><a class="site-menu__link" href="contact/">Contacto</a></li>
+    </ul><a class="site-menu__language" href="en/" lang="en" aria-label="Cambiar idioma a inglés">EN</a></div>
+    <div class="nav-actions"><button class="theme-toggle" type="button" data-theme-toggle aria-pressed="true" aria-label="Cambiar tema de color"><i class="bx bx-moon theme-toggle__icon" aria-hidden="true"></i></button><button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Abrir menú"><i class="bx bx-menu" aria-hidden="true"></i></button></div>
+  </nav></header>
+  <main id="main-content" class="page-main">
+    <section class="hero"><div class="page-shell hero__grid">
+      <div><p class="eyebrow">Ingeniería + desarrollo web</p><h1 class="hero__title">Alfredo <span>Brambila</span></h1><p class="hero__meta">Desarrollador de aplicaciones y plataformas web</p><p class="hero__lead">Convierto procesos, datos y necesidades técnicas en aplicaciones web funcionales. Combino desarrollo web, pensamiento de ingeniería y herramientas de inteligencia artificial para construir interfaces, dashboards e integraciones orientadas a necesidades reales.</p><div class="button-row"><a class="button button--primary" href="projects/">Ver lo que he construido</a><a class="button button--secondary" href="profile/">Conocer mi enfoque</a></div><div class="hero__links"><a class="social-link" href="https://www.linkedin.com/in/alfredo-brambila-arias" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Alfredo Brambila"><i class="bx bxl-linkedin" aria-hidden="true"></i></a><a class="social-link" href="https://github.com/alfreolico" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Alfredo Brambila"><i class="bx bxl-github" aria-hidden="true"></i></a></div></div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orbit orbit--back" data-orbit><div class="orbit__track"><i class="orbit__icon bx bxl-html5"></i><i class="orbit__icon bx bxl-css3"></i><i class="orbit__icon bx bxl-javascript"></i><i class="orbit__icon bx bxl-typescript"></i><i class="orbit__icon bx bxl-react"></i><i class="orbit__icon bx bxl-nodejs"></i><i class="orbit__icon bx bxl-git"></i><i class="orbit__icon bx bxl-postgresql"></i><i class="orbit__icon bx bxl-mongodb"></i><i class="orbit__icon bx bx-code-alt"></i><i class="orbit__icon bx bxl-tailwind-css"></i></div></div>
+        <img class="hero-visual__photo" src="assets/img/profile.png" width="306" height="391" alt="">
+        <div class="orbit orbit--front" data-orbit><div class="orbit__track"><i class="orbit__icon bx bxl-html5"></i><i class="orbit__icon bx bxl-css3"></i><i class="orbit__icon bx bxl-javascript"></i><i class="orbit__icon bx bxl-typescript"></i><i class="orbit__icon bx bxl-react"></i><i class="orbit__icon bx bxl-nodejs"></i><i class="orbit__icon bx bxl-git"></i><i class="orbit__icon bx bxl-postgresql"></i><i class="orbit__icon bx bxl-mongodb"></i><i class="orbit__icon bx bx-code-alt"></i><i class="orbit__icon bx bxl-tailwind-css"></i></div></div>
       </div>
-
-      <div class="navbar__toggles flex--container">
-        <div class="navbar__toggle--darkmode flex--container">
-          <input type="checkbox" name="color-scheme" id="darkmode-toggle" class="navbar__toggle--darkmode-input" />
-          <label for="darkmode-toggle" class="navbar__toggle--darkmode-label">
-            <i class="bx bx-sun navbar__toggle--darkmode-sun"></i>
-            <i class="bx bx-moon navbar__toggle--darkmode-moon"></i>
-          </label>
-        </div>
-        <div class="navbar__toggle--language flex--container">
-          <input type="checkbox" name="language-toggle" id="language-toggle" class="navbar__toggle--language-input" />
-          <label for="language-toggle" class="navbar__toggle--language-label"></label>
-        </div>
-      </div>
-      <a href="#nav"><i class="bx bx-menu btn__open navbar__icon"></i></a>
-    </nav>
-  </header>
-
-  <main class="container-styled">
-    <section id="home" class="home">
-
-      <div class="home__container grid--container">
-
-        </script>
-        <div class="home__image">
-          <img src="assets/img/profile.png" alt="profile photo" title="Alfreolico" />
-        </div>
-
-        <ul class="home__social flex--container">
-          <li class="home__social-item">
-            <a class="home__social-link" href="https://www.linkedin.com/in/alfredo-brambila-arias" target="_blank"><i
-                class="bx bxl-linkedin"></i></a>
-          </li>
-          <li class="home__social-item">
-            <a class="home__social-link" href="https://api.whatsapp.com/send?phone=9381448996&text=Hola%2C%20Tengo%20una%20gran%20idea%20en%20mi%20mente%2C%20puedes%20hacerla%20realidad%3F
-              " target="_blank"><i class="bx bxl-whatsapp"></i></a>
-          </li>
-          <li class="home__social-item">
-            <a class="home__social-link" href="https://github.com/alfreolico" target="_blank"><i
-                class="bx bxl-github"></i></a>
-          </li>
-
-        </ul>
-
-        <div class="home__info">
-          <h1 class="home__title">¿Sabías qué?: </h1>
-
-          <p class="home__description">
-            Si estas buscando un fullstack. SOY LO QUE TÚ NECESITAS!
-          </p>
-        </div>
-
-        <div class="home__buttons">
-          <a class="btn btn--primary" href="assets\docs\CV_Brambila.pdf" title="Descargar mi CV" download="cv_Alfredo"
-            rel="noreferrer nofollow">
-            Descargar CV
-          </a>
-        </div>
-      </div>
-    </section>
-    <div id="wheel" class="wheel-pos">
-      <ul class="ul-styled">
-        <li class="li-styled"><i class="bx bxl-html5 size-icon"></i></li>
-        <li class="li-styled"><i class="bx bxl-nodejs size-icon"></i></li>
-        <li class="li-styled"><i class="bx bxl-javascript size-icon"></i></li>
-        <li class="li-styled"><i class="bx bx-code-alt size-icon"></i></li>
-        <li class="li-styled"><i class="bx bxl-graphql size-icon"></i></li>
-        <li class="li-styled"><i class="bx bxl-git size-icon"></i></li>
-        <li class="li-styled"><i class="bx bxl-typescript size-icon"></i></li>
-        <li class="li-styled"><i class="bx bxl-redux size-icon"></i></li>
-        <li class="li-styled"><i class="bx bxl-tailwind-css size-icon"></i></li>
-        <li class="li-styled"><i class="bx bxl-react size-icon"></i></li>
-        <li class="li-styled"><i class="bx bxl-css3 size-icon"></i></li>
-      </ul>
-    </div>
-
-    <section id="about" class="about section">
-      <h2 class="section__title">Acerca de Mí</h2>
-
-      <div class="about__container grid--container">
-        <p class="about__description">
-          Soy un ingeniero mecánico y desarrollador con experiencia incipiente en el ámbito fullstack, pero con una
-          fuerte inclinación hacia el desarrollo backend. Me destaco en la creación y gestión de sistemas robustos,
-          enfocados en la lógica del servidor, la gestión de bases de datos y la implementación de APIs.
-
-          Mi interés radica en comprender y optimizar el funcionamiento interno de las aplicaciones, asegurando
-          rendimiento, escalabilidad y seguridad. Aunque estoy explorando tecnologías de frontend, me siento más
-          cómodo
-          trabajando con herramientas y lenguajes backend como Node.js y Python, además de sistemas de bases de datos
-          relacionales y no relacionales como PostgreSQL.
-
-          Me considero una persona comprometida con mi trabajo y con una pasión por el aprendizaje continuo. Mi
-          enfoque
-          está en aprender y crecer profesionalmente, aportando soluciones confiables y buscando siempre mejorar mis
-          habilidades técnicas.
-        </p>
-
-        <div class="about__cards flex--container">
-          <!--Card 1 -->
-          <div class="about__card">
-            <img class="about__card--img" src="assets/img/me_1.png" alt="Laborando como ingeniero"
-              title="Laborando como ingeniero" />
-          </div>
-          <!--Card 2 -->
-          <div class="about__card">
-            <img class="about__card--img" src="assets/img/me_2.png" alt="Laborando como diseñador"
-              title="Laborando como diseñador" />
-          </div>
-          <!--Card 3 -->
-          <div class="about__card">
-            <img class="about__card--img" src="assets/img/me_3.png" alt="Trabajando en equipo"
-              title="rabajando en equipo" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="skills section">
-      <h2 class="section__title">Habilidades</h2>
-
-      <div class="skills__container grid--container">
-        <p class="skills__description flex--container">
-          Como desarrollador fullstack, combino un dominio técnico integral con habilidades interpersonales para
-          abarcar todas las fases del desarrollo de software. Domino lenguajes como HTML, CSS y JavaScript en el
-          frontend, junto con frameworks modernos como React y Tailwind CSS. En el backend trabajo con tecnologías
-          como Node.js y Django, y gestiono bases de datos relacionales como PostgreSQL y bases de datos no
-          relacionales. Implemento buenas prácticas de seguridad y utilizo herramientas como Git y Docker para
-          optimizar procesos. Mi capacidad de comunicación, resolución de problemas y adaptabilidad me permite
-          colaborar eficazmente en equipo y entregar soluciones de alta calidad.
-        </p>
-
-        <!-- Frontend Skills -->
-        <div class="skills__category">
-          <h3 class="skills__category-title">Frontend</h3>
-          <div class="skills__wrapper flex--container">
-            <div class="skills__cards flex--container">
-
-              <!--Card - HTML -->
-              <details class="skills__cards-container" name="frontend">
-                <summary class="skills__cards-title flex--container">
-                  <i class="bx bxl-html5 flex--container"></i>
-                </summary>
-                <div class="skills__card-container">
-                  <h3 class="skills__card-title">HTML</h3>
-                  <p class="skills__card-description">
-                    Tengo conocimiento en HTML, lo que me permite estructurar contenido de manera clara y semántica.
-                    Utilizo etiquetas adecuadas para organizar la información y mejorar la accesibilidad, como
-                    encabezados, párrafos, listas y formularios interactivos.
-                  </p>
-                </div>
-              </details>
-
-              <!--Card - CSS3 -->
-              <details class="skills__cards-container" name="frontend">
-                <summary class="skills__cards-title flex--container">
-                  <i class="bx bxl-css3 flex--container"></i>
-                </summary>
-                <div class="skills__card-container">
-                  <h3 class="skills__card-title">CSS3</h3>
-                  <p class="skills__card-description">
-                    Tengo dominio en CSS3, que utilizo para diseñar interfaces web atractivas y responsivas. Mis
-                    habilidades incluyen el uso de selectores avanzados, flexbox, grid, animaciones y transiciones
-                    para mejorar la interacción del usuario.
-                  </p>
-                </div>
-              </details>
-
-              <!--Card - Javascript -->
-              <details class="skills__cards-container" name="frontend">
-                <summary class="skills__cards-title flex--container">
-                  <i class="bx bxl-javascript flex--container"></i>
-                </summary>
-                <div class="skills__card-container">
-                  <h3 class="skills__card-title">Javascript</h3>
-                  <p class="skills__card-description">
-                    Tengo experiencia con JavaScript, lo que me permite desarrollar soluciones interactivas y dinámicas
-                    en la web. Mis habilidades incluyen manipulación del DOM, gestión de eventos, y consumo de APIs
-                    mediante fetch.
-                  </p>
-                </div>
-              </details>
-
-              <!--Card - TypeScript -->
-              <details class="skills__cards-container" name="frontend">
-                <summary class="skills__cards-title flex--container">
-                  <i class="bx bxl-typescript flex--container"></i>
-                </summary>
-                <div class="skills__card-container">
-                  <h3 class="skills__card-title">TypeScript</h3>
-                  <p class="skills__card-description">
-                    Utilizo TypeScript para desarrollar aplicaciones JavaScript más robustas mediante tipado
-                    estático. Mi experiencia incluye definición de interfaces y tipos personalizados, integración
-                    con React y Node.js, y detección temprana de errores.
-                  </p>
-                </div>
-              </details>
-
-              <!--Card - React -->
-              <details class="skills__cards-container" name="frontend">
-                <summary class="skills__cards-title flex--container">
-                  <i class="bx bxl-react flex--container"></i>
-                </summary>
-                <div class="skills__card-container">
-                  <h3 class="skills__card-title">React</h3>
-                  <p class="skills__card-description">
-                    Desarrollo aplicaciones web modernas con React, utilizando hooks como useState y useEffect para
-                    gestionar estado. Tengo experiencia en componentes funcionales, manejo de props, React Router,
-                    y consumo de APIs REST.
-                  </p>
-                </div>
-              </details>
-
-              <!--Card - Tailwind CSS -->
-              <details class="skills__cards-container" name="frontend">
-                <summary class="skills__cards-title flex--container">
-                  <i class="bx bxl-tailwind-css flex--container"></i>
-                </summary>
-                <div class="skills__card-container">
-                  <h3 class="skills__card-title">Tailwind CSS</h3>
-                  <p class="skills__card-description">
-                    Utilizo Tailwind CSS para crear interfaces modernas y responsivas mediante clases utilitarias.
-                    Mi experiencia incluye diseño de layouts complejos, personalización de temas y optimización
-                    del build para producción.
-                  </p>
-                </div>
-              </details>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- Backend Skills -->
-        <div class="skills__category">
-          <h3 class="skills__category-title">Backend & Bases de Datos</h3>
-          <div class="skills__wrapper flex--container">
-            <div class="skills__cards flex--container">
-
-              <!--Card - Node.js -->
-              <details class="skills__cards-container" name="backend">
-                <summary class="skills__cards-title flex--container">
-                  <i class="bx bxl-nodejs flex--container"></i>
-                </summary>
-                <div class="skills__card-container">
-                  <h3 class="skills__card-title">Node.js</h3>
-                  <p class="skills__card-description">
-                    Desarrollo aplicaciones backend con Node.js, creando APIs RESTful eficientes y escalables.
-                    Mi experiencia incluye manejo de peticiones asíncronas, conexión con bases de datos y
-                    buenas prácticas de seguridad.
-                  </p>
-                </div>
-              </details>
-
-              <!--Card - Express.js -->
-              <details class="skills__cards-container" name="backend">
-                <summary class="skills__cards-title flex--container">
-                  <i class="bx bxl-nodejs flex--container"></i>
-                </summary>
-                <div class="skills__card-container">
-                  <h3 class="skills__card-title">Express.js</h3>
-                  <p class="skills__card-description">
-                    Desarrollo APIs con Express.js, el framework web más popular de Node.js. Mis habilidades
-                    incluyen creación de rutas RESTful, middleware personalizado, validación de datos y
-                    gestión de errores centralizada.
-                  </p>
-                </div>
-              </details>
-
-              <!--Card - PostgreSQL -->
-              <details class="skills__cards-container" name="backend">
-                <summary class="skills__cards-title flex--container">
-                  <i class="bx bxl-postgresql flex--container"></i>
-                </summary>
-                <div class="skills__card-container">
-                  <h3 class="skills__card-title">PostgreSQL</h3>
-                  <p class="skills__card-description">
-                    Trabajo con PostgreSQL para gestionar bases de datos relacionales. Mis habilidades incluyen
-                    diseño de esquemas normalizados, consultas SQL complejas con joins, creación de índices
-                    y manejo de transacciones.
-                  </p>
-                </div>
-              </details>
-
-              <!--Card - MongoDB -->
-              <details class="skills__cards-container" name="backend">
-                <summary class="skills__cards-title flex--container">
-                  <i class="bx bxl-mongodb flex--container"></i>
-                </summary>
-                <div class="skills__card-container">
-                  <h3 class="skills__card-title">MongoDB</h3>
-                  <p class="skills__card-description">
-                    Trabajo con MongoDB para gestionar bases de datos NoSQL flexibles. Mi experiencia incluye
-                    diseño de esquemas orientados a documentos, operaciones CRUD, agregaciones y uso de Mongoose
-                    para modelado de datos.
-                  </p>
-                </div>
-              </details>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- Tools -->
-        <div class="skills__category">
-          <h3 class="skills__category-title">Herramientas</h3>
-          <div class="skills__wrapper flex--container">
-            <div class="skills__cards flex--container">
-
-              <!--Card - Git & GitHub -->
-              <details class="skills__cards-container" name="tools">
-                <summary class="skills__cards-title flex--container">
-                  <i class="bx bxl-git flex--container"></i>
-                </summary>
-                <div class="skills__card-container">
-                  <h3 class="skills__card-title">Git & GitHub</h3>
-                  <p class="skills__card-description">
-                    Domino Git para control de versiones y GitHub para colaboración. Mis habilidades incluyen
-                    gestión de ramas con Git Flow, pull requests, code reviews y uso de GitHub Actions para CI/CD.
-                  </p>
-                </div>
-              </details>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- Soft Skills -->
-        <div class="skills__tags flex--container">
-          <h3 class="skills__tags-title">Habilidades Blandas</h3>
-          <div class="skills__tags-container flex--container">
-            <span class="skills__tag">Resolución de problemas</span>
-            <span class="skills__tag">Comunicación efectiva</span>
-            <span class="skills__tag">Trabajo en equipo</span>
-            <span class="skills__tag">Adaptabilidad</span>
-            <span class="skills__tag">Pensamiento crítico</span>
-            <span class="skills__tag">Aprendizaje continuo</span>
-            <span class="skills__tag">Gestión del tiempo</span>
-            <span class="skills__tag">Atención al detalle</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="projects" class="projects section">
-      <h2 class="section__title">Proyectos</h2>
-
-      <div class="projects__container grid--container">
-        <!-- Proyecto 1: Rick and Morty -->
-        <div class="projects__project">
-          <div class="projects__inner grid--container">
-            <div class="projects__image">
-              <img src="assets/img/project1.jpg" alt="Rick and Morty Character Explorer" title="Rick and Morty App" />
-            </div>
-
-            <div class="projects__info">
-              <h3 class="projects__name">Rick and Morty Character Explorer</h3>
-              <p class="projects__description">
-                Aplicación web interactiva desarrollada con React que consume la API de Rick and Morty para explorar
-                personajes de la serie. Implementa búsqueda en tiempo real, filtrado por estado
-                (vivo/muerto/desconocido),
-                paginación, y visualización detallada de información. Utiliza React Hooks (useState, useEffect), manejo
-                de estados, peticiones asíncronas con fetch, y diseño responsivo con CSS3. Demuestra habilidades en
-                consumo de APIs REST, gestión de componentes y experiencia de usuario fluida.
-              </p>
-
-              <div class="projects__buttons">
-                <a class="btn projects__button" href="https://rick-morty-steel-seven.vercel.app/" target="_blank"
-                  rel="noreferrer noopener">
-                  VER DEMO
-                </a>
-                <a class="btn projects__button" href="https://github.com/alfreolico/rick-morty" target="_blank"
-                  rel="noreferrer noopener">
-                  VER CÓDIGO
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 2: BeStrong Valentine -->
-        <div class="projects__project">
-          <div class="projects__inner grid--container">
-            <div class="projects__image">
-              <img src="assets/img/project2.png" alt="BeStrong Valentine App" title="BeStrong Valentine Interactive" />
-            </div>
-
-            <div class="projects__info">
-              <h3 class="projects__name">Be My Valentine</h3>
-              <p class="projects__description">
-                Aplicación web interactiva y creativa desarrollada con JavaScript vanilla que presenta un juego
-                divertido de San Valentín. Implementa lógica de juego con eventos del DOM, manipulación dinámica
-                de elementos HTML, animaciones CSS personalizadas, y diseño responsivo. Utiliza programación orientada
-                a eventos, gestión de estados sin frameworks, y técnicas modernas de JavaScript (ES6+). Demuestra
-                creatividad en el diseño UX/UI y habilidades en desarrollo frontend sin dependencias externas.
-              </p>
-
-              <div class="projects__buttons">
-                <a class="btn projects__button" href="https://bemyvalentine-flax.vercel.app/" target="_blank"
-                  rel="noreferrer noopener">
-                  VER DEMO
-                </a>
-                <a class="btn projects__button" href="https://github.com/alfreolico/BeStrong" target="_blank"
-                  rel="noreferrer noopener">
-                  VER CÓDIGO
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Proyecto 3: POKE-EK -->
-        <div class="projects__project">
-          <div class="projects__inner grid--container">
-            <div class="projects__image">
-              <img src="assets/img/project3.jpg" alt="POKE-EK Pokédex" title="POKE-EK Pokemon Explorer" />
-            </div>
-
-            <div class="projects__info">
-              <h3 class="projects__name">Pokédex</h3>
-              <p class="projects__description">
-                Pokédex interactiva desarrollada con React que consume la PokeAPI para explorar el universo Pokémon.
-                Incluye búsqueda avanzada por nombre o número, filtrado por tipos, visualización de estadísticas
-                detalladas, evoluciones y habilidades. Utiliza React Hooks para gestión de estado, Context API para
-                compartir datos globales, lazy loading para optimizar rendimiento, y diseño responsivo con CSS moderno.
-                Implementa arquitectura de componentes escalable y mejores prácticas de React para una experiencia
-                de usuario óptima.
-              </p>
-
-              <div class="projects__buttons">
-                <a class="btn projects__button" href="https://poke-ek.vercel.app/" target="_blank"
-                  rel="noreferrer noopener">
-                  VER DEMO
-                </a>
-                <a class="btn projects__button" href="https://github.com/alfreolico/POKE-EK" target="_blank"
-                  rel="noreferrer noopener">
-                  VER CÓDIGO
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- <div class="projects__project">
-            <div class="projects__inner grid--container">
-              <div class="projects__image">
-                <img src="assets/img/project4.png" alt="project 1" title="Aplicación del tiempo con React" />
-              </div>
-
-              <div class="projects__info">
-                <h3 class="projects__name">Proyecto 4</h3>
-                <p class="projects__description">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-
-              <div class="projects__buttons">
-                <button class="btn projects__button" type="button">
-                  VER DEMO
-                </button>
-                <button class="btn projects__button" type="button">
-                  VER CÓDIGO
-                </button>
-              </div>
-            </div>
-          </div>
-        </div> -->
-    </div>
-    </section>
-    <section id="contact" class="contact section">
-      <h2 class="section__title">Contacto</h2>
-
-      <div class="contact__container grid--container">
-        <div class="contact__info">
-          <h3 class="contact__info-title">Información de contacto</h3>
-          <p class="contact__info-description">
-            Ponte en contacto conmigo, para materializar tus ideas.
-          </p>
-
-          <address class="contact__info-data">
-            <div class="contact__info-item">
-              <i class="bx bxl-whatsapp"></i>
-
-              <span class="contact__info-number">
-                <a href="https://wa.me/+529381448996?text=Tu%20Mensaje%20De%20Texto" target="_blank"
-                  rel="noreferrer nofollow">Enviar mensaje a WhatsApp</a>
-              </span>
-            </div>
-
-
-            <div class="contact__info-item">
-              <i class="bx bxs-envelope"></i>
-
-              <span class="contact__info-mail">
-                <a id="mail" href="mailto:test@correo.com" target="_blank" rel="noreferrer nofollow">
-                  alfreolico.brambila@gmail.com
-                </a>
-              </span>
-            </div>
-
-            <div class="contact__info-item">
-              <i class="bx bx-map"></i>
-
-              <span class="contact__info-map"> Carmen, Camepeche, México. </span>
-            </div>
-          </address>
-        </div>
-        <div class="contact__form">
-          <h3 class="contact__form-title">Enviar mensaje</h3>
-
-          <form id="form" class="contact__form-container">
-            <div class="contact__form-group">
-              <label for="name" class="contact__form-label">Nombre</label>
-              <input type="text" id="name" name="name" class="contact__form-input" />
-            </div>
-
-            <div class="contact__form-group">
-              <label for="email" class="contact__form-label">Correo</label>
-              <input type="email" id="email" name="email" class="contact__form-input" />
-            </div>
-
-            <div class="contact__form-group">
-              <label for="subject" class="contact__form-label">Asunto</label>
-              <input type="text" id="subject" name="subject" class="contact__form-input" />
-            </div>
-
-            <div class="contact__form-group">
-              <label for="message" class="contact__form-label">Mensaje</label>
-              <textarea id="message" name="message" cols="30" rows="10" class="contact__form-input"></textarea>
-            </div>
-            <dialog class="contact__form-modal" id="modal">
-              Formulario enviado con éxito!
-              <button type="reset" id="btn_close-modal">Cerrar</button>
-            </dialog>
-
-            <button type="submit" class="btn contact__form-button">
-              Enviar
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
+    </div><span class="hero__scroll">Explorar</span></section>
+    <section class="section section--surface"><div class="page-shell"><div class="section__heading"><p class="eyebrow">Selección</p><h2 class="section__title">Proyectos destacados</h2><p class="section__intro">Una muestra breve de aplicaciones publicadas. La página de proyectos reunirá el contexto técnico completo en una etapa posterior.</p></div><div class="card-grid project-grid">
+      <article class="card project-card"><img class="project-card__image" src="assets/img/project1.jpg" width="1898" height="852" loading="lazy" alt="Vista de Rick and Morty Character Explorer"><div class="project-card__body"><h3>Rick and Morty Character Explorer</h3><p>Explorador de personajes construido con React y una API pública.</p><a class="text-link" href="projects/">Ver proyecto</a></div></article>
+      <article class="card project-card"><img class="project-card__image" src="assets/img/project2.png" width="1621" height="865" loading="lazy" alt="Vista de Be My Valentine"><div class="project-card__body"><h3>Be My Valentine</h3><p>Experimento interactivo desarrollado con JavaScript nativo.</p><a class="text-link" href="projects/">Ver proyecto</a></div></article>
+      <article class="card project-card"><img class="project-card__image" src="assets/img/project3.jpg" width="1752" height="812" loading="lazy" alt="Vista de Pokédex"><div class="project-card__body"><h3>Pokédex</h3><p>Aplicación React para explorar datos de Pokémon.</p><a class="text-link" href="projects/">Ver proyecto</a></div></article>
+    </div></div></section>
+    <section class="section"><div class="page-shell"><div class="section__heading"><p class="eyebrow">Áreas de trabajo</p><h2 class="section__title">Capacidades en construcción continua</h2><p class="section__intro">La experiencia y el alcance exactos se revisarán editorialmente; esta vista organiza las áreas presentes en el portfolio actual.</p></div><div class="card-grid card-grid--three"><article class="card"><p class="card__label">Web</p><h3>Interfaces y aplicaciones</h3><p>HTML, CSS, JavaScript, React y herramientas de interfaz.</p></article><article class="card"><p class="card__label">Backend</p><h3>APIs y datos</h3><p>Node.js, Express y bases de datos relacionales o documentales.</p></article><article class="card"><p class="card__label">Proceso</p><h3>Ingeniería aplicada</h3><p>Resolución de problemas, documentación y aprendizaje continuo.</p></article></div><p style="margin-top: 1.5rem"><a class="text-link" href="capabilities/">Explorar capacidades</a></p></div></section>
+    <section class="section section--surface"><div class="page-shell"><div class="section__heading"><p class="eyebrow">Contacto</p><h2 class="section__title">¿Tienes una idea o un reto técnico?</h2><p class="section__intro">Consulta los canales disponibles y el estado de la configuración de contacto.</p><div class="button-row"><a class="button button--primary" href="contact/">Ir a contacto</a></div></div></div></section>
   </main>
-
-  <footer class="footer section">
-    <div class="footer__container grid--container">
-      <div class="footer__info">
-        <h3 class="footer__title">Alfredo Brambila</h3>
-        <p class="footer__description">
-          SOY LO QUE TÚ NECESITAS!
-        </p>
-      </div>
-
-      <div class="footer__social">
-        <h3 class="footer__title">Redes Sociales</h3>
-
-        <ul class="footer__social-list">
-          <!--<li class="footer__social-item">
-            <a class="footer__social-link" href="https://www.facebook.com/lotso.brambila" target="_blank"
-              rel="noreferrer nofollow"><i class="bx bxl-facebook"></i></a>
-          </li>
-
-          <li class="footer__social-item">
-            <a class="footer__social-link" href="https://www.instagram.com/alfreolico" target="_blank"
-              rel="noreferrer nofollow"><i class="bx bxl-instagram"></i></a>
-          </li>
-
-          <li class="footer__social-item">
-            <a class="footer__social-link" href="https://x.com/alfreolico" target="_blank" rel="noreferrer nofollow"><i
-                class="bx bxl-twitter"></i></a>
-          </li>-->
-
-          <li class="footer__social-item">
-            <a class="footer__social-link" href="https://www.linkedin.com/in/alfredo-brambila-arias" target="_blank"
-              rel="noreferrer nofollow"><i class="bx bxl-linkedin"></i></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="footer__copy">&#64;<span> </span>Todos los derechos reservados</p>
-  </footer>
-</body>
-
-</html>
+  <div class="floating-actions" role="group" aria-label="Acciones rápidas">
+  <button class="floating-actions__button floating-actions__button--top" type="button" data-scroll-top aria-label="Volver al inicio de la página" hidden>
+    <i class="bx bx-chevron-up" aria-hidden="true"></i>
+  </button>
+  <a class="floating-actions__button floating-actions__button--whatsapp" href="https://wa.me/529992231193?text=Hola%20Alfredo%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20conversar%20sobre%20una%20oportunidad%20o%20proyecto%20web." target="_blank" rel="noopener noreferrer" aria-label="Contactar a Alfredo por WhatsApp">
+    <i class="bx bxl-whatsapp" aria-hidden="true"></i>
+  </a>
+</div>
+  <footer class="site-footer"><div class="page-shell site-footer__inner"><span>Alfredo Brambila</span><p class="site-footer__copy">© <span data-current-year></span> Todos los derechos reservados.</p></div></footer>
+</body></html>
