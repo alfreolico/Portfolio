@@ -149,7 +149,8 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); line-height: 1.08; }
 .card h3 { font-size: 1.4rem; }
 .card p { margin: .8rem 0 0; color: var(--color-text-muted); }
 .project-card { overflow: hidden; padding: 0; }
-.project-card__image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.project-card__image { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.project-card__image--digital-card { object-position: center 38%; }
 .project-card__body { padding: 1.25rem; }
 .project-card__links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; color: var(--color-accent); font: 700 .82rem/1 var(--font-display); }
 .text-link { color: var(--color-accent); font: 700 .88rem/1 var(--font-display); text-decoration: underline; text-underline-offset: .3rem; }
