@@ -1,0 +1,185 @@
+/* Trabajo / Work V2: route styles isolated from V1 pages. */
+.work-page { overflow-x: clip; }
+.work-hero { padding: clamp(5.5rem, 12vw, 9rem) 0 clamp(2rem, 5vw, 4rem); }
+.work-hero h1 { max-width: 12ch; margin: .45rem 0 1rem; font-size: clamp(3.2rem, 8vw, 6.5rem); line-height: .94; letter-spacing: -.065em; }
+.work-hero__lead { max-width: 63ch; margin: 0; color: var(--color-text-muted); font-size: clamp(1.05rem, 2vw, 1.22rem); }
+.work-transfer-section { padding: clamp(2rem, 5vw, 4.5rem) 0 clamp(5rem, 10vw, 8rem); border-top: 1px solid var(--mechanical-line-muted); background: linear-gradient(180deg, color-mix(in srgb, var(--mechanical-panel) 70%, transparent), transparent); }
+.work-transfer__heading { display: grid; gap: .8rem; max-width: 64rem; }
+.work-transfer__heading h2 { margin: 0; font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: -.06em; }
+.work-transfer__heading > p:not(.eyebrow) { max-width: 62ch; margin: 0; color: var(--color-text-muted); }
+.work-page .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.work-carriage { position: relative; display: block; max-width: 68rem; min-height: 12rem; margin: clamp(2.5rem, 5vw, 4.5rem) 0 2rem; padding: 0; border: 1px solid var(--mechanical-line); border-radius: 1.25rem; background: color-mix(in srgb, var(--mechanical-panel) 84%, var(--color-bg)); box-shadow: var(--shadow-elevated); isolation: isolate; }
+.work-carriage__plate { position: absolute; inset: .38rem; z-index: -1; border: 1px solid var(--mechanical-line-muted); border-radius: .92rem; background: linear-gradient(105deg, color-mix(in srgb, var(--color-surface-raised) 62%, transparent), transparent 52%, color-mix(in srgb, var(--color-accent) 5%, transparent)); pointer-events: none; }
+.work-carriage__track { position: absolute; top: 50%; right: 17%; left: 17%; height: .78rem; border: 1px solid color-mix(in srgb, var(--mechanical-line) 72%, var(--color-border)); border-radius: 999px; background: linear-gradient(180deg, color-mix(in srgb, var(--color-bg) 72%, transparent), color-mix(in srgb, var(--color-surface-raised) 80%, transparent)); box-shadow: inset 0 .12rem .28rem color-mix(in srgb, var(--color-bg) 62%, transparent); translate: 0 -50%; pointer-events: none; }
+.work-carriage__track::before, .work-carriage__track::after { content: ""; position: absolute; top: 50%; width: 1.1rem; height: 1.1rem; border: 1px solid var(--mechanical-connector); border-radius: 50%; background: var(--color-surface); box-shadow: 0 0 .9rem color-mix(in srgb, var(--mechanical-marker) 20%, transparent); translate: 0 -50%; }
+.work-carriage__track::before { left: -.58rem; }.work-carriage__track::after { right: -.58rem; }
+.work-carriage__ticks { position: absolute; inset: -1.05rem .25rem auto; height: .42rem; background: repeating-linear-gradient(90deg, transparent 0 calc(10% - 1px), var(--mechanical-line-muted) calc(10% - 1px) 10%); opacity: .78; }
+.work-carriage__option { position: absolute; top: 1.2rem; width: 35%; min-height: auto; padding: .8rem 1rem; color: var(--color-text-muted); cursor: pointer; font-family: var(--font-display); transition: color .2s ease, opacity .2s ease; }
+.work-carriage__option--projects { left: 1rem; text-align: left; }.work-carriage__option--services { right: 1rem; text-align: right; justify-items: end; }
+.work-carriage__option span { display: block; font-size: clamp(.9rem, 1.7vw, 1.12rem); font-weight: 700; line-height: 1.15; }.work-carriage__option small { display: block; margin-top: .2rem; font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; }
+.work-carriage__option input { position: absolute; inline-size: 1px; block-size: 1px; opacity: 0; }.work-carriage__option:has(input:checked) { color: var(--color-text); }.work-carriage__option:has(input:focus-visible)::after { content: ""; position: absolute; inset: .22rem; border: 3px solid var(--color-focus); border-radius: .55rem; pointer-events: none; }
+.work-carriage__knob { position: absolute; z-index: 2; top: calc(50% - 2.35rem); left: calc(17% - 4.25rem); width: 8.5rem; height: 4.7rem; border: 1px solid color-mix(in srgb, var(--mechanical-connector) 82%, white); border-radius: .72rem; background: linear-gradient(135deg, color-mix(in srgb, var(--color-accent) 26%, var(--color-surface-raised)), color-mix(in srgb, var(--color-surface-raised) 94%, var(--color-bg))); box-shadow: 0 .7rem 1.3rem color-mix(in srgb, var(--color-bg) 58%, transparent), inset 0 1px 0 color-mix(in srgb, white 32%, transparent), inset 0 -1px 0 color-mix(in srgb, var(--color-bg) 36%, transparent); transition: left .42s cubic-bezier(.18, .92, .24, 1.15), box-shadow .14s ease, scale .14s ease; pointer-events: none; }
+.work-carriage[data-mode="services"] .work-carriage__knob { left: calc(83% - 4.25rem); }.work-carriage__knob::before, .work-carriage__knob::after { content: ""; position: absolute; top: .58rem; width: .48rem; height: .48rem; border: 1px solid var(--mechanical-marker); border-radius: 50%; background: var(--color-surface); }.work-carriage__knob::before { left: .58rem; }.work-carriage__knob::after { right: .58rem; }
+.work-carriage__grip { position: absolute; top: 50%; left: 50%; width: 3.15rem; height: 1.8rem; border: 1px solid var(--mechanical-line-muted); border-radius: .28rem; background: repeating-linear-gradient(90deg, transparent 0 .45rem, var(--mechanical-line) .45rem .62rem); translate: -50% -50%; }
+.work-carriage__status { position: absolute; right: 1.5rem; bottom: 1.15rem; z-index: 3; color: var(--color-text-muted); font: 600 .72rem/1.2 var(--font-display); letter-spacing: .08em; text-transform: uppercase; }.work-carriage__signal { position: absolute; z-index: 1; top: 50%; left: 17%; width: 66%; height: .78rem; overflow: hidden; border-radius: 999px; translate: 0 -50%; pointer-events: none; }.work-carriage__signal::after { content: ""; position: absolute; top: 50%; left: -12%; width: 12%; height: 2px; background: linear-gradient(90deg, transparent, var(--mechanical-marker), transparent); box-shadow: 0 0 .75rem var(--mechanical-marker); translate: 0 -50%; opacity: 0; }.work-carriage.is-transferring .work-carriage__signal::after { animation: work-signal .38s ease-out both; }.work-carriage.is-transferring .work-carriage__knob { box-shadow: 0 .55rem 1rem color-mix(in srgb, var(--color-bg) 58%, transparent), 0 0 1.15rem color-mix(in srgb, var(--mechanical-marker) 20%, transparent), inset 0 1px 0 color-mix(in srgb, white 32%, transparent); }.work-carriage:active .work-carriage__knob { scale: .98; translate: 0 2px; }
+.work-transfer__stage { position: relative; transition: height .32s ease; }.work-view { display: grid; gap: clamp(3rem, 7vw, 5.5rem); }.work-view__intro { display: grid; gap: .7rem; max-width: 64ch; }.work-view__intro h3 { margin: 0; font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -.055em; }.work-view__intro > p:not(.eyebrow) { margin: 0; color: var(--color-text-muted); }.work-view__section { display: grid; gap: 1.5rem; }.work-view__section-heading { display: grid; gap: .65rem; max-width: 62ch; }.work-view__section-heading h4 { margin: 0; font-size: clamp(1.5rem, 3vw, 2.4rem); letter-spacing: -.045em; }.work-view__section-heading p { margin: 0; color: var(--color-text-muted); }
+.work-project-grid, .work-service-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1rem; }.work-project-card, .work-service-card, .work-evidence-bridge { position: relative; display: grid; gap: .85rem; min-width: 0; padding: 1.2rem; border: 1px solid color-mix(in srgb, var(--mechanical-line-muted) 70%, var(--color-border)); border-radius: var(--radius-card); background: var(--mechanical-panel); box-shadow: var(--shadow-surface); overflow: hidden; }.work-project-card::before, .work-service-card::before, .work-evidence-bridge::before { content: ""; position: absolute; top: .7rem; right: .7rem; width: .7rem; height: .7rem; border-top: 1px solid var(--mechanical-line-muted); border-right: 1px solid var(--mechanical-line-muted); pointer-events: none; }.work-project-card::after, .work-service-card::after, .work-evidence-bridge::after { content: ""; position: absolute; right: -.12rem; bottom: 1rem; width: .4rem; height: .4rem; border: 1px solid var(--mechanical-connector); border-radius: 50%; background: var(--color-surface); pointer-events: none; }.work-project-card { grid-column: span 4; }.work-project-card--industrial { grid-column: span 12; padding: 0; }.work-project-card--industrial .project-feature { grid-template-columns: 1fr; }.work-project-card--applied { grid-column: span 4; padding: 0; }.work-project-card--applied .project-card__body { padding: 1.2rem; }.work-project-card--lab { grid-column: span 4; padding: 0; border-style: dashed; }.work-project-card--lab .project-card__body { padding: 1.2rem; }.work-project-card--mapped { border-color: var(--mechanical-line); }.work-project-card--mapped .project-card__image { border-bottom-color: var(--mechanical-line-muted); }.work-project-card h4, .work-service-card h4, .work-evidence-bridge h4 { max-width: 25ch; margin: 0; font-size: clamp(1.15rem, 2.2vw, 1.6rem); letter-spacing: -.035em; }.work-project-card > p, .work-service-card > p, .work-evidence-bridge > p { margin: 0; color: var(--color-text-muted); }.work-card__id { margin: 0; color: var(--color-accent); font: 700 .72rem/1.2 var(--font-display); letter-spacing: .1em; text-transform: uppercase; }.work-project-card .project-feature { border: 0; border-radius: 0; box-shadow: none; background: transparent; }.work-project-card .project-feature__body { padding: 1.2rem; }.work-project-card .project-feature__visual { min-height: 15rem; }.work-project-card .project-card__image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-bottom: 1px solid var(--color-border); }.work-project-card .project-card__image--digital-card { object-position: center 25%; }.work-project-card .project-tags { margin-top: auto; }.work-project-card .project-card__links a, .work-service-card a, .work-evidence-bridge a { color: var(--color-accent); font-family: var(--font-display); font-weight: 700; }.work-project-card .project-card__links a:hover, .work-service-card a:hover, .work-evidence-bridge a:hover { color: var(--color-text); }
+.work-service-card { grid-column: span 6; align-content: start; }.work-service-card--industrial { grid-column: span 12; background: linear-gradient(135deg, color-mix(in srgb, var(--color-accent) 9%, var(--mechanical-panel)), var(--mechanical-panel)); }.work-service-card ul { display: grid; gap: .55rem; margin: 0; padding-left: 1.1rem; color: var(--color-text-muted); }.work-service-card li::marker { color: var(--color-accent); }.work-service-card__meta { font-size: .92rem; }.work-evidence-bridge { grid-column: span 12; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); align-items: center; border-style: dashed; }.work-evidence-bridge__label { color: var(--color-accent); font: 700 .72rem/1.2 var(--font-display); letter-spacing: .1em; text-transform: uppercase; }.work-evidence-bridge__body { display: grid; gap: .45rem; }.work-evidence-bridge__body p { margin: 0; color: var(--color-text-muted); }
+.work-transfer__process { display: grid; gap: 1rem; }.work-transfer__process .service-process { margin: 0; }.work-transfer__conditions { display: grid; gap: 1rem; }.work-transfer__conditions .service-two-column { display: grid; gap: 1rem; }.work-transfer__conditions .card { min-width: 0; }.work-transfer__closing { display: grid; gap: 1.2rem; max-width: 58rem; }.work-transfer__closing h3 { max-width: 18ch; margin: 0; font-size: clamp(2rem, 5vw, 3.8rem); letter-spacing: -.05em; }.work-transfer__closing .button-row { margin-top: .4rem; }.js .work-carriage { display: block; }.no-js .work-carriage { display: none; }.no-js .work-transfer__stage { margin-top: 2rem; }.js .work-view { position: absolute; inset: 0; width: 100%; align-content: start; opacity: 1; visibility: visible; transition: opacity .2s ease, visibility 0s linear; }.js .work-view--services { opacity: 0; visibility: hidden; transition: opacity .2s ease, visibility 0s linear .3s; }.js .work-transfer__stage[data-mode="services"] .work-view--projects { opacity: 0; visibility: hidden; transition: opacity .2s ease, visibility 0s linear .3s; }.js .work-transfer__stage[data-mode="services"] .work-view--services { opacity: 1; visibility: visible; transition: opacity .24s ease; }.work-card--docked { border-color: var(--mechanical-marker); box-shadow: var(--shadow-elevated), 0 0 1rem color-mix(in srgb, var(--mechanical-marker) 14%, transparent); }
+@keyframes work-signal { 0% { left: -12%; opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { left: 100%; opacity: 0; } }
+@media (min-width: 900px) { .work-project-card--industrial .project-feature { grid-template-columns: minmax(15rem, .75fr) minmax(0, 1.25fr); }.work-project-card--industrial .project-feature__visual { border-right: 1px solid var(--mechanical-line-muted); border-bottom: 0; }.work-transfer__conditions .service-two-column { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 899px) { .work-project-card--applied, .work-project-card--lab { grid-column: span 6; }.work-service-card { grid-column: span 6; }.work-service-card--industrial, .work-evidence-bridge { grid-column: span 12; } }
+@media (max-width: 600px) { .work-carriage { min-height: 10.8rem; }.work-carriage__option { top: .8rem; width: 42%; padding-inline: .62rem; }.work-carriage__track { right: 13%; left: 13%; }.work-carriage__knob { top: calc(50% - 2rem); left: calc(13% - 3.25rem); width: 6.5rem; height: 4rem; }.work-carriage[data-mode="services"] .work-carriage__knob { left: calc(87% - 3.25rem); }.work-carriage__grip { width: 2.35rem; height: 1.45rem; }.work-carriage__signal { left: 13%; width: 74%; }.work-carriage__status { bottom: .72rem; left: 1rem; right: auto; }.work-project-grid, .work-service-grid { grid-template-columns: 1fr; }.work-project-card, .work-project-card--industrial, .work-project-card--applied, .work-project-card--lab, .work-service-card, .work-service-card--industrial, .work-evidence-bridge { grid-column: auto; }.work-evidence-bridge { grid-template-columns: 1fr; }.work-transfer__stage { transition: none; }.js .work-view { position: absolute; }.js .work-view--services { transform: translateY(.8rem); }.js .work-transfer__stage[data-mode="services"] .work-view--projects { transform: translateY(-.8rem); }.js .work-transfer__stage[data-mode="services"] .work-view--services { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .work-carriage__knob, .work-transfer__stage, .js .work-view { transition: none !important; }.work-carriage.is-transferring .work-carriage__signal::after { animation: none; } }
+
+/* Fieldset establishes a reduced internal percentage box; use the carriage's
+   fixed component geometry rather than percentage offsets for its mechanics. */
+.work-carriage__track,
+.work-carriage__signal { top: 5.75rem; }
+.work-carriage__knob { top: 3.4rem; }
+.work-carriage__status { top: 10rem; bottom: auto; }
+
+@media (max-width: 600px) {
+  .work-carriage__track,
+  .work-carriage__signal { top: 5.1rem; }
+  .work-carriage__knob { top: 3.1rem; }
+  .work-carriage__status { top: 8.9rem; bottom: auto; }
+}
+
+/* Compact transfer console. The control occupies only the space it needs. */
+.work-carriage {
+  height: 8rem;
+  min-height: 0;
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  border-width: 1px 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.work-carriage__plate {
+  inset: .45rem 0;
+  border-width: 0 1px;
+  border-radius: 0;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--mechanical-panel) 82%, transparent), transparent 18% 82%, color-mix(in srgb, var(--mechanical-panel) 82%, transparent));
+}
+.work-carriage__option { top: .65rem; width: 32%; padding: .45rem .2rem; }
+.work-carriage__option--projects { left: 1rem; }
+.work-carriage__option--services { right: 1rem; }
+.work-carriage__track,
+.work-carriage__signal { top: 4.3rem; }
+.work-carriage__track { right: 18%; left: 18%; }
+.work-carriage__signal { left: 18%; width: 64%; }
+.work-carriage__knob { top: 2.6rem; left: calc(18% - 3.6rem); width: 7.2rem; height: 3.55rem; }
+.work-carriage[data-mode="services"] .work-carriage__knob { left: calc(82% - 3.6rem); }
+.work-carriage__grip { width: 2.65rem; height: 1.35rem; }
+.work-carriage__status {
+  top: 6.55rem;
+  right: 1rem;
+  padding: .2rem .42rem;
+  border: 1px solid var(--mechanical-line-muted);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+}
+.work-transfer__bus {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) auto minmax(2rem, 1fr);
+  align-items: center;
+  gap: .65rem;
+  height: 2.5rem;
+  margin: .35rem 0 1.15rem;
+  color: var(--color-text-muted);
+}
+.work-transfer__bus::before,
+.work-transfer__bus::after,
+.work-transfer__bus-line { content: ""; height: 1px; background: var(--mechanical-line-muted); }
+.work-transfer__bus::before { grid-column: 1; }
+.work-transfer__bus-line { grid-column: 3; }
+.work-transfer__bus-label { grid-column: 2; font: 700 .66rem/1 var(--font-display); letter-spacing: .14em; text-transform: uppercase; }
+.work-transfer__bus-node { position: absolute; right: 0; width: .45rem; height: .45rem; border: 1px solid var(--mechanical-connector); border-radius: 50%; background: var(--color-surface); }
+.work-transfer__bus::after { position: absolute; left: 0; width: .45rem; height: .45rem; border: 1px solid var(--mechanical-connector); border-radius: 50%; background: var(--color-surface); }
+.work-transfer.is-transferring .work-transfer__bus-line,
+[data-work-transfer].is-transferring .work-transfer__bus-line { animation: work-bus-signal .46s ease-out both; }
+.work-project-card--mapped::before,
+.work-service-card[data-work-pair]::before,
+.work-evidence-bridge[data-work-pair]::before {
+  content: "CHASSIS · " attr(data-work-pair);
+  top: .72rem;
+  left: .72rem;
+  right: auto;
+  z-index: 2;
+  width: auto;
+  height: auto;
+  padding: .2rem .36rem;
+  border: 1px solid var(--mechanical-line-muted);
+  border-radius: .2rem;
+  background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+  color: var(--color-text-muted);
+  font: 700 .58rem/1 var(--font-display);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.work-project-card--mapped .project-card__eyebrow { padding-top: 1.1rem; }
+.work-card--docked { animation: work-chassis-dock .2s ease-out both; }
+@keyframes work-bus-signal { 0% { background: var(--mechanical-line-muted); box-shadow: none; } 45% { background: var(--mechanical-marker); box-shadow: 0 0 .7rem color-mix(in srgb, var(--mechanical-marker) 45%, transparent); } 100% { background: var(--mechanical-line-muted); box-shadow: none; } }
+@keyframes work-chassis-dock { 0% { translate: 0 -2px; } 100% { translate: 0; } }
+
+@media (min-width: 601px) and (max-width: 899px) {
+  .work-carriage { height: 8.65rem; }
+  .work-carriage__option { width: 37%; }
+  .work-carriage__track,
+  .work-carriage__signal { top: 4.7rem; }
+  .work-carriage__knob { top: 3rem; }
+  .work-carriage__status { top: 7.1rem; }
+}
+
+@media (max-width: 600px) {
+  .work-carriage {
+    height: 15.8rem;
+    margin-top: 1.5rem;
+    border-width: 0 1px;
+  }
+  .work-carriage__plate { inset: 0 .45rem; border-width: 1px 0; }
+  .work-carriage__option { right: 1rem; left: 1rem; width: auto; padding: .45rem; text-align: center; }
+  .work-carriage__option--projects { top: .5rem; }
+  .work-carriage__option--services { top: 13rem; justify-items: center; }
+  .work-carriage__track,
+  .work-carriage__signal {
+    top: 3.85rem;
+    right: auto;
+    left: calc(50% - .39rem);
+    width: .78rem;
+    height: 8.2rem;
+  }
+  .work-carriage__ticks {
+    inset: .25rem -1.05rem;
+    width: .42rem;
+    height: auto;
+    background: repeating-linear-gradient(180deg, transparent 0 calc(10% - 1px), var(--mechanical-line-muted) calc(10% - 1px) 10%);
+  }
+  .work-carriage__track::before,
+  .work-carriage__track::after { left: 50%; right: auto; translate: -50% 0; }
+  .work-carriage__track::before { top: -.58rem; }
+  .work-carriage__track::after { top: auto; bottom: -.58rem; }
+  .work-carriage__knob {
+    top: 3.05rem;
+    left: calc(50% - 3.6rem);
+    width: 7.2rem;
+    height: 3.45rem;
+    translate: 0;
+  }
+  .work-carriage[data-mode="services"] .work-carriage__knob { top: 9.15rem; left: calc(50% - 3.6rem); }
+  .work-carriage__signal { overflow: visible; }
+  .work-carriage__signal::after { top: -12%; left: 50%; width: 2px; height: 12%; translate: -50% 0; background: linear-gradient(180deg, transparent, var(--mechanical-marker), transparent); }
+  .work-carriage.is-transferring .work-carriage__signal::after { animation: work-signal-vertical .38s ease-out both; }
+  .work-carriage__status { top: 7.35rem; right: 50%; left: auto; translate: 50% 0; white-space: nowrap; }
+  .work-transfer__bus { height: 1.65rem; margin: .65rem 0 .85rem; }
+  .work-transfer__bus-label { font-size: .58rem; }
+}
+@keyframes work-signal-vertical { 0% { top: -12%; opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .work-transfer__bus-line,
+  .work-card--docked { animation: none !important; }
+}
+
+.no-js .work-transfer__bus { display: none; }
