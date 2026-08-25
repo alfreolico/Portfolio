@@ -17,31 +17,6 @@
 .boot-photo { display: block; width: 100%; height: 100%; object-fit: cover; }
 .boot-instrument { z-index: 0; }
 .boot-orbit { z-index: 3; }
-.boot-status {
-  position: absolute;
-  z-index: 5;
-  right: 1.5rem;
-  bottom: 1.3rem;
-  display: inline-flex;
-  align-items: center;
-  gap: .45rem;
-  padding: .45rem .65rem;
-  border: 1px solid var(--mechanical-line-muted);
-  border-radius: 999px;
-  color: var(--color-text-muted);
-  background: color-mix(in srgb, var(--color-surface) 78%, transparent);
-  font: 700 .65rem/1 var(--font-display);
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-.boot-status::before {
-  width: .42rem;
-  height: .42rem;
-  border-radius: 50%;
-  background: var(--mechanical-marker);
-  box-shadow: 0 0 .65rem color-mix(in srgb, var(--mechanical-marker) 45%, transparent);
-  content: "";
-}
 .boot-reference::after {
   display: inline-block;
   width: 4rem;
@@ -57,8 +32,7 @@
 .boot-enhanced .boot-descriptor,
 .boot-enhanced .boot-lead,
 .boot-enhanced .boot-actions,
-.boot-enhanced .boot-links,
-.boot-enhanced .boot-status { opacity: 0; }
+.boot-enhanced .boot-links { opacity: 0; }
 .boot-enhanced .boot-title__word { opacity: 0; transform: translateY(.55em); }
 .boot-enhanced .boot-instrument { opacity: 0; transform: scale(.93); transform-origin: center; }
 .boot-enhanced .boot-photo-frame { clip-path: inset(0 50% 0 50% round 46%); }
@@ -66,7 +40,6 @@
 
 @media (max-width: 899px) {
   .hero--boot { min-height: auto; }
-  .boot-status { right: .5rem; bottom: .6rem; }
   .boot-photo-frame { width: min(58vw, 306px); height: auto; aspect-ratio: 306 / 391; }
   .boot-photo { position: absolute; inset: 0; }
   .boot-reference::after { width: 2rem; }
@@ -74,7 +47,6 @@
 
 @media (max-width: 599px) {
   .boot-photo-frame { width: min(64vw, 260px); }
-  .boot-status { right: 0; bottom: -.15rem; font-size: .58rem; }
   .boot-reference::after { width: 1.2rem; }
 }
 
@@ -84,7 +56,6 @@
   .boot-enhanced .boot-lead,
   .boot-enhanced .boot-actions,
   .boot-enhanced .boot-links,
-  .boot-enhanced .boot-status,
   .boot-enhanced .boot-title__word,
   .boot-enhanced .boot-instrument,
   .boot-enhanced .boot-orbit { opacity: 1; transform: none; }

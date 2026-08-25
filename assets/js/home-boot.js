@@ -17,7 +17,6 @@
   const lead = hero.querySelector('.boot-lead');
   const actions = hero.querySelector('.boot-actions');
   const links = hero.querySelector('.boot-links');
-  const status = hero.querySelector('.boot-status');
   let timeline;
 
   try {
@@ -32,7 +31,7 @@
         .to(descriptor, { opacity: 1, y: 0, duration: .12 }, .25)
         .to(photo, { clipPath: 'inset(0 0% 0 0% round 46%)', duration: .22, ease: 'power2.inOut' }, .24)
         .to(visual.querySelectorAll('.boot-orbit'), { opacity: 1, duration: .12 }, .39)
-        .to([lead, actions, links, status], { opacity: 1, duration: .12, stagger: .025 }, .48);
+        .to([lead, actions, links], { opacity: 1, duration: .12, stagger: .025 }, .48);
     } else if (tablet) {
       timeline
         .to(instrument, { opacity: 1, scale: 1, duration: .17 }, 0)
@@ -41,7 +40,7 @@
         .to(descriptor, { opacity: 1, y: 0, duration: .14 }, .31)
         .to(photo, { clipPath: 'inset(0 0% 0 0% round 46%)', duration: .28, ease: 'power2.inOut' }, .29)
         .to(visual.querySelectorAll('.boot-orbit'), { opacity: 1, duration: .12 }, .49)
-        .to([lead, actions, links, status], { opacity: 1, duration: .14, stagger: .035 }, .61);
+        .to([lead, actions, links], { opacity: 1, duration: .14, stagger: .035 }, .61);
     } else {
       timeline
         .to(instrument, { opacity: 1, scale: 1, duration: .2 }, 0)
@@ -51,7 +50,7 @@
         .to(photo, { clipPath: 'inset(0 0% 0 0% round 46%)', duration: .34, ease: 'power2.inOut' }, .34)
         .to(visual.querySelectorAll('.boot-orbit'), { opacity: 1, duration: .12 }, .57)
         .fromTo(icons, { opacity: 0 }, { opacity: 1, duration: .14, stagger: { each: .018, from: 'center' }, clearProps: 'opacity' }, .59)
-        .to([lead, actions, links, status], { opacity: 1, duration: .15, stagger: .045 }, .78);
+        .to([lead, actions, links], { opacity: 1, duration: .15, stagger: .045 }, .78);
     }
   } catch {
     hero.classList.remove('boot-enhanced');
