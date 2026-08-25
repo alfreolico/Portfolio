@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420">
+  <symbol id="hero-instrument-ring" viewBox="0 0 520 420">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" vector-effect="non-scaling-stroke">
+      <path d="M57 280C70 95 255 8 435 120" stroke-width="1.2" opacity=".72"/>
+      <path d="M112 347C257 419 448 338 472 198" stroke-width="1" opacity=".42"/>
+      <path d="M82 237l18 4M91 196l17 6M111 157l16 8M142 123l14 11M181 94l12 14M224 72l9 16M270 58l5 18M318 60l-2 18M363 74l-7 16M403 96l-11 14M438 128l-14 11M466 165l-16 7" stroke-width="1" opacity=".68"/>
+      <path d="M67 263l28 6M282 46l7 26" stroke-width="1.8"/>
+      <path d="M94 276h22M406 126h24M440 273h23" stroke-width="1" opacity=".54"/>
+      <circle cx="94" cy="276" r="3" fill="currentColor" stroke="none"/>
+      <circle cx="430" cy="126" r="3" fill="currentColor" stroke="none"/>
+      <circle cx="440" cy="273" r="3" fill="currentColor" stroke="none"/>
+    </g>
+  </symbol>
+</svg>
