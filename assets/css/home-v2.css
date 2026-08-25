@@ -16,7 +16,6 @@
 }
 .boot-photo { display: block; width: 100%; height: 100%; object-fit: cover; }
 .boot-instrument { z-index: 0; }
-.boot-orbit { z-index: 3; }
 .boot-reference::after {
   display: inline-block;
   width: 4rem;
