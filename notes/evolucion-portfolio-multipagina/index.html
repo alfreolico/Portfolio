@@ -20,6 +20,21 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="De una página a un sistema multipágina bilingüe">
   <meta name="twitter:description" content="Decisiones reales para organizar un portfolio estático en rutas bilingües y una base preparada para crecer.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "De una página a un sistema multipágina bilingüe",
+    "description": "Build log de Alfredo Brambila sobre la evolución de un portfolio de una página hacia una arquitectura multipágina bilingüe con tecnologías web nativas.",
+    "author": {
+      "@type": "Person",
+      "name": "Alfredo Brambila"
+    },
+    "url": "https://alfredobrambila.vercel.app/notes/evolucion-portfolio-multipagina/",
+    "inLanguage": "es",
+    "datePublished": "2026-08-24"
+  }
+  </script>
   <meta name="theme-color" content="#07111f">
   <meta name="theme-color" content="#eff8fc" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#07111f" media="(prefers-color-scheme: dark)">
@@ -33,7 +48,7 @@
 <body>
   <a class="skip-link" href="#main-content">Saltar al contenido</a>
   <header class="site-header"><nav class="site-nav" aria-label="Navegación principal"><a class="brand" href="../../"><span class="brand__mark" aria-hidden="true">A</span>Alfreolico</a><div id="site-menu" class="site-menu" data-site-menu data-open="false"><ul class="site-menu__list"><li><a class="site-menu__link" href="../../">Inicio</a></li><li><a class="site-menu__link" href="../../enfoque/">Enfoque</a></li><li><a class="site-menu__link" href="../../trabajo/">Trabajo</a></li><li><a class="site-menu__link" href="../../notes/" aria-current="page">Bitácora</a></li><li><a class="site-menu__link" href="../../contact/">Contacto</a></li></ul><a class="site-menu__language" href="../../../en/notes/from-one-page-to-bilingual-system/" lang="en" aria-label="Cambiar idioma a inglés">EN</a></div><div class="nav-actions"><button class="theme-toggle" type="button" data-theme-toggle aria-pressed="true" aria-label="Cambiar tema de color"><svg class="icon theme-toggle__icon" aria-hidden="true"><use href="../../assets/icons/sprite.svg#icon-moon"></use></svg></button><button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Abrir menú"><svg class="icon" aria-hidden="true"><use href="../../assets/icons/sprite.svg#icon-menu"></use></svg></button></div></nav></header>
-  <main id="main-content" class="page-main notes-page"><article class="note-article"><header class="note-header page-shell"><nav class="note-breadcrumb" aria-label="Ruta de navegación"><a href="../">Bitácora</a><span aria-hidden="true">→</span><span aria-current="page">De una página a un sistema multipágina bilingüe</span></nav><p class="note-header__type">BUILD LOG · 001</p><h1>De una página a un sistema multipágina bilingüe</h1><p class="note-header__summary">Una decisión de arquitectura para dejar de acumular secciones dentro de un mismo portfolio y convertirlas en rutas reales, equivalentes en español e inglés.</p><ul class="note-tags" aria-label="Temas de la entrada"><li>Arquitectura</li><li>Accesibilidad</li><li>Internacionalización</li></ul></header>
+  <main id="main-content" class="page-main notes-page"><article class="note-article"><header class="note-header page-shell"><nav class="note-breadcrumb" aria-label="Ruta de navegación"><a href="../">Bitácora</a><span aria-hidden="true">→</span><span aria-current="page">De una página a un sistema multipágina bilingüe</span></nav><p class="note-header__type">BUILD LOG · 001</p><h1>De una página a un sistema multipágina bilingüe</h1><p class="note-header__summary">Una decisión de arquitectura para dejar de acumular secciones dentro de un mismo portfolio y convertirlas en rutas reales, equivalentes en español e inglés.</p><p class="note-header__date"><time datetime="2026-08-24">24 de agosto de 2026</time></p><ul class="note-tags" aria-label="Temas de la entrada"><li>Arquitectura</li><li>Accesibilidad</li><li>Internacionalización</li></ul></header>
     <div class="note-content page-shell">
       <aside class="note-historical-context" aria-label="Contexto histórico"><p>Esta entrada documenta una etapa anterior de la arquitectura del portfolio. El sistema continuó evolucionando después de esta implementación.</p></aside>
       <section><h2>Cuando el problema dejó de ser agregar otra sección</h2><p>El portfolio anterior funcionaba. Ya tenía una presentación en español, una versión en inglés, contenido de perfil, capacidades, proyectos y contacto. También tenía estilos propios, JavaScript modular, tema visual y algunas interacciones que valía la pena conservar.</p><p>No partí de un proyecto roto ni de una página vacía. El límite apareció al intentar hacerlo crecer. Agregar una sección nueva parecía sencillo hasta que surgió una pregunta más importante: ¿esto debe seguir siendo una parte de la misma página o ya necesita convertirse en una página real?</p><p>Mientras más contenido acumulaba, más difícil era distinguir qué pertenecía a Perfil, qué debía vivir en Proyectos y qué necesitaba Servicios o Contacto. Una modificación pequeña podía afectar una parte distinta del recorrido. La estructura seguía funcionando, pero dejó de ser una forma cómoda de revisar, ampliar y mantener el sitio.</p></section>
