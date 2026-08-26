@@ -1,0 +1,6 @@
+# Local Codex / agent configuration
+AGENTS.md
+.agents/
+
+# Local editor configuration
+.vscode/
