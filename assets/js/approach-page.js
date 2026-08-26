@@ -5,17 +5,38 @@
 
   const pin = story.querySelector('[data-approach-pin]');
   const machine = story.querySelector('[data-approach-machine]');
+  const svg = machine?.querySelector('svg');
   const stages = [...story.querySelectorAll('[data-approach-step]')];
   const parts = [...machine.querySelectorAll('[data-machine-part]')];
   const stateLabel = machine.querySelector('[data-machine-state]');
   const stageMarks = [...machine.querySelectorAll('.machine-stage-marks circle')];
+  const traces = [
+    machine.querySelector('[data-machine-part="input"] .machine-flow'),
+    machine.querySelector('[data-machine-part="valve"] .machine-link'),
+    machine.querySelector('[data-flow-path]'),
+    machine.querySelector('[data-machine-part="transmission"] .machine-link'),
+    machine.querySelector('[data-machine-part="inspection"] .machine-check'),
+    machine.querySelector('[data-feedback-path]')
+  ];
+  const stageNodes = [
+    [machine.querySelector('[data-machine-part="input"] .machine-port')],
+    [machine.querySelector('[data-machine-part="valve"] .machine-port')],
+    [...machine.querySelectorAll('[data-machine-part="flow"] .machine-node')],
+    [machine.querySelector('[data-gear-b] .machine-port')],
+    [machine.querySelector('[data-machine-part="inspection"] .machine-port')],
+    [machine.querySelector('[data-machine-part="feedback"] .machine-symbol')]
+  ];
+  const flowPath = machine.querySelector('[data-flow-path]');
   const gsap = window.gsap;
   const ScrollTrigger = window.ScrollTrigger;
+  const DrawSVGPlugin = window.DrawSVGPlugin;
+  const MotionPathPlugin = window.MotionPathPlugin;
   const labels = document.documentElement.lang === 'es'
     ? ['01 / ENTRADA', '02 / CONTROL', '03 / FLUJO', '04 / TRANSMISIÓN', '05 / INSPECCIÓN', '06 / RETORNO']
     : ['01 / INPUT', '02 / CONTROL', '03 / FLOW', '04 / TRANSMISSION', '05 / INSPECTION', '06 / RETURN'];
   let activeStage = -1;
   let media;
+  let signal;
 
   const setTextStage = (index, animate = false) => {
     if (index === activeStage) return;
@@ -31,27 +52,44 @@
     activeStage = index;
   };
 
-  const showMachineState = (index, animate = false) => {
+  const setMachineState = (index, animate = false) => {
     parts.forEach((part, partIndex) => {
       const opacity = partIndex <= index ? 1 : .12;
       (animate ? gsap.to : gsap.set)(part, animate ? { opacity, duration: .28, overwrite: true } : { opacity });
     });
+    traces.forEach((trace, traceIndex) => {
+      const drawSVG = traceIndex <= index ? '100%' : '0%';
+      (animate ? gsap.to : gsap.set)(trace, animate ? { drawSVG, duration: .3, overwrite: true } : { drawSVG });
+    });
+    stageNodes.forEach((nodes, nodeIndex) => nodes.filter(Boolean).forEach((node) => {
+      const active = nodeIndex <= index;
+      (animate ? gsap.to : gsap.set)(node, animate
+        ? { opacity: active ? 1 : .35, scale: active ? 1 : .68, transformOrigin: '50% 50%', duration: .24, overwrite: true }
+        : { opacity: active ? 1 : .35, scale: active ? 1 : .68, transformOrigin: '50% 50%' });
+    }));
     const duration = animate ? .38 : 0;
     gsap.to('[data-valve-rotor]', { rotation: index >= 1 ? 45 : 0, transformOrigin: 'center', duration, overwrite: true });
     gsap.to('[data-gear-a]', { rotation: index >= 3 ? 72 : 0, transformOrigin: 'center', duration, overwrite: true });
     gsap.to('[data-gear-b]', { rotation: index >= 3 ? -96 : 0, transformOrigin: 'center', duration, overwrite: true });
     gsap.to('[data-piston]', { x: index >= 3 ? 24 : 0, duration, overwrite: true });
-    gsap.to('[data-flow-path]', { strokeDashoffset: index >= 2 ? 0 : 88, duration, overwrite: true });
-    gsap.to('[data-feedback-path]', { strokeDashoffset: index >= 5 ? 0 : 180, duration, overwrite: true });
   };
 
-  if (!gsap || !ScrollTrigger) {
+  if (!gsap || !ScrollTrigger || !DrawSVGPlugin) {
     document.documentElement.classList.add('approach-static');
     parts.forEach((part) => { part.style.opacity = '1'; });
     return;
   }
 
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
+  if (MotionPathPlugin && flowPath && svg) {
+    gsap.registerPlugin(MotionPathPlugin);
+    signal = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    signal.classList.add('machine-signal');
+    signal.setAttribute('r', '5');
+    signal.setAttribute('opacity', '0');
+    svg.append(signal);
+  }
+
   document.documentElement.dataset.approachMotion = 'scrolltrigger';
   media = gsap.matchMedia();
   media.add({ desktop: '(min-width: 900px)', reduced: '(prefers-reduced-motion: reduce)' }, (context) => {
@@ -61,6 +99,8 @@
       document.documentElement.classList.add('approach-static');
       stages.forEach((stage) => stage.classList.add('is-active'));
       parts.forEach((part) => gsap.set(part, { opacity: 1 }));
+      traces.forEach((trace) => gsap.set(trace, { drawSVG: '100%' }));
+      stageNodes.flat().filter(Boolean).forEach((node) => gsap.set(node, { opacity: 1, scale: 1 }));
       stageMarks.forEach((mark) => mark.classList.add('is-active'));
       stateLabel.textContent = labels.at(-1);
       return () => document.documentElement.classList.remove('approach-static');
@@ -68,19 +108,47 @@
     if (desktop) {
       document.documentElement.classList.add('has-approach-scroll');
       setTextStage(0);
-      showMachineState(0);
+      setMachineState(0);
       const timeline = gsap.timeline({ defaults: { ease: 'power2.inOut' } })
-        .to(parts[1], { opacity: 1, duration: .5 }, 1).to('[data-valve-rotor]', { rotation: 45, transformOrigin: 'center', duration: .5 }, 1)
-        .to(parts[2], { opacity: 1, duration: .5 }, 2).fromTo('[data-flow-path]', { strokeDashoffset: 88 }, { strokeDashoffset: 0, duration: .65 }, 2)
-        .to(parts[3], { opacity: 1, duration: .5 }, 3).to('[data-gear-a]', { rotation: 72, transformOrigin: 'center', duration: .65 }, 3).to('[data-gear-b]', { rotation: -96, transformOrigin: 'center', duration: .65 }, 3).to('[data-piston]', { x: 24, duration: .6 }, 3)
-        .to(parts[4], { opacity: 1, duration: .5 }, 4).to(parts[5], { opacity: 1, duration: .5 }, 5).fromTo('[data-feedback-path]', { strokeDashoffset: 180 }, { strokeDashoffset: 0, duration: .7 }, 5);
+        .to(parts[1], { opacity: 1, duration: .5 }, 1).fromTo(traces[1], { drawSVG: '0%' }, { drawSVG: '100%', duration: .5 }, 1).to(stageNodes[1], { opacity: 1, scale: 1, transformOrigin: '50% 50%', duration: .3 }, 1.16)
+        .to(parts[2], { opacity: 1, duration: .5 }, 2).fromTo(traces[2], { drawSVG: '0%' }, { drawSVG: '100%', duration: .65 }, 2).to(stageNodes[2], { opacity: 1, scale: 1, transformOrigin: '50% 50%', duration: .3 }, 2.26)
+        .to(parts[3], { opacity: 1, duration: .5 }, 3).fromTo(traces[3], { drawSVG: '0%' }, { drawSVG: '100%', duration: .5 }, 3).to(stageNodes[3], { opacity: 1, scale: 1, transformOrigin: '50% 50%', duration: .3 }, 3.2).to('[data-gear-a]', { rotation: 72, transformOrigin: 'center', duration: .65 }, 3).to('[data-gear-b]', { rotation: -96, transformOrigin: 'center', duration: .65 }, 3).to('[data-piston]', { x: 24, duration: .6 }, 3)
+        .to(parts[4], { opacity: 1, duration: .5 }, 4).fromTo(traces[4], { drawSVG: '0%' }, { drawSVG: '100%', duration: .45 }, 4).to(stageNodes[4], { opacity: 1, scale: 1, transformOrigin: '50% 50%', duration: .3 }, 4.18)
+        .to(parts[5], { opacity: 1, duration: .5 }, 5).fromTo(traces[5], { drawSVG: '0%' }, { drawSVG: '100%', duration: .7 }, 5).to(stageNodes[5], { opacity: 1, scale: 1, transformOrigin: '50% 50%', duration: .3 }, 5.25);
+
+      if (signal) {
+        const motionStart = { path: flowPath, align: flowPath, alignOrigin: [.5, .5], start: 0, end: 0 };
+        const motionEnd = { path: flowPath, align: flowPath, alignOrigin: [.5, .5], start: 0, end: 1 };
+        timeline
+          .set(signal, { opacity: 0, motionPath: motionStart }, 2)
+          .to(signal, { opacity: 1, duration: .08 }, 2)
+          .to(signal, { motionPath: motionEnd, duration: .58, ease: 'none' }, 2)
+          .to(signal, { opacity: 0, duration: .08 }, 2.58);
+      }
+
       const trigger = ScrollTrigger.create({ trigger: pin, start: 'top 12%', end: () => `+=${Math.max(window.innerHeight * 3.2, 2200)}`, pin, animation: timeline, scrub: .65, anticipatePin: 1, invalidateOnRefresh: true, onUpdate: (self) => setTextStage(Math.min(stages.length - 1, Math.round(self.progress * (stages.length - 1))), true) });
-      return () => { trigger.kill(); timeline.kill(); document.documentElement.classList.remove('has-approach-scroll'); stages.forEach((stage) => gsap.set(stage, { clearProps: 'all' })); };
+      return () => {
+        trigger.kill();
+        timeline.kill();
+        if (signal) gsap.set(signal, { opacity: 0, clearProps: 'transform' });
+        document.documentElement.classList.remove('has-approach-scroll');
+        stages.forEach((stage) => gsap.set(stage, { clearProps: 'all' }));
+      };
     }
-    setTextStage(0); showMachineState(0);
-    const observer = new IntersectionObserver((entries) => { const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]; if (!visible) return; const index = Number(visible.target.dataset.approachStep); setTextStage(index); showMachineState(index, true); }, { rootMargin: '-32% 0px -45%', threshold: [0, .25, .5, .75] });
+    setTextStage(0);
+    setMachineState(0);
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      const index = Number(visible.target.dataset.approachStep);
+      setTextStage(index);
+      setMachineState(index, true);
+    }, { rootMargin: '-32% 0px -45%', threshold: [0, .25, .5, .75] });
     stages.forEach((stage) => observer.observe(stage));
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (signal) gsap.set(signal, { opacity: 0, clearProps: 'transform' });
+    };
   });
   window.addEventListener('pagehide', () => media?.revert(), { once: true });
 })();

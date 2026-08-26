@@ -32,7 +32,6 @@
 .boot-enhanced .boot-lead,
 .boot-enhanced .boot-actions,
 .boot-enhanced .boot-links { opacity: 0; }
-.boot-enhanced .boot-title__word { opacity: 0; transform: translateY(.55em); }
 .boot-enhanced .boot-instrument { opacity: 0; transform: scale(.93); transform-origin: center; }
 .boot-enhanced .boot-photo-frame { clip-path: inset(0 50% 0 50% round 46%); }
 .boot-enhanced .boot-orbit { opacity: 0; }
@@ -55,7 +54,6 @@
   .boot-enhanced .boot-lead,
   .boot-enhanced .boot-actions,
   .boot-enhanced .boot-links,
-  .boot-enhanced .boot-title__word,
   .boot-enhanced .boot-instrument,
   .boot-enhanced .boot-orbit { opacity: 1; transform: none; }
   .boot-enhanced .boot-photo-frame { clip-path: none; }
