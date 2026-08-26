@@ -27,6 +27,12 @@
     [machine.querySelector('[data-machine-part="feedback"] .machine-symbol')]
   ];
   const flowPath = machine.querySelector('[data-flow-path]');
+  const valvePart = machine.querySelector('[data-machine-part="valve"]');
+  const valveRotor = machine.querySelector('[data-valve-rotor]');
+  const constraintForm = story.querySelector('[data-constraint-valve]');
+  const constraintInputs = [...story.querySelectorAll('[data-constraint]')];
+  const constraintMessage = story.querySelector('[data-constraint-message]');
+  const constraintReset = story.querySelector('[data-constraint-reset]');
   const gsap = window.gsap;
   const ScrollTrigger = window.ScrollTrigger;
   const DrawSVGPlugin = window.DrawSVGPlugin;
@@ -34,9 +40,64 @@
   const labels = document.documentElement.lang === 'es'
     ? ['01 / ENTRADA', '02 / CONTROL', '03 / FLUJO', '04 / TRANSMISIÓN', '05 / INSPECCIÓN', '06 / RETORNO']
     : ['01 / INPUT', '02 / CONTROL', '03 / FLOW', '04 / TRANSMISSION', '05 / INSPECTION', '06 / RETURN'];
+  const constraintCopy = document.documentElement.lang === 'es'
+    ? {
+        clear: 'Con un punto de partida claro, la dirección puede pasar a estructura.',
+        scope: 'Sin un alcance definido, la estructura debe mantenerse revisable antes de comprometer una implementación.',
+        data: 'Con información por validar, primero hay que confirmar fuentes y límites antes de conectar un flujo.',
+        access: 'Con acceso pendiente, una integración no puede confirmarse hasta validar permisos y entorno.',
+        multiple: 'El avance queda condicionado por varias decisiones de partida. Antes de avanzar, hay que delimitar el alcance, confirmar fuentes y validar accesos según corresponda.'
+      }
+    : {
+        clear: 'With a clear starting point, the direction can move into structure.',
+        scope: 'Without a defined scope, the structure needs to remain reviewable before committing to implementation.',
+        data: 'With information still to validate, sources and limits need confirming before a flow can be connected.',
+        access: 'With access pending, an integration cannot be confirmed until permissions and environment are validated.',
+        multiple: 'Progress is conditioned by several starting decisions. Before moving on, scope, sources and access need clarifying where they apply.'
+      };
   let activeStage = -1;
   let media;
   let signal;
+
+  const getActiveConstraints = () => constraintInputs
+    .filter((input) => input.checked)
+    .map((input) => input.dataset.constraint);
+
+  const applyConstraintState = ({ animate = false, visual = false } = {}) => {
+    const activeConstraints = getActiveConstraints();
+    const level = activeConstraints.length;
+    story.dataset.constraintLevel = String(level);
+    if (constraintMessage) {
+      constraintMessage.textContent = level === 0
+        ? constraintCopy.clear
+        : level === 1
+          ? constraintCopy[activeConstraints[0]]
+          : constraintCopy.multiple;
+    }
+    if (constraintReset) constraintReset.disabled = level === 0;
+    if (!visual || !gsap) return;
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const method = animate && !reduced ? gsap.to : gsap.set;
+    const duration = animate && !reduced ? .34 : 0;
+    const rotation = 45 - (level * 13);
+    const availableFlow = `${Math.max(42, 100 - (level * 18))}%`;
+    method(valveRotor, { rotation, transformOrigin: 'center', duration, overwrite: true });
+    method(valvePart, { opacity: level > 0 ? .9 : 1, duration, overwrite: true });
+    if (DrawSVGPlugin && flowPath) {
+      method(flowPath, { drawSVG: level > 0 ? `0 ${availableFlow}` : '100%', duration, overwrite: true });
+    }
+  };
+
+  if (constraintForm) {
+    constraintForm.addEventListener('change', () => applyConstraintState({ animate: true, visual: true }));
+    constraintReset?.addEventListener('click', () => {
+      constraintInputs.forEach((input) => { input.checked = false; });
+      applyConstraintState({ animate: true, visual: true });
+    });
+    applyConstraintState();
+    constraintForm.classList.add('is-ready');
+  }
 
   const setTextStage = (index, animate = false) => {
     if (index === activeStage) return;
@@ -50,6 +111,7 @@
       gsap.to(next, { opacity: 1, y: 0, duration: .22, overwrite: true });
     }
     activeStage = index;
+    if (index === 1) applyConstraintState({ animate, visual: true });
   };
 
   const setMachineState = (index, animate = false) => {

@@ -92,7 +92,24 @@
         <div class="approach-story__pin" data-approach-pin>
           <div class="approach-steps" data-approach-steps>
             <article class="approach-step is-active" data-approach-step="0"><p class="approach-step__id">01 · Entrada</p><h3>Entender el problema</h3><p>Identifico la necesidad antes de elegir una herramienta. El objetivo es comprender qué debe resolver la solución y para quién.</p></article>
-            <article class="approach-step" data-approach-step="1"><p class="approach-step__id">02 · Control</p><h3>Revisar restricciones y datos</h3><p>Ubico usuarios, fuentes de información, permisos, contenido disponible y límites del proyecto antes de comprometer una dirección.</p></article>
+            <article class="approach-step" data-approach-step="1">
+              <p class="approach-step__id">02 · Control</p>
+              <h3>Revisar restricciones y datos</h3>
+              <p class="approach-step__description">Ubico usuarios, fuentes de información, permisos, contenido disponible y límites del proyecto antes de comprometer una dirección.</p>
+              <form class="constraint-valve" data-constraint-valve>
+                <fieldset aria-describedby="constraint-valve-hint">
+                  <legend>Condiciones de partida</legend>
+                  <p class="constraint-valve__hint" id="constraint-valve-hint">Marca lo que todavía requiere definición. La máquina mostrará cómo condiciona el avance.</p>
+                  <label><input type="checkbox" name="scope" data-constraint="scope"> Alcance por definir</label>
+                  <label><input type="checkbox" name="data" data-constraint="data"> Información por validar</label>
+                  <label><input type="checkbox" name="access" data-constraint="access"> Acceso pendiente</label>
+                </fieldset>
+                <div class="constraint-valve__feedback">
+                  <p data-constraint-message role="status" aria-live="polite">Con un punto de partida claro, la dirección puede pasar a estructura.</p>
+                  <button type="button" class="constraint-valve__reset" data-constraint-reset>Restaurar condiciones</button>
+                </div>
+              </form>
+            </article>
             <article class="approach-step" data-approach-step="2"><p class="approach-step__id">03 · Flujo</p><h3>Diseñar una estructura</h3><p>Divido el sistema en pantallas, componentes y flujos comprensibles para que la información pueda revisarse y evolucionar.</p></article>
             <article class="approach-step" data-approach-step="3"><p class="approach-step__id">04 · Transmisión</p><h3>Prototipar e implementar</h3><p>Convierto la estructura en una interfaz funcional y revisable, conectando componentes y datos según el alcance definido.</p></article>
             <article class="approach-step" data-approach-step="4"><p class="approach-step__id">05 · Inspección</p><h3>Probar y documentar</h3><p>Verifico el comportamiento, registro decisiones relevantes e itero con base en hallazgos, no en una sensación de cierre.</p></article>
