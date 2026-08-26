@@ -15,7 +15,8 @@
   border-radius: 46% 46% 34% 34%;
 }
 .boot-photo { display: block; width: 100%; height: 100%; object-fit: cover; }
-.boot-instrument { z-index: 0; }
+.boot-instrument { z-index: 0; overflow: visible; }
+.boot-signal { fill: var(--mechanical-marker); stroke: var(--color-bg); stroke-width: 1.5; pointer-events: none; vector-effect: non-scaling-stroke; }
 .boot-reference::after {
   display: inline-block;
   width: 4rem;
