@@ -29,6 +29,13 @@
   const flowPath = machine.querySelector('[data-flow-path]');
   const valvePart = machine.querySelector('[data-machine-part="valve"]');
   const valveRotor = machine.querySelector('[data-valve-rotor]');
+  const scopeRoute = machine.querySelector('[data-scope-route]');
+  const validationRing = machine.querySelector('[data-validation-ring]');
+  const validationNode = machine.querySelector('[data-validation-node]');
+  const validationMark = machine.querySelector('[data-validation-mark]');
+  const accessGateBar = machine.querySelector('[data-access-gate-bar]');
+  const constraintTraces = Object.fromEntries([...machine.querySelectorAll('[data-constraint-trace]')].map((trace) => [trace.dataset.constraintTrace, trace]));
+  const downstreamParts = ['transmission', 'inspection', 'feedback'].map((name) => machine.querySelector(`[data-machine-part="${name}"]`)).filter(Boolean);
   const constraintForm = story.querySelector('[data-constraint-valve]');
   const constraintInputs = [...story.querySelectorAll('[data-constraint]')];
   const constraintMessage = story.querySelector('[data-constraint-message]');
@@ -58,15 +65,35 @@
   let activeStage = -1;
   let media;
   let signal;
+  let previousConstraintLevel = 0;
 
   const getActiveConstraints = () => constraintInputs
     .filter((input) => input.checked)
     .map((input) => input.dataset.constraint);
 
+  const runConstraintPulse = (end) => {
+    if (!signal || !MotionPathPlugin || !flowPath || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const start = { path: flowPath, align: flowPath, alignOrigin: [.5, .5], start: 0, end: 0 };
+    const finish = { path: flowPath, align: flowPath, alignOrigin: [.5, .5], start: 0, end };
+    window.gsap.killTweensOf(signal);
+    window.gsap.timeline()
+      .set(signal, { opacity: 0, motionPath: start })
+      .to(signal, { opacity: 1, duration: .05 })
+      .to(signal, { motionPath: finish, duration: .34, ease: 'power1.inOut' })
+      .to(signal, { opacity: 0, duration: .08 });
+  };
+
   const applyConstraintState = ({ animate = false, visual = false } = {}) => {
     const activeConstraints = getActiveConstraints();
     const level = activeConstraints.length;
+    const scope = activeConstraints.includes('scope');
+    const data = activeConstraints.includes('data');
+    const access = activeConstraints.includes('access');
+    const restoring = previousConstraintLevel > 0 && level === 0;
     story.dataset.constraintLevel = String(level);
+    story.dataset.constraintScope = String(scope);
+    story.dataset.constraintData = String(data);
+    story.dataset.constraintAccess = String(access);
     if (constraintMessage) {
       constraintMessage.textContent = level === 0
         ? constraintCopy.clear
@@ -75,18 +102,46 @@
           : constraintCopy.multiple;
     }
     if (constraintReset) constraintReset.disabled = level === 0;
-    if (!visual || !gsap) return;
+    if (!visual || !gsap) {
+      previousConstraintLevel = level;
+      return;
+    }
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const method = animate && !reduced ? gsap.to : gsap.set;
     const duration = animate && !reduced ? .34 : 0;
-    const rotation = 45 - (level * 13);
-    const availableFlow = `${Math.max(42, 100 - (level * 18))}%`;
-    method(valveRotor, { rotation, transformOrigin: 'center', duration, overwrite: true });
-    method(valvePart, { opacity: level > 0 ? .9 : 1, duration, overwrite: true });
-    if (DrawSVGPlugin && flowPath) {
-      method(flowPath, { drawSVG: level > 0 ? `0 ${availableFlow}` : '100%', duration, overwrite: true });
+    const flowEnd = data ? .67 : access ? .94 : 1;
+    const flowDraw = data ? '0 67%' : access ? '0 94%' : '100%';
+    const downstreamOpacity = data || access ? .24 : scope ? .7 : 1;
+    method(valveRotor, { rotation: scope ? 14 : 45, transformOrigin: 'center', duration, overwrite: true });
+    method(valvePart, { opacity: 1, duration, overwrite: true });
+    method(accessGateBar, { y: access ? 30 : 0, duration, ease: 'power3.inOut', overwrite: true });
+    method(validationRing, { opacity: data ? 1 : .28, scale: data ? 1.2 : 1, transformOrigin: '50% 50%', duration, overwrite: true });
+    method(validationNode, { scale: data ? 1.45 : 1, transformOrigin: '50% 50%', duration, overwrite: true });
+    method(validationMark, { opacity: data ? 1 : 0, duration, overwrite: true });
+    downstreamParts.forEach((part) => method(part, { opacity: downstreamOpacity, duration, overwrite: true }));
+    if (DrawSVGPlugin) {
+      method(flowPath, { drawSVG: flowDraw, duration, overwrite: true });
+      method(scopeRoute, { drawSVG: scope ? '100%' : '0%', opacity: scope ? 1 : 0, duration, overwrite: true });
+      Object.entries(constraintTraces).forEach(([name, trace]) => method(trace, { drawSVG: activeConstraints.includes(name) ? '100%' : '0%', duration: animate && !reduced ? .24 : 0, overwrite: true }));
     }
+    if (restoring && animate && !reduced) {
+      gsap.timeline()
+        .to(accessGateBar, { y: 0, duration: .2, ease: 'power3.out', overwrite: true }, 0)
+        .to(valveRotor, { rotation: 45, transformOrigin: 'center', duration: .25, ease: 'power3.out', overwrite: true }, 0)
+        .fromTo(flowPath, { drawSVG: '0%' }, { drawSVG: '100%', duration: .42, ease: 'power2.out', overwrite: true }, .08)
+        .to([...stageNodes[2], ...stageNodes[3], ...stageNodes[4]].filter(Boolean), { opacity: 1, scale: 1, transformOrigin: '50% 50%', duration: .18, stagger: .07, overwrite: true }, .28);
+      runConstraintPulse(1);
+    } else if (animate && !reduced && data) {
+      gsap.fromTo(validationNode, { scale: 1 }, { scale: 1.62, duration: .13, yoyo: true, repeat: 1, transformOrigin: '50% 50%', overwrite: true });
+      runConstraintPulse(flowEnd);
+    } else if (animate && !reduced && access) {
+      runConstraintPulse(flowEnd);
+    }
+    if (animate && !reduced && level === 3 && previousConstraintLevel < 3) {
+      gsap.fromTo(machine, { y: -1.5 }, { y: 0, duration: .16, ease: 'power2.out', overwrite: true });
+    }
+    previousConstraintLevel = level;
   };
 
   if (constraintForm) {

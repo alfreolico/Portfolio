@@ -199,10 +199,15 @@
 </g>
 <g data-machine-part="flow" class="machine-part machine-flow-system">
 <path d="M258 262H350V178H430" class="machine-flow machine-flow--signal" data-flow-path/>
+<path d="M258 262H298V322H386" class="machine-constraint-route" data-scope-route/>
 <circle cx="350" cy="262" r="7" class="machine-node"/>
-<circle cx="350" cy="178" r="7" class="machine-node"/>
+<circle cx="350" cy="178" r="16" class="machine-validation-ring" data-validation-ring/>
+<circle cx="350" cy="178" r="7" class="machine-node" data-validation-node/>
+<path d="M343 178L348 183L358 171" class="machine-validation-mark" data-validation-mark/>
+<g data-access-gate transform="translate(414 178)"><path d="M-12-34V34M12-34V34" class="machine-gate-rail"/><path d="M-20-30H20" class="machine-gate-bar" data-access-gate-bar/></g>
 <path d="M326 238L350 262L374 238" class="machine-reference"/>
 </g>
+<g class="machine-constraint-links"><path d="M215 188V150H276" data-constraint-trace="scope"/><text x="236" y="138" data-constraint-label="scope">SCOPE</text><path d="M350 160V132H406" data-constraint-trace="data"/><text x="364" y="120" data-constraint-label="data">DATA</text><path d="M414 144V116H472" data-constraint-trace="access"/><text x="425" y="104" data-constraint-label="access">ACCESS</text></g>
 <g data-machine-part="transmission" class="machine-part machine-transmission">
 <g data-gear-a transform="translate(448 178)">
 <circle r="34" class="machine-housing"/>

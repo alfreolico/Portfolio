@@ -30,47 +30,529 @@
   <meta name="theme-color" content="#eff8fc" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#07111f" media="(prefers-color-scheme: dark)">
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="../../assets/img/logo.png" type="image/png">
-  <link rel="stylesheet" href="../../assets/css/style.css"><link rel="stylesheet" href="../../assets/css/work-page.css">
-  <script type="module" src="../../assets/js/main.js"></script>
-  <script src="../../assets/vendor/gsap/gsap.min.js" defer></script><script src="../../assets/vendor/gsap/Flip.min.js" defer></script><script src="../../assets/js/work-page.js" defer></script>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="../../assets/css/work-page.css">
+  <script type="module" src="../../assets/js/main.js">
+</script>
+  <script src="../../assets/vendor/gsap/gsap.min.js" defer>
+</script>
+<script src="../../assets/vendor/gsap/Flip.min.js" defer>
+</script>
+<script src="../../assets/js/work-page.js" defer>
+</script>
 </head>
 <body class="work-page" data-theme="dark">
   <a class="skip-link" href="#main-content">Skip to content</a>
-  <header class="site-header"><nav class="site-nav" aria-label="Primary navigation"><a class="brand" href="../"><span class="brand__mark" aria-hidden="true">A</span>Alfreolico</a><div id="site-menu" class="site-menu" data-site-menu data-open="false"><ul class="site-menu__list"><li><a class="site-menu__link" href="../">Home</a></li><li><a class="site-menu__link" href="../approach/">Approach</a></li><li><a class="site-menu__link" href="../work/" aria-current="page">Work</a></li><li><a class="site-menu__link" href="../notes/">Engineering Notes</a></li><li><a class="site-menu__link" href="../contact/">Contact</a></li></ul><a class="site-menu__language" href="../../trabajo/" lang="es" aria-label="Switch language to Spanish">ES</a></div><div class="nav-actions"><button class="theme-toggle" type="button" data-theme-toggle aria-pressed="true" aria-label="Change color theme"><svg class="icon theme-toggle__icon" aria-hidden="true"><use href="../../assets/icons/sprite.svg#icon-moon"></use></svg></button><button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><svg class="icon" aria-hidden="true"><use href="../../assets/icons/sprite.svg#icon-menu"></use></svg></button></div></nav></header>
+  <header class="site-header">
+<nav class="site-nav" aria-label="Primary navigation">
+<a class="brand" href="../">
+<span class="brand__mark" aria-hidden="true">A</span>Alfreolico</a>
+<div id="site-menu" class="site-menu" data-site-menu data-open="false">
+<ul class="site-menu__list">
+<li>
+<a class="site-menu__link" href="../">Home</a>
+</li>
+<li>
+<a class="site-menu__link" href="../approach/">Approach</a>
+</li>
+<li>
+<a class="site-menu__link" href="../work/" aria-current="page">Work</a>
+</li>
+<li>
+<a class="site-menu__link" href="../notes/">Engineering Notes</a>
+</li>
+<li>
+<a class="site-menu__link" href="../contact/">Contact</a>
+</li>
+</ul>
+<a class="site-menu__language" href="../../trabajo/" lang="es" aria-label="Switch language to Spanish">ES</a>
+</div>
+<div class="nav-actions">
+<button class="theme-toggle" type="button" data-theme-toggle aria-pressed="true" aria-label="Change color theme">
+<svg class="icon theme-toggle__icon" aria-hidden="true">
+<use href="../../assets/icons/sprite.svg#icon-moon">
+</use>
+</svg>
+</button>
+<button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+<svg class="icon" aria-hidden="true">
+<use href="../../assets/icons/sprite.svg#icon-menu">
+</use>
+</svg>
+</button>
+</div>
+</nav>
+</header>
   <main id="main-content">
-    <section class="work-hero"><div class="page-shell"><p class="eyebrow">Work</p><h1>One foundation, two useful ways to read it.</h1><p class="work-hero__lead">Projects, technical explorations, and services with a clear scope to show what I have built and what I can build with you.</p></div></section>
-    <section class="work-transfer-section" data-work-transfer aria-labelledby="work-title"><div class="page-shell">
-      <div class="work-transfer__heading"><p class="eyebrow">Transfer system</p><h2 id="work-title">Work</h2><p>Choose between reviewing built evidence or the solutions I can develop. Visible relationships connect real work with capabilities that already have context.</p></div>
-      <fieldset class="work-carriage" aria-describedby="work-carriage-help"><legend class="sr-only">Work display mode</legend><p id="work-carriage-help" class="sr-only">Use the left and right arrow keys to switch between projects and services.</p><span class="work-carriage__plate" aria-hidden="true"></span><span class="work-carriage__track" aria-hidden="true"><span class="work-carriage__ticks"></span></span><label class="work-carriage__option work-carriage__option--projects"><input type="radio" name="work-mode" value="projects" checked><span>What I've built</span><small>Projects</small></label><label class="work-carriage__option work-carriage__option--services"><input type="radio" name="work-mode" value="services"><span>What I can build</span><small>Services</small></label><span class="work-carriage__signal" aria-hidden="true"></span><span class="work-carriage__knob" aria-hidden="true"><span class="work-carriage__grip"></span></span><span class="work-carriage__status" aria-live="polite">Active configuration · projects</span></fieldset>
-      <div class="work-transfer__bus" aria-hidden="true"><span class="work-transfer__bus-line"></span><span class="work-transfer__bus-label">Transfer</span><span class="work-transfer__bus-node"></span></div>
+    <section class="work-hero">
+<div class="page-shell">
+<p class="eyebrow">Work</p>
+<h1>One foundation, two useful ways to read it.</h1>
+<p class="work-hero__lead">Projects, technical explorations, and services with a clear scope to show what I have built and what I can build with you.</p>
+</div>
+</section>
+    <section class="work-transfer-section" data-work-transfer aria-labelledby="work-title">
+<div class="page-shell">
+      <div class="work-transfer__heading">
+<p class="eyebrow">Transfer system</p>
+<h2 id="work-title">Work</h2>
+<p>Choose between reviewing built evidence or the solutions I can develop. Visible relationships connect real work with capabilities that already have context.</p>
+</div>
+      <fieldset class="work-carriage" aria-describedby="work-carriage-help">
+<legend class="sr-only">Work display mode</legend>
+<p id="work-carriage-help" class="sr-only">Use the left and right arrow keys to switch between projects and services.</p>
+<span class="work-carriage__plate" aria-hidden="true">
+</span>
+<span class="work-carriage__track" aria-hidden="true">
+<span class="work-carriage__ticks">
+</span>
+</span>
+<label class="work-carriage__option work-carriage__option--projects">
+<input type="radio" name="work-mode" value="projects" checked>
+<span>What I've built</span>
+<small>Projects</small>
+</label>
+<label class="work-carriage__option work-carriage__option--services">
+<input type="radio" name="work-mode" value="services">
+<span>What I can build</span>
+<small>Services</small>
+</label>
+<span class="work-carriage__signal" aria-hidden="true">
+</span>
+<span class="work-carriage__knob" aria-hidden="true">
+<span class="work-carriage__grip">
+</span>
+</span>
+<span class="work-carriage__status" aria-live="polite">Active configuration · projects</span>
+</fieldset>
+      <div class="work-transfer__bus" aria-hidden="true">
+<span class="work-transfer__bus-line">
+</span>
+<span class="work-transfer__bus-label">Transfer</span>
+<span class="work-transfer__bus-node">
+</span>
+</div>
       <div class="work-transfer__stage" data-work-stage data-mode="projects">
         <section id="projects" class="work-view work-view--projects" data-work-view="projects" aria-labelledby="built-title">
-          <header class="work-view__intro"><p class="eyebrow">Active evidence</p><h3 id="built-title">What I've built</h3><p>A selection organized by context and maturity. Each project shows its purpose, my contribution, and the evidence that can be shared publicly.</p></header>
-          <section class="work-view__section" aria-labelledby="industrial-title"><div class="work-view__section-heading"><p class="eyebrow">Featured project</p><h4 id="industrial-title">Industrial monitoring web platform</h4><p>A project in development that connects process data already exposed by the technical integration with a web experience for visualization.</p></div><div class="work-project-grid"><article class="work-project-card work-project-card--industrial work-project-card--mapped" data-work-pair="industrial"><div class="project-feature project-feature--assembly"><div class="project-feature__visual" aria-hidden="true"><span></span><span></span><span></span></div><div class="project-feature__body"><p class="project-card__eyebrow"><span class="tag tag--status project-status">In development</span> Featured project</p><h4>Dashboard and web platform for process data</h4><p><strong>Purpose.</strong> Visualize process data through a dashboard with its own frontend and backend.</p><p><strong>My contribution.</strong> Frontend, web backend, and dashboard development based on data exposed by the system's technical integration.</p><ul class="project-tags" aria-label="Confirmed technologies"><li class="tag tag--technology">HTML</li><li class="tag tag--technology">CSS</li><li class="tag tag--technology">JavaScript</li><li class="tag tag--technology">Node.js</li><li class="tag tag--technology">Express</li></ul><p class="project-note">This composition is an editorial cover, not a product screenshot. Views and technical details remain private while authorization to share them is pending.</p></div></div></article></div></section>
-          <section class="work-view__section" aria-labelledby="applied-title"><div class="work-view__section-heading"><p class="eyebrow">Applied projects</p><h4 id="applied-title">Development for a clear need</h4><p>Publishable work that shows interface building, digital presence, and an in-house technical foundation.</p></div><div class="work-project-grid"><article class="work-project-card work-project-card--applied work-project-card--mapped" data-work-pair="kyk"><img class="project-card__image" src="../../assets/img/project-kyk-webinar.webp" width="1765" height="835" loading="lazy" alt="Preview of the KYK Webinar landing page"><div class="project-card__body"><p class="project-card__eyebrow"><span class="tag tag--status project-status">Completed</span> Applied project</p><h4>KYK Webinar</h4><p><strong>Purpose.</strong> A webinar registration landing page designed to present the proposal, guide visitors to sign up, and measure interaction with Google Analytics.</p><p><strong>My contribution.</strong> Full web development.</p><ul class="project-tags" aria-label="Confirmed technology"><li class="tag tag--technology">Google Analytics</li></ul><div class="project-card__links"><a href="https://kyk-webinar.vercel.app/" target="_blank" rel="noopener noreferrer">View project</a></div></div></article><article class="work-project-card work-project-card--applied work-project-card--mapped" data-work-pair="digital-card"><img class="project-card__image project-card__image--digital-card" src="../../assets/img/project-digital-card.webp" width="807" height="850" loading="lazy" alt="Preview of the digital business card"><div class="project-card__body"><p class="project-card__eyebrow"><span class="tag tag--status project-status">Completed</span> Applied project</p><h4>Digital card</h4><p><strong>Purpose.</strong> A digital business card for insurance services.</p><p><strong>My contribution.</strong> Full development of the web experience.</p><ul class="project-tags" aria-label="Confirmed technologies"><li class="tag tag--technology">HTML</li><li class="tag tag--technology">CSS</li><li class="tag tag--technology">JavaScript</li></ul><div class="project-card__links"><a href="https://tarjeta-presentacion-iota.vercel.app/" target="_blank" rel="noopener noreferrer">View project</a></div></div></article><article class="work-project-card work-project-card--applied work-project-card--mapped" data-work-pair="portfolio"><img class="project-card__image" src="../../assets/img/project-portfolio.webp" width="1286" height="856" loading="lazy" alt="Preview of Alfredo Brambila's portfolio"><div class="project-card__body"><p class="project-card__eyebrow"><span class="tag tag--status project-status">Active</span> Applied project</p><h4>Alfredo's portfolio</h4><p><strong>Purpose.</strong> Present work, professional approach, and contact paths in a self-managed static site.</p><p><strong>My contribution.</strong> Site architecture, interface, content, and native components.</p><ul class="project-tags" aria-label="Visible technologies and decisions"><li class="tag tag--technology">HTML</li><li class="tag tag--technology">CSS</li><li class="tag tag--technology">JavaScript</li><li class="tag tag--technology">Static i18n</li><li class="tag tag--technology">Persistent themes</li></ul><div class="project-card__links"><a href="../">View site</a><a href="../projects/portfolio/">View case study</a></div></div></article></div></section>
-          <section class="work-view__section" aria-labelledby="lab-title"><div class="work-view__section-heading"><p class="eyebrow">Lab</p><h4 id="lab-title">Exploring interfaces, APIs, and interaction</h4><p>Practice and experimental work that complements applied projects without replacing them.</p></div><div class="work-project-grid"><article class="work-project-card work-project-card--lab"><img class="project-card__image" src="../../assets/img/project1.jpg" width="1898" height="852" loading="lazy" alt="Rick and Morty Character Explorer view"><div class="project-card__body"><p class="project-card__eyebrow">Technical project</p><h4>Rick and Morty Character Explorer</h4><p>A character explorer built with React and the public Rick and Morty API.</p><ul class="project-tags" aria-label="Confirmed technologies"><li class="tag tag--technology">React</li><li class="tag tag--technology">Public API</li></ul><div class="project-card__links"><a href="https://rick-morty-steel-seven.vercel.app/" target="_blank" rel="noopener noreferrer">View demo</a><a href="https://github.com/alfreolico/rick-morty" target="_blank" rel="noopener noreferrer">View code</a></div></div></article><article class="work-project-card work-project-card--lab"><img class="project-card__image" src="../../assets/img/project3.jpg" width="1752" height="812" loading="lazy" alt="Pokédex view"><div class="project-card__body"><p class="project-card__eyebrow">Learning project</p><h4>Pokédex</h4><p>A React application for exploring information from PokeAPI.</p><ul class="project-tags" aria-label="Confirmed technologies"><li class="tag tag--technology">React</li><li class="tag tag--technology">PokeAPI</li></ul><div class="project-card__links"><a href="https://poke-ek.vercel.app/" target="_blank" rel="noopener noreferrer">View demo</a><a href="https://github.com/alfreolico/POKE-EK" target="_blank" rel="noopener noreferrer">View code</a></div></div></article><article class="work-project-card work-project-card--lab work-project-card--mapped" data-work-pair="valentine"><img class="project-card__image" src="../../assets/img/project2.png" width="1621" height="865" loading="lazy" alt="Be My Valentine view"><div class="project-card__body"><p class="project-card__eyebrow">Interactive experiment</p><h4>Be My Valentine</h4><p>An interactive Valentine’s web experience that explores animation, interaction, and visual storytelling. Its format can be adapted for personalized digital invitations for weddings, quinceañera celebrations, parties, anniversaries, and other special events.</p><ul class="project-tags" aria-label="Confirmed technologies"><li class="tag tag--technology">HTML</li><li class="tag tag--technology">CSS</li><li class="tag tag--technology">JavaScript</li></ul><div class="project-card__links"><a href="https://bemyvalentine-flax.vercel.app/" target="_blank" rel="noopener noreferrer">View demo</a><a href="https://github.com/alfreolico/BeStrong" target="_blank" rel="noopener noreferrer">View code</a></div></div></article></div></section>
+          <header class="work-view__intro">
+<p class="eyebrow">Active evidence</p>
+<h3 id="built-title">What I've built</h3>
+<p>A selection organized by context and maturity. Each project shows its purpose, my contribution, and the evidence that can be shared publicly.</p>
+</header>
+          <section class="work-view__section" aria-labelledby="industrial-title">
+<div class="work-view__section-heading">
+<p class="eyebrow">Featured project</p>
+<h4 id="industrial-title">Industrial monitoring web platform</h4>
+<p>A project in development that connects process data already exposed by the technical integration with a web experience for visualization.</p>
+</div>
+<div class="work-project-grid">
+<article class="work-project-card work-project-card--industrial work-project-card--mapped" data-work-pair="industrial">
+<div class="project-feature project-feature--assembly">
+<div class="project-feature__visual" aria-hidden="true">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</div>
+<div class="project-feature__body">
+<p class="project-card__eyebrow">
+<span class="tag tag--status project-status">In development</span> Featured project</p>
+<h4>Dashboard and web platform for process data</h4>
+<p>
+<strong>Purpose.</strong> Visualize process data through a dashboard with its own frontend and backend.</p>
+<p>
+<strong>My contribution.</strong> Frontend, web backend, and dashboard development based on data exposed by the system's technical integration.</p>
+<ul class="project-tags" aria-label="Confirmed technologies">
+<li class="tag tag--technology">HTML</li>
+<li class="tag tag--technology">CSS</li>
+<li class="tag tag--technology">JavaScript</li>
+<li class="tag tag--technology">Node.js</li>
+<li class="tag tag--technology">Express</li>
+</ul>
+<p class="project-note">This composition is an editorial cover, not a product screenshot. Views and technical details remain private while authorization to share them is pending.</p>
+</div>
+</div>
+</article>
+</div>
+</section>
+          <section class="work-view__section" aria-labelledby="applied-title">
+<div class="work-view__section-heading">
+<p class="eyebrow">Applied projects</p>
+<h4 id="applied-title">Development for a clear need</h4>
+<p>Publishable work that shows interface building, digital presence, and an in-house technical foundation.</p>
+</div>
+<div class="work-project-grid">
+<article class="work-project-card work-project-card--applied work-project-card--mapped" data-work-pair="kyk">
+<img class="project-card__image" src="../../assets/img/project-kyk-webinar.webp" width="1765" height="835" loading="lazy" alt="Preview of the KYK Webinar landing page">
+<div class="project-card__body">
+<p class="project-card__eyebrow">
+<span class="tag tag--status project-status">Completed</span> Applied project</p>
+<h4>KYK Webinar</h4>
+<p>
+<strong>Purpose.</strong> A webinar registration landing page designed to present the proposal, guide visitors to sign up, and measure interaction with Google Analytics.</p>
+<p>
+<strong>My contribution.</strong> Full web development.</p>
+<ul class="project-tags" aria-label="Confirmed technology">
+<li class="tag tag--technology">Google Analytics</li>
+</ul>
+<div class="project-card__links">
+<a href="https://kyk-webinar.vercel.app/" target="_blank" rel="noopener noreferrer">View project</a>
+</div>
+</div>
+</article>
+<article class="work-project-card work-project-card--applied work-project-card--mapped" data-work-pair="digital-card">
+<img class="project-card__image project-card__image--digital-card" src="../../assets/img/project-digital-card.webp" width="807" height="850" loading="lazy" alt="Preview of the digital business card">
+<div class="project-card__body">
+<p class="project-card__eyebrow">
+<span class="tag tag--status project-status">Completed</span> Applied project</p>
+<h4>Digital card</h4>
+<p>
+<strong>Purpose.</strong> A digital business card for insurance services.</p>
+<p>
+<strong>My contribution.</strong> Full development of the web experience.</p>
+<ul class="project-tags" aria-label="Confirmed technologies">
+<li class="tag tag--technology">HTML</li>
+<li class="tag tag--technology">CSS</li>
+<li class="tag tag--technology">JavaScript</li>
+</ul>
+<div class="project-card__links">
+<a href="https://tarjeta-presentacion-iota.vercel.app/" target="_blank" rel="noopener noreferrer">View project</a>
+</div>
+</div>
+</article>
+<article class="work-project-card work-project-card--applied work-project-card--mapped" data-work-pair="portfolio">
+<img class="project-card__image" src="../../assets/img/project-portfolio.webp" width="1286" height="856" loading="lazy" alt="Preview of Alfredo Brambila's portfolio">
+<div class="project-card__body">
+<p class="project-card__eyebrow">
+<span class="tag tag--status project-status">Active</span> Applied project</p>
+<h4>Alfredo's portfolio</h4>
+<p>
+<strong>Purpose.</strong> Present work, professional approach, and contact paths in a self-managed static site.</p>
+<p>
+<strong>My contribution.</strong> Site architecture, interface, content, and native components.</p>
+<ul class="project-tags" aria-label="Visible technologies and decisions">
+<li class="tag tag--technology">HTML</li>
+<li class="tag tag--technology">CSS</li>
+<li class="tag tag--technology">JavaScript</li>
+<li class="tag tag--technology">Static i18n</li>
+<li class="tag tag--technology">Persistent themes</li>
+</ul>
+<div class="project-card__links">
+<a href="../">View site</a>
+<a href="../projects/portfolio/">View case study</a>
+</div>
+</div>
+</article>
+</div>
+</section>
+          <section class="work-view__section" aria-labelledby="lab-title">
+<div class="work-view__section-heading">
+<p class="eyebrow">Lab</p>
+<h4 id="lab-title">Exploring interfaces, APIs, and interaction</h4>
+<p>Practice and experimental work that complements applied projects without replacing them.</p>
+</div>
+<div class="work-project-grid">
+<article class="work-project-card work-project-card--lab">
+<img class="project-card__image" src="../../assets/img/project1.jpg" width="1898" height="852" loading="lazy" alt="Rick and Morty Character Explorer view">
+<div class="project-card__body">
+<p class="project-card__eyebrow">Technical project</p>
+<h4>Rick and Morty Character Explorer</h4>
+<p>A character explorer built with React and the public Rick and Morty API.</p>
+<ul class="project-tags" aria-label="Confirmed technologies">
+<li class="tag tag--technology">React</li>
+<li class="tag tag--technology">Public API</li>
+</ul>
+<div class="project-card__links">
+<a href="https://rick-morty-steel-seven.vercel.app/" target="_blank" rel="noopener noreferrer">View demo</a>
+<a href="https://github.com/alfreolico/rick-morty" target="_blank" rel="noopener noreferrer">View code</a>
+</div>
+</div>
+</article>
+<article class="work-project-card work-project-card--lab">
+<img class="project-card__image" src="../../assets/img/project3.jpg" width="1752" height="812" loading="lazy" alt="Pokédex view">
+<div class="project-card__body">
+<p class="project-card__eyebrow">Learning project</p>
+<h4>Pokédex</h4>
+<p>A React application for exploring information from PokeAPI.</p>
+<ul class="project-tags" aria-label="Confirmed technologies">
+<li class="tag tag--technology">React</li>
+<li class="tag tag--technology">PokeAPI</li>
+</ul>
+<div class="project-card__links">
+<a href="https://poke-ek.vercel.app/" target="_blank" rel="noopener noreferrer">View demo</a>
+<a href="https://github.com/alfreolico/POKE-EK" target="_blank" rel="noopener noreferrer">View code</a>
+</div>
+</div>
+</article>
+<article class="work-project-card work-project-card--lab work-project-card--mapped" data-work-pair="valentine">
+<img class="project-card__image" src="../../assets/img/project2.png" width="1621" height="865" loading="lazy" alt="Be My Valentine view">
+<div class="project-card__body">
+<p class="project-card__eyebrow">Interactive experiment</p>
+<h4>Be My Valentine</h4>
+<p>An interactive Valentine’s web experience that explores animation, interaction, and visual storytelling. Its format can be adapted for personalized digital invitations for weddings, quinceañera celebrations, parties, anniversaries, and other special events.</p>
+<ul class="project-tags" aria-label="Confirmed technologies">
+<li class="tag tag--technology">HTML</li>
+<li class="tag tag--technology">CSS</li>
+<li class="tag tag--technology">JavaScript</li>
+</ul>
+<div class="project-card__links">
+<a href="https://bemyvalentine-flax.vercel.app/" target="_blank" rel="noopener noreferrer">View demo</a>
+<a href="https://github.com/alfreolico/BeStrong" target="_blank" rel="noopener noreferrer">View code</a>
+</div>
+</div>
+</article>
+</div>
+</section>
         </section>
         <section id="services" class="work-view work-view--services" data-work-view="services" aria-labelledby="services-title">
-          <header class="work-view__intro"><p class="eyebrow">Active capability</p><h3 id="services-title">What I can build</h3><p>I work on defined projects: from a landing page or professional site to a small application, integration, or dashboard, based on the context and available information.</p></header>
-          <section class="work-view__section" aria-labelledby="service-list-title"><div class="work-view__section-heading"><p class="eyebrow">Main services</p><h4 id="service-list-title">A web response for a concrete problem</h4><p>Every collaboration starts with the objective, audience, constraints, and available evidence; technology supports that decision.</p></div><div class="work-service-grid"><article class="work-service-card" data-work-pair="kyk"><p class="work-card__id">01 · Applied</p><h4>Landing pages and conversion pages</h4><p><strong>Solves:</strong> presenting an offer, collecting registrations, promoting an event, sharing a personalized web invitation, or guiding toward a clear action.</p><ul><li>Responsive page and content hierarchy.</li><li>CTAs, a registration form or link when the external service is defined, and personalized web invitations with an agreed scope.</li><li>Google Analytics and static publishing when included in scope.</li></ul><p class="work-service-card__meta"><strong>For:</strong> professionals, events, and businesses with one main action or a personalized digital invitation.</p><p class="work-service-card__meta"><strong>Evidence:</strong> <a href="https://kyk-webinar.vercel.app/" target="_blank" rel="noopener noreferrer">KYK Webinar</a>, portfolio, and digital card; Be My Valentine as an exploration of an interactive format.</p></article><article class="work-service-card"><p class="work-card__id">02 · Applied</p><h4>Professional and business sites</h4><p><strong>Solves:</strong> scattered information, missing digital presence, or a presentation that does not explain services and contact.</p><ul><li>Responsive multipage site, navigation, and organized content.</li><li>Services, contact, social links, and basic analytics.</li><li>Bilingual version when content is available.</li></ul><p class="work-service-card__meta"><strong>For:</strong> professionals and small businesses with a clear offer.</p><p class="work-service-card__meta"><strong>Evidence:</strong> multipage portfolio and digital card.</p></article><article class="work-service-card" data-work-pair="portfolio"><p class="work-card__id">03 · Applied</p><h4>Portfolios and professional presence</h4><p><strong>Solves:</strong> generic profiles, projects without context, or a lack of visual evidence of work.</p><ul><li>Content architecture and responsive portfolio.</li><li>Projects page, case studies, and professional links.</li><li>Visual theme and bilingual version depending on scope.</li></ul><p class="work-service-card__meta"><strong>For:</strong> professionals who need to explain their work clearly.</p><p class="work-service-card__meta"><strong>Evidence:</strong> <a href="../projects/portfolio/">Alfredo's portfolio</a>.</p></article><article class="work-service-card" data-work-pair="digital-card"><p class="work-card__id">04 · Applied</p><h4>Digital cards</h4><p><strong>Solves:</strong> sharing contact and services in a mobile, direct way that is more practical than a printed card.</p><ul><li>Mobile page with contact details, social links, and services.</li><li>Visual identity and links to WhatsApp, email, or social networks.</li><li>QR code when defined as part of the scope.</li></ul><p class="work-service-card__meta"><strong>For:</strong> independent professionals and local services.</p><p class="work-service-card__meta"><strong>Evidence:</strong> <a href="https://tarjeta-presentacion-iota.vercel.app/" target="_blank" rel="noopener noreferrer">digital card for professional services</a>.</p></article><article class="work-service-card work-service-card--industrial" data-work-pair="industrial"><p class="work-card__id">05 · Defined scope</p><h4>Web applications with a defined scope</h4><p><strong>Solves:</strong> consulting information, organizing data, capturing entries, or running simple flows.</p><ul><li>Web interface, interaction, forms, and navigation.</li><li>API consumption and a simple backend when the scope requires it.</li><li>Basic documentation of completed work.</li></ul><p class="work-service-card__meta"><strong>For:</strong> teams or businesses with a small internal tool and a concrete need.</p><p class="work-service-card__meta"><strong>Evidence:</strong> React and JavaScript projects; industrial platform in development.</p></article><article class="work-service-card"><p class="work-card__id">06 · In-development project</p><h4>Dashboards and data visualization</h4><p><strong>Solves:</strong> hard-to-read data, limited visibility of states, or distributed information.</p><ul><li>Indicator cards, tables, charts, and states.</li><li>Basic filters when scope defines them.</li><li>Integration with an available data source.</li></ul><p class="work-service-card__meta"><strong>Scope note:</strong> depends on the availability, structure, and permissions of the data source.</p><p class="work-service-card__meta"><strong>Evidence:</strong> industrial monitoring web platform in development.</p></article><article class="work-service-card"><p class="work-card__id">07 · Applied</p><h4>API and web service integration</h4><p><strong>Solves:</strong> showing external information, connecting an interface to a documented service, or centralizing data.</p><ul><li>Data consumption and transformation.</li><li>Basic state and error handling.</li><li>Frontend–backend connection and environment variables when needed.</li></ul><p class="work-service-card__meta"><strong>For:</strong> projects with a documented API and available access.</p><p class="work-service-card__meta"><strong>Evidence:</strong> public APIs and platform in development.</p></article><article class="work-service-card"><p class="work-card__id">08 · Applied</p><h4>Site maintenance and evolution</h4><p><strong>Solves:</strong> functional but disorganized sites, confusing navigation, inconsistent design, or hard-to-maintain content.</p><ul><li>Initial review and priority list.</li><li>Fixes, controlled refactoring, and responsive improvements.</li><li>Basic accessibility adjustments and change documentation.</li></ul><p class="work-service-card__meta"><strong>For:</strong> existing sites that need order and staged improvements.</p><p class="work-service-card__meta"><strong>Evidence:</strong> evolution of the current portfolio.</p></article><article class="work-evidence-bridge" data-work-pair="valentine"><p class="work-evidence-bridge__label">Related format</p><div class="work-evidence-bridge__body"><h4>Personalized web invitations</h4><p>Be My Valentine explores a format that can be adapted for digital invitations for weddings, quinceañera celebrations, parties, anniversaries, and other special events. It is not a client project.</p><a href="https://bemyvalentine-flax.vercel.app/" target="_blank" rel="noopener noreferrer">View the Be My Valentine exploration</a></div></article></div></section>
-          <section class="work-transfer__process" aria-labelledby="process-title"><div class="work-view__section-heading"><p class="eyebrow">How I approach a project</p><h4 id="process-title">A conversation before a solution</h4></div><ol class="service-process service-process--flow"><li><h3>Initial conversation</h3><p>I listen to the goal and context.</p></li><li><h3>Problem</h3><p>We define what the solution needs to solve.</p></li><li><h3>Scope and constraints</h3><p>We review data, access, content, and limits.</p></li><li><h3>Proposal</h3><p>I outline a solution structure, in phases when useful.</p></li><li><h3>Implementation</h3><p>I build and review progress in manageable blocks.</p></li><li><h3>Review and delivery</h3><p>We validate agreed criteria and document what is needed.</p></li><li><h3>Maintenance</h3><p>It can continue when contracted as part of the next scope.</p></li></ol></section>
-          <section class="work-transfer__conditions" aria-labelledby="conditions-title"><div class="work-view__section-heading"><p class="eyebrow">Collaboration conditions</p><h4 id="conditions-title">Information and boundaries before committing to a solution</h4></div><div class="service-two-column"><article class="card"><p class="card__label">What I need from the client</p><h3>Information that improves the conversation</h3><ul class="list"><li>Goal and audience.</li><li>Available content and visual references.</li><li>Required functions and desired date.</li><li>Access or documentation for external services.</li><li>Constraints and approval owner.</li></ul></article><article class="card"><p class="card__label">Scope and boundaries</p><h3>Validate before committing</h3><p>Before committing to a solution, I review scope, data sources, external services, permissions, and validation criteria.</p><p>More complex projects may need stages, additional tests, external services, infrastructure, or collaboration with other profiles.</p></article></div><ul class="service-modes" aria-label="Ways to collaborate"><li class="tag tag--category">Full project</li><li class="tag tag--category">Phased development</li><li class="tag tag--category">Maintenance</li><li class="tag tag--category">Technical collaboration</li><li class="tag tag--category">Remote work</li></ul></section>
-          <section class="work-transfer__closing"><p class="eyebrow">Next step</p><h3>A good solution starts by understanding what you need to solve.</h3><div class="button-row"><a class="button button--primary" href="../contact/">Start a conversation</a></div></section>
+          <header class="work-view__intro">
+<p class="eyebrow">Active capability</p>
+<h3 id="services-title">What I can build</h3>
+<p>I work on defined projects: from a landing page or professional site to a small application, integration, or dashboard, based on the context and available information.</p>
+</header>
+          <section class="work-view__section" aria-labelledby="service-list-title">
+<div class="work-view__section-heading">
+<p class="eyebrow">Main services</p>
+<h4 id="service-list-title">A web response for a concrete problem</h4>
+<p>Every collaboration starts with the objective, audience, constraints, and available evidence; technology supports that decision.</p>
+</div>
+<div class="work-service-grid">
+<article class="work-service-card" data-work-pair="kyk">
+<p class="work-card__id">01 · Applied</p>
+<h4>Landing pages and conversion pages</h4>
+<p>
+<strong>Solves:</strong> presenting an offer, collecting registrations, promoting an event, sharing a personalized web invitation, or guiding toward a clear action.</p>
+<ul>
+<li>Responsive page and content hierarchy.</li>
+<li>CTAs, a registration form or link when the external service is defined, and personalized web invitations with an agreed scope.</li>
+<li>Google Analytics and static publishing when included in scope.</li>
+</ul>
+<p class="work-service-card__meta">
+<strong>For:</strong> professionals, events, and businesses with one main action or a personalized digital invitation.</p>
+<p class="work-service-card__meta">
+<strong>Evidence:</strong> <a href="https://kyk-webinar.vercel.app/" target="_blank" rel="noopener noreferrer">KYK Webinar</a>, portfolio, and digital card; Be My Valentine as an exploration of an interactive format.</p>
+</article>
+<article class="work-service-card">
+<p class="work-card__id">02 · Applied</p>
+<h4>Professional and business sites</h4>
+<p>
+<strong>Solves:</strong> scattered information, missing digital presence, or a presentation that does not explain services and contact.</p>
+<ul>
+<li>Responsive multipage site, navigation, and organized content.</li>
+<li>Services, contact, social links, and basic analytics.</li>
+<li>Bilingual version when content is available.</li>
+</ul>
+<p class="work-service-card__meta">
+<strong>For:</strong> professionals and small businesses with a clear offer.</p>
+<p class="work-service-card__meta">
+<strong>Evidence:</strong> multipage portfolio and digital card.</p>
+</article>
+<article class="work-service-card" data-work-pair="portfolio">
+<p class="work-card__id">03 · Applied</p>
+<h4>Portfolios and professional presence</h4>
+<p>
+<strong>Solves:</strong> generic profiles, projects without context, or a lack of visual evidence of work.</p>
+<ul>
+<li>Content architecture and responsive portfolio.</li>
+<li>Projects page, case studies, and professional links.</li>
+<li>Visual theme and bilingual version depending on scope.</li>
+</ul>
+<p class="work-service-card__meta">
+<strong>For:</strong> professionals who need to explain their work clearly.</p>
+<p class="work-service-card__meta">
+<strong>Evidence:</strong> <a href="../projects/portfolio/">Alfredo's portfolio</a>.</p>
+</article>
+<article class="work-service-card" data-work-pair="digital-card">
+<p class="work-card__id">04 · Applied</p>
+<h4>Digital cards</h4>
+<p>
+<strong>Solves:</strong> sharing contact and services in a mobile, direct way that is more practical than a printed card.</p>
+<ul>
+<li>Mobile page with contact details, social links, and services.</li>
+<li>Visual identity and links to WhatsApp, email, or social networks.</li>
+<li>QR code when defined as part of the scope.</li>
+</ul>
+<p class="work-service-card__meta">
+<strong>For:</strong> independent professionals and local services.</p>
+<p class="work-service-card__meta">
+<strong>Evidence:</strong> <a href="https://tarjeta-presentacion-iota.vercel.app/" target="_blank" rel="noopener noreferrer">digital card for professional services</a>.</p>
+</article>
+<article class="work-service-card work-service-card--industrial" data-work-pair="industrial">
+<p class="work-card__id">05 · Defined scope</p>
+<h4>Web applications with a defined scope</h4>
+<p>
+<strong>Solves:</strong> consulting information, organizing data, capturing entries, or running simple flows.</p>
+<ul>
+<li>Web interface, interaction, forms, and navigation.</li>
+<li>API consumption and a simple backend when the scope requires it.</li>
+<li>Basic documentation of completed work.</li>
+</ul>
+<p class="work-service-card__meta">
+<strong>For:</strong> teams or businesses with a small internal tool and a concrete need.</p>
+<p class="work-service-card__meta">
+<strong>Evidence:</strong> React and JavaScript projects; industrial platform in development.</p>
+</article>
+<article class="work-service-card">
+<p class="work-card__id">06 · In-development project</p>
+<h4>Dashboards and data visualization</h4>
+<p>
+<strong>Solves:</strong> hard-to-read data, limited visibility of states, or distributed information.</p>
+<ul>
+<li>Indicator cards, tables, charts, and states.</li>
+<li>Basic filters when scope defines them.</li>
+<li>Integration with an available data source.</li>
+</ul>
+<p class="work-service-card__meta">
+<strong>Scope note:</strong> depends on the availability, structure, and permissions of the data source.</p>
+<p class="work-service-card__meta">
+<strong>Evidence:</strong> industrial monitoring web platform in development.</p>
+</article>
+<article class="work-service-card">
+<p class="work-card__id">07 · Applied</p>
+<h4>API and web service integration</h4>
+<p>
+<strong>Solves:</strong> showing external information, connecting an interface to a documented service, or centralizing data.</p>
+<ul>
+<li>Data consumption and transformation.</li>
+<li>Basic state and error handling.</li>
+<li>Frontend–backend connection and environment variables when needed.</li>
+</ul>
+<p class="work-service-card__meta">
+<strong>For:</strong> projects with a documented API and available access.</p>
+<p class="work-service-card__meta">
+<strong>Evidence:</strong> public APIs and platform in development.</p>
+</article>
+<article class="work-service-card">
+<p class="work-card__id">08 · Applied</p>
+<h4>Site maintenance and evolution</h4>
+<p>
+<strong>Solves:</strong> functional but disorganized sites, confusing navigation, inconsistent design, or hard-to-maintain content.</p>
+<ul>
+<li>Initial review and priority list.</li>
+<li>Fixes, controlled refactoring, and responsive improvements.</li>
+<li>Basic accessibility adjustments and change documentation.</li>
+</ul>
+<p class="work-service-card__meta">
+<strong>For:</strong> existing sites that need order and staged improvements.</p>
+<p class="work-service-card__meta">
+<strong>Evidence:</strong> evolution of the current portfolio.</p>
+</article>
+<article class="work-evidence-bridge" data-work-pair="valentine">
+<p class="work-evidence-bridge__label">Related format</p>
+<div class="work-evidence-bridge__body">
+<h4>Personalized web invitations</h4>
+<p>Be My Valentine explores a format that can be adapted for digital invitations for weddings, quinceañera celebrations, parties, anniversaries, and other special events. It is not a client project.</p>
+<a href="https://bemyvalentine-flax.vercel.app/" target="_blank" rel="noopener noreferrer">View the Be My Valentine exploration</a>
+</div>
+</article>
+</div>
+</section>
+          <section class="work-transfer__process" aria-labelledby="process-title">
+<div class="work-view__section-heading">
+<p class="eyebrow">How I approach a project</p>
+<h4 id="process-title">A conversation before a solution</h4>
+</div>
+<ol class="service-process service-process--flow">
+<li>
+<h3>Initial conversation</h3>
+<p>I listen to the goal and context.</p>
+</li>
+<li>
+<h3>Problem</h3>
+<p>We define what the solution needs to solve.</p>
+</li>
+<li>
+<h3>Scope and constraints</h3>
+<p>We review data, access, content, and limits.</p>
+</li>
+<li>
+<h3>Proposal</h3>
+<p>I outline a solution structure, in phases when useful.</p>
+</li>
+<li>
+<h3>Implementation</h3>
+<p>I build and review progress in manageable blocks.</p>
+</li>
+<li>
+<h3>Review and delivery</h3>
+<p>We validate agreed criteria and document what is needed.</p>
+</li>
+<li>
+<h3>Maintenance</h3>
+<p>It can continue when contracted as part of the next scope.</p>
+</li>
+</ol>
+</section>
+          <section class="work-transfer__conditions" aria-labelledby="conditions-title">
+<div class="work-view__section-heading">
+<p class="eyebrow">Collaboration conditions</p>
+<h4 id="conditions-title">Information and boundaries before committing to a solution</h4>
+</div>
+<div class="service-two-column">
+<article class="card">
+<p class="card__label">What I need from the client</p>
+<h3>Information that improves the conversation</h3>
+<ul class="list">
+<li>Goal and audience.</li>
+<li>Available content and visual references.</li>
+<li>Required functions and desired date.</li>
+<li>Access or documentation for external services.</li>
+<li>Constraints and approval owner.</li>
+</ul>
+</article>
+<article class="card">
+<p class="card__label">Scope and boundaries</p>
+<h3>Validate before committing</h3>
+<p>Before committing to a solution, I review scope, data sources, external services, permissions, and validation criteria.</p>
+<p>More complex projects may need stages, additional tests, external services, infrastructure, or collaboration with other profiles.</p>
+</article>
+</div>
+<ul class="service-modes" aria-label="Ways to collaborate">
+<li class="tag tag--category">Full project</li>
+<li class="tag tag--category">Phased development</li>
+<li class="tag tag--category">Maintenance</li>
+<li class="tag tag--category">Technical collaboration</li>
+<li class="tag tag--category">Remote work</li>
+</ul>
+</section>
+          <section class="work-transfer__closing">
+<p class="eyebrow">Next step</p>
+<h3>A good solution starts by understanding what you need to solve.</h3>
+<div class="button-row">
+<a class="button button--primary" href="../contact/">Start a conversation</a>
+</div>
+</section>
         </section>
       </div>
-    </div></section>
+    </div>
+</section>
   </main>
   <div class="floating-actions" role="group" aria-label="Quick actions">
     <button class="floating-actions__button floating-actions__button--top" type="button" data-scroll-top aria-label="Back to the top of the page" hidden>
-      <svg class="icon" aria-hidden="true"><use href="../../assets/icons/sprite.svg#icon-chevron-up"></use></svg>
+      <svg class="icon" aria-hidden="true">
+<use href="../../assets/icons/sprite.svg#icon-chevron-up">
+</use>
+</svg>
     </button>
     <a class="floating-actions__button floating-actions__button--whatsapp" href="https://wa.me/529992231193?text=Hi%20Alfredo%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20web%20opportunity%20or%20project." target="_blank" rel="noopener noreferrer" aria-label="Contact Alfredo on WhatsApp">
-      <svg class="icon" aria-hidden="true"><use href="../../assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+      <svg class="icon" aria-hidden="true">
+<use href="../../assets/icons/sprite.svg#icon-whatsapp">
+</use>
+</svg>
     </a>
   </div>
-  <footer class="site-footer"><div class="page-shell site-footer__inner"><span>Alfredo Brambila</span><p class="site-footer__copy">© <span data-current-year></span> All rights reserved.</p></div></footer>
+  <footer class="site-footer">
+<div class="page-shell site-footer__inner">
+<span>Alfredo Brambila</span>
+<p class="site-footer__copy">© <span data-current-year>
+</span> All rights reserved.</p>
+</div>
+</footer>
 </body>
 </html>
