@@ -1,0 +1,78 @@
+/*
+ * REBOOT shared machine grammar — foundation only.
+ * Route owners compose these primitives; this file does not impose layout
+ * or animation on any public page until a route explicitly opts in.
+ *
+ * DOM vocabulary:
+ * [data-machine-core] [data-machine-port] [data-machine-channel]
+ * [data-machine-valve] [data-machine-node] [data-machine-terminal]
+ * [data-machine-return] [data-machine-signal]
+ *
+ * State vocabulary: data-machine-active, data-machine-blocked,
+ * data-machine-verified and data-machine-kind="applied|lab".
+ */
+:root {
+  --machine-line-primary: var(--mechanical-line);
+  --machine-line-secondary: var(--mechanical-connector);
+  --machine-line-dormant: var(--mechanical-line-muted);
+  --machine-active: var(--color-accent);
+  --machine-blocked: var(--color-accent-secondary);
+  --machine-verified: var(--color-accent);
+  --machine-lab: color-mix(in srgb, var(--color-accent-secondary) 76%, var(--color-text-muted));
+  --machine-port-size: clamp(.7rem, 1.2vw, 1rem);
+  --machine-node-size: clamp(.55rem, .9vw, .8rem);
+  --machine-stroke-thin: 1px;
+  --machine-stroke: 2px;
+  --machine-stroke-strong: 3px;
+  --machine-energy-soft: 0 0 1rem color-mix(in srgb, var(--machine-active) 24%, transparent);
+  --machine-energy-strong: 0 0 1.5rem color-mix(in srgb, var(--machine-active) 34%, transparent);
+  --machine-transition-fast: 160ms;
+  --machine-transition: 320ms;
+  --machine-transition-slow: 560ms;
+  --machine-gap-1: clamp(.5rem, 1vw, 1rem);
+  --machine-gap-2: clamp(1rem, 2vw, 2rem);
+  --machine-gap-3: clamp(2rem, 5vw, 5rem);
+  --machine-terminal-applied: 1;
+  --machine-terminal-lab: .72;
+}
+
+/* SVGs are normally decorative; semantic relationship remains in HTML. */
+[data-machine-visual][aria-hidden="true"] [data-machine-channel] {
+  fill: none;
+  stroke: var(--machine-line-primary);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+[data-machine-visual][aria-hidden="true"] [data-machine-port],
+[data-machine-visual][aria-hidden="true"] [data-machine-node],
+[data-machine-visual][aria-hidden="true"] [data-machine-terminal] {
+  fill: var(--color-surface);
+  stroke: var(--machine-line-secondary);
+  vector-effect: non-scaling-stroke;
+}
+[data-machine-visual][aria-hidden="true"] [data-machine-signal] { fill: var(--machine-active); pointer-events: none; }
+[data-machine-visual][aria-hidden="true"][data-machine-active="true"] [data-machine-channel],
+[data-machine-visual][aria-hidden="true"] [data-machine-channel][data-machine-active="true"] { stroke: var(--machine-active); filter: drop-shadow(var(--machine-energy-soft)); }
+[data-machine-visual][aria-hidden="true"] [data-machine-valve][data-machine-blocked="true"],
+[data-machine-visual][aria-hidden="true"] [data-machine-channel][data-machine-blocked="true"] { stroke: var(--machine-blocked); }
+[data-machine-terminal][data-machine-kind="lab"] { opacity: var(--machine-terminal-lab); }
+[data-machine-terminal][data-machine-kind="applied"] { opacity: var(--machine-terminal-applied); }
+
+/* Route layouts use these classes only after opting into the grammar. */
+.machine-composition { position: relative; min-width: 0; }
+.machine-composition__copy { position: relative; z-index: 1; max-width: 28ch; }
+.machine-composition__visual { position: relative; min-width: 0; }
+@media (max-width: 899px) {
+  .machine-composition[data-machine-layout="spatial"] { display: grid; gap: var(--machine-gap-2); }
+}
+@media (max-width: 599px) {
+  .machine-composition[data-machine-layout="causal"] { display: grid; gap: var(--machine-gap-1); }
+  .machine-composition[data-machine-layout="causal"] [data-machine-port],
+  .machine-composition[data-machine-layout="causal"] [data-machine-node],
+  .machine-composition[data-machine-layout="causal"] [data-machine-terminal] { min-block-size: 2.75rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-machine-visual] [data-machine-signal] { display: none; }
+  [data-machine-visual] [data-machine-channel] { stroke-dasharray: none !important; }
+}

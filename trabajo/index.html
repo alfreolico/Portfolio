@@ -40,7 +40,9 @@
 </script>
   <script src="../assets/vendor/gsap/gsap.min.js" defer>
 </script>
-  <script src="../assets/vendor/gsap/Flip.min.js" defer>
+  <script src="../assets/vendor/gsap/DrawSVGPlugin.min.js" defer>
+</script>
+  <script src="../assets/vendor/gsap/MotionPathPlugin.min.js" defer>
 </script>
   <script src="../assets/js/work-page.js" defer>
 </script>
@@ -88,450 +90,144 @@
 </nav>
 </header>
   <main id="main-content">
-    <section class="work-hero">
-<div class="page-shell">
-<p class="eyebrow">Trabajo</p>
-<h1>Una misma base, dos lecturas útiles.</h1>
-<p class="work-hero__lead">Proyectos, exploraciones técnicas y servicios con alcance claro para mostrar qué he construido y qué puedo construir contigo.</p>
-</div>
-</section>
-    <section class="work-transfer-section" data-work-transfer aria-labelledby="work-title">
-<div class="page-shell">
-      <div class="work-transfer__heading">
-<p class="eyebrow">Sistema de transferencia</p>
-<h2 id="work-title">Trabajo</h2>
-<p>Elige entre revisar la evidencia construida o las soluciones que puedo desarrollar. Las relaciones visibles conectan trabajo real con capacidades que ya tienen contexto.</p>
-</div>
-      <fieldset class="work-carriage" aria-describedby="work-carriage-help">
-<legend class="sr-only">Modo de visualización de Trabajo</legend>
-<p id="work-carriage-help" class="sr-only">Usa las flechas izquierda y derecha para cambiar entre proyectos y servicios.</p>
-<span class="work-carriage__plate" aria-hidden="true">
-</span>
-<span class="work-carriage__track" aria-hidden="true">
-<span class="work-carriage__ticks">
-</span>
-</span>
-<label class="work-carriage__option work-carriage__option--projects">
-<input type="radio" name="work-mode" value="projects" checked>
-<span>Lo que he construido</span>
-<small>Proyectos</small>
-</label>
-<label class="work-carriage__option work-carriage__option--services">
-<input type="radio" name="work-mode" value="services">
-<span>Lo que puedo construir</span>
-<small>Servicios</small>
-</label>
-<span class="work-carriage__signal" aria-hidden="true">
-</span>
-<span class="work-carriage__knob" aria-hidden="true">
-<span class="work-carriage__grip">
-</span>
-</span>
-<span class="work-carriage__status" aria-live="polite">Configuración activa · proyectos</span>
-</fieldset>
-      <div class="work-transfer__bus" aria-hidden="true">
-<span class="work-transfer__bus-line">
-</span>
-<span class="work-transfer__bus-label">Transferencia</span>
-<span class="work-transfer__bus-node">
-</span>
-</div>
-      <div class="work-transfer__stage" data-work-stage data-mode="projects">
-        <section id="proyectos" class="work-view work-view--projects" data-work-view="projects" aria-labelledby="built-title">
-          <header class="work-view__intro">
-<p class="eyebrow">Evidencia activa</p>
-<h3 id="built-title">Lo que he construido</h3>
-<p>Una selección organizada por contexto y madurez. Cada proyecto muestra el propósito, mi participación y la evidencia que puede compartirse públicamente.</p>
-</header>
-          <section class="work-view__section" aria-labelledby="industrial-title">
-<div class="work-view__section-heading">
-<p class="eyebrow">Proyecto insignia</p>
-<h4 id="industrial-title">Plataforma web de monitoreo industrial</h4>
-<p>Un proyecto en desarrollo que conecta datos de proceso ya expuestos por la integración técnica con una experiencia web para su visualización.</p>
-</div>
-<div class="work-project-grid">
-<article class="work-project-card work-project-card--industrial work-project-card--mapped" data-work-pair="industrial">
-<div class="project-feature project-feature--assembly">
-<div class="project-feature__visual" aria-hidden="true">
-<span>
-</span>
-<span>
-</span>
-<span>
-</span>
-</div>
-<div class="project-feature__body">
-<p class="project-card__eyebrow">
-<span class="tag tag--status project-status">En desarrollo</span> Proyecto insignia</p>
-<h4>Dashboard y plataforma web para datos de proceso</h4>
-<p>
-<strong>Propósito.</strong> Visualizar datos de proceso mediante un dashboard con frontend y backend propios.</p>
-<p>
-<strong>Mi responsabilidad.</strong> Desarrollo del frontend, backend web y dashboard a partir de datos expuestos por la integración técnica del sistema.</p>
-<ul class="project-tags" aria-label="Tecnologías confirmadas">
-<li class="tag tag--technology">HTML</li>
-<li class="tag tag--technology">CSS</li>
-<li class="tag tag--technology">JavaScript</li>
-<li class="tag tag--technology">Node.js</li>
-<li class="tag tag--technology">Express</li>
-</ul>
-<p class="project-note">La composición visual es una portada editorial, no una captura del producto. Las vistas y detalles técnicos permanecen reservados mientras se obtiene autorización para mostrarlos.</p>
-</div>
-</div>
-</article>
-</div>
-</section>
-          <section class="work-view__section" aria-labelledby="applied-title">
-<div class="work-view__section-heading">
-<p class="eyebrow">Proyectos aplicados</p>
-<h4 id="applied-title">Desarrollo orientado a una necesidad concreta</h4>
-<p>Piezas publicables que muestran construcción de interfaces, presencia digital y una base técnica propia.</p>
-</div>
-<div class="work-project-grid">
-<article class="work-project-card work-project-card--applied work-project-card--mapped" data-work-pair="kyk">
-<img class="project-card__image" src="../assets/img/project-kyk-webinar.webp" width="1765" height="835" loading="lazy" alt="Vista previa de la landing KYK Webinar">
-<div class="project-card__body">
-<p class="project-card__eyebrow">
-<span class="tag tag--status project-status">Completado</span> Proyecto aplicado</p>
-<h4>KYK Webinar</h4>
-<p>
-<strong>Propósito.</strong> Landing de registro para webinar diseñada para presentar la propuesta, orientar a la inscripción y medir interacción mediante Google Analytics.</p>
-<p>
-<strong>Mi responsabilidad.</strong> Desarrollo web completo.</p>
-<ul class="project-tags" aria-label="Tecnología confirmada">
-<li class="tag tag--technology">Google Analytics</li>
-</ul>
-<div class="project-card__links">
-<a href="https://kyk-webinar.vercel.app/" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
-</div>
-</div>
-</article>
-<article class="work-project-card work-project-card--applied work-project-card--mapped" data-work-pair="digital-card">
-<img class="project-card__image project-card__image--digital-card" src="../assets/img/project-digital-card.webp" width="807" height="850" loading="lazy" alt="Vista previa de la tarjeta de presentación digital">
-<div class="project-card__body">
-<p class="project-card__eyebrow">
-<span class="tag tag--status project-status">Completado</span> Proyecto aplicado</p>
-<h4>Tarjeta digital</h4>
-<p>
-<strong>Propósito.</strong> Tarjeta de presentación digital para servicios de seguros.</p>
-<p>
-<strong>Mi responsabilidad.</strong> Desarrollo completo de la experiencia web.</p>
-<ul class="project-tags" aria-label="Tecnologías confirmadas">
-<li class="tag tag--technology">HTML</li>
-<li class="tag tag--technology">CSS</li>
-<li class="tag tag--technology">JavaScript</li>
-</ul>
-<div class="project-card__links">
-<a href="https://tarjeta-presentacion-iota.vercel.app/" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
-</div>
-</div>
-</article>
-<article class="work-project-card work-project-card--applied work-project-card--mapped" data-work-pair="portfolio">
-<img class="project-card__image" src="../assets/img/project-portfolio.webp" width="1286" height="856" loading="lazy" alt="Vista previa del portfolio de Alfredo Brambila">
-<div class="project-card__body">
-<p class="project-card__eyebrow">
-<span class="tag tag--status project-status">Activo</span> Proyecto aplicado</p>
-<h4>Portfolio de Alfredo</h4>
-<p>
-<strong>Propósito.</strong> Presentar trabajo, enfoque profesional y formas de contacto en un sitio estático propio.</p>
-<p>
-<strong>Mi responsabilidad.</strong> Arquitectura, interfaz, contenido y componentes nativos del sitio.</p>
-<ul class="project-tags" aria-label="Tecnologías y decisiones visibles">
-<li class="tag tag--technology">HTML</li>
-<li class="tag tag--technology">CSS</li>
-<li class="tag tag--technology">JavaScript</li>
-<li class="tag tag--technology">i18n estático</li>
-<li class="tag tag--technology">Temas persistentes</li>
-</ul>
-<div class="project-card__links">
-<a href="../">Ver sitio</a>
-<a href="../projects/portfolio/">Ver caso de estudio</a>
-</div>
-</div>
-</article>
-</div>
-</section>
-          <section class="work-view__section" aria-labelledby="lab-title">
-<div class="work-view__section-heading">
-<p class="eyebrow">Laboratorio técnico</p>
-<h4 id="lab-title">Exploración de interfaces, APIs e interacción</h4>
-<p>Proyectos de práctica y experimentación que complementan el trabajo aplicado sin sustituirlo.</p>
-</div>
-<div class="work-project-grid">
-<article class="work-project-card work-project-card--lab">
-<img class="project-card__image" src="../assets/img/project1.jpg" width="1898" height="852" loading="lazy" alt="Vista de Rick and Morty Character Explorer">
-<div class="project-card__body">
-<p class="project-card__eyebrow">Proyecto técnico</p>
-<h4>Rick and Morty Character Explorer</h4>
-<p>Explorador de personajes construido con React y la API pública de Rick and Morty.</p>
-<ul class="project-tags" aria-label="Tecnologías confirmadas">
-<li class="tag tag--technology">React</li>
-<li class="tag tag--technology">API pública</li>
-</ul>
-<div class="project-card__links">
-<a href="https://rick-morty-steel-seven.vercel.app/" target="_blank" rel="noopener noreferrer">Ver demo</a>
-<a href="https://github.com/alfreolico/rick-morty" target="_blank" rel="noopener noreferrer">Ver código</a>
-</div>
-</div>
-</article>
-<article class="work-project-card work-project-card--lab">
-<img class="project-card__image" src="../assets/img/project3.jpg" width="1752" height="812" loading="lazy" alt="Vista de Pokédex">
-<div class="project-card__body">
-<p class="project-card__eyebrow">Proyecto de aprendizaje</p>
-<h4>Pokédex</h4>
-<p>Aplicación React para explorar información obtenida desde PokeAPI.</p>
-<ul class="project-tags" aria-label="Tecnologías confirmadas">
-<li class="tag tag--technology">React</li>
-<li class="tag tag--technology">PokeAPI</li>
-</ul>
-<div class="project-card__links">
-<a href="https://poke-ek.vercel.app/" target="_blank" rel="noopener noreferrer">Ver demo</a>
-<a href="https://github.com/alfreolico/POKE-EK" target="_blank" rel="noopener noreferrer">Ver código</a>
-</div>
-</div>
-</article>
-<article class="work-project-card work-project-card--lab work-project-card--mapped" data-work-pair="valentine">
-<img class="project-card__image" src="../assets/img/project2.png" width="1621" height="865" loading="lazy" alt="Vista de Be My Valentine">
-<div class="project-card__body">
-<p class="project-card__eyebrow">Experimento interactivo</p>
-<h4>Be My Valentine</h4>
-<p>Experiencia web interactiva de San Valentín que explora animación, interacción y narrativa visual. Su formato puede adaptarse a invitaciones digitales personalizadas para bodas, XV años, fiestas, aniversarios y otros eventos especiales.</p>
-<ul class="project-tags" aria-label="Tecnologías confirmadas">
-<li class="tag tag--technology">HTML</li>
-<li class="tag tag--technology">CSS</li>
-<li class="tag tag--technology">JavaScript</li>
-</ul>
-<div class="project-card__links">
-<a href="https://bemyvalentine-flax.vercel.app/" target="_blank" rel="noopener noreferrer">Ver demo</a>
-<a href="https://github.com/alfreolico/BeStrong" target="_blank" rel="noopener noreferrer">Ver código</a>
-</div>
-</div>
-</article>
-</div>
-</section>
+    <section class="evidence-field" data-evidence-field aria-labelledby="work-title">
+      <div class="evidence-field__grid" aria-hidden="true"></div>
+      <div class="page-shell evidence-field__shell">
+        <header class="evidence-field__intro">
+          <p class="eyebrow">03 · Trabajo / campo de evidencia</p>
+          <h1 id="work-title">Capacidad conectada.<br>Evidencia real.</h1>
+          <p>Selecciona una capacidad para ver qué trabajo la sostiene. La ruta distingue lo aplicado de la exploración sin convertir aprendizaje en experiencia de cliente.</p>
+        </header>
+
+        <aside class="evidence-field__legend" aria-label="Leyenda del campo de evidencia">
+          <p><span class="evidence-key evidence-key--active" aria-hidden="true"></span>Capacidad activa</p>
+          <p><span class="evidence-key evidence-key--applied" aria-hidden="true"></span>Evidencia aplicada</p>
+          <p><span class="evidence-key evidence-key--lab" aria-hidden="true"></span>Laboratorio / exploración</p>
+        </aside>
+
+        <fieldset class="capability-bank" data-capability-bank>
+          <legend>Selecciona una capacidad</legend>
+          <div class="capability-bank__ports">
+            <label class="capability-port" data-capability="interfaces">
+              <input type="radio" name="work-capability" value="interfaces" data-route-summary="Interfaces, presencia digital y experiencias web construidas para una necesidad concreta." checked>
+              <span class="capability-port__number">01</span><span class="capability-port__icon" aria-hidden="true">&lt;/&gt;</span><span>Aplicaciones<br>e interfaces</span>
+            </label>
+            <label class="capability-port" data-capability="backend">
+              <input type="radio" name="work-capability" value="backend" data-route-summary="Backend web, servicios documentados y datos conectados a una interfaz.">
+              <span class="capability-port__number">02</span><span class="capability-port__icon" aria-hidden="true">DB</span><span>Backend<br>y datos</span>
+            </label>
+            <label class="capability-port" data-capability="visualization">
+              <input type="radio" name="work-capability" value="visualization" data-route-summary="Dashboards e interfaces para leer estados, indicadores y datos de proceso.">
+              <span class="capability-port__number">03</span><span class="capability-port__icon" aria-hidden="true">▥</span><span>Dashboards<br>y visualización</span>
+            </label>
+            <label class="capability-port" data-capability="integrations">
+              <input type="radio" name="work-capability" value="integrations" data-route-summary="APIs, analítica y servicios externos integrados cuando existen acceso y documentación.">
+              <span class="capability-port__number">04</span><span class="capability-port__icon" aria-hidden="true">⇄</span><span>Integraciones<br>y automatización</span>
+            </label>
+            <label class="capability-port" data-capability="evolution">
+              <input type="radio" name="work-capability" value="evolution" data-route-summary="Auditoría, accesibilidad, responsive y evolución controlada de una base existente.">
+              <span class="capability-port__number">05</span><span class="capability-port__icon" aria-hidden="true">◇</span><span>Auditoría<br>y evolución</span>
+            </label>
+            <label class="capability-port" data-capability="ai-process">
+              <input type="radio" name="work-capability" value="ai-process" data-route-summary="IA como herramienta auxiliar para investigar, prototipar, depurar y revisar; las decisiones y validación siguen siendo humanas.">
+              <span class="capability-port__number">06</span><span class="capability-port__icon" aria-hidden="true">AI</span><span>IA dentro<br>del proceso</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <section class="route-commit" aria-labelledby="route-title">
+          <div class="work-route-hub" data-route-hub>
+            <picture class="work-route-hub__material" aria-hidden="true">
+              <source srcset="../assets/img/plate_02.avif" type="image/avif">
+              <source srcset="../assets/img/plate_02.webp" type="image/webp">
+              <img src="../assets/img/plate_02.png" width="1672" height="941" loading="eager" fetchpriority="high" alt="">
+            </picture>
+            <p class="route-commit__node-label">Nodo de commit</p>
+            <div class="route-commit__readout">
+              <p class="route-commit__label">Ruta comprometida</p>
+              <h2 id="route-title" data-route-title>Aplicaciones e interfaces</h2>
+              <p data-route-summary aria-live="polite">Interfaces, presencia digital y experiencias web construidas para una necesidad concreta.</p>
+            </div>
+            <svg class="route-commit__map" viewBox="0 0 1672 941" aria-hidden="true">
+              <path class="route-commit__source" d="M165 42V150H82V565H306" data-route-source></path>
+              <path class="route-commit__branch route-commit__branch--applied" d="M1175 486H1672" data-route-branch="applied"></path>
+              <path class="route-commit__branch route-commit__branch--lab" d="M1175 653H1672" data-route-branch="lab"></path>
+              <circle class="route-commit__reactor" cx="832" cy="280" r="38" data-route-reactor></circle>
+              <circle class="route-commit__pulse" cx="0" cy="0" r="11" data-route-pulse="source"></circle>
+              <circle class="route-commit__pulse" cx="0" cy="0" r="10" data-route-pulse="applied"></circle>
+              <circle class="route-commit__pulse route-commit__pulse--lab" cx="0" cy="0" r="10" data-route-pulse="lab"></circle>
+            </svg>
+          </div>
         </section>
-        <section id="servicios" class="work-view work-view--services" data-work-view="services" aria-labelledby="services-title">
-          <header class="work-view__intro">
-<p class="eyebrow">Capacidad activa</p>
-<h3 id="services-title">Lo que puedo construir</h3>
-<p>Trabajo con proyectos definidos: desde una landing o sitio profesional hasta una aplicación, integración o dashboard pequeño, según el contexto y la información disponible.</p>
-</header>
-          <section class="work-view__section" aria-labelledby="service-list-title">
-<div class="work-view__section-heading">
-<p class="eyebrow">Servicios principales</p>
-<h4 id="service-list-title">Una respuesta web para un problema concreto</h4>
-<p>Cada colaboración parte del objetivo, el público, las restricciones y la evidencia disponible; la tecnología acompaña esa decisión.</p>
-</div>
-<div class="work-service-grid">
-<article class="work-service-card" data-work-pair="kyk">
-<p class="work-card__id">01 · Aplicado</p>
-<h4>Landing pages y páginas de conversión</h4>
-<p>
-<strong>Resuelve:</strong> presentar una oferta, captar registros, promover un evento, compartir una invitación web personalizada o dirigir hacia una acción clara.</p>
-<ul>
-<li>Página responsive y jerarquía de contenido.</li>
-<li>CTAs, formulario o enlace de registro cuando el servicio externo esté definido, e invitaciones web personalizadas con alcance acordado.</li>
-<li>Google Analytics y publicación estática si forman parte del alcance.</li>
-</ul>
-<p class="work-service-card__meta">
-<strong>Ideal para:</strong> profesionales, eventos y negocios con una acción principal o una invitación digital personalizada.</p>
-<p class="work-service-card__meta">
-<strong>Evidencia:</strong> <a href="https://kyk-webinar.vercel.app/" target="_blank" rel="noopener noreferrer">KYK Webinar</a>, portfolio y tarjeta digital; Be My Valentine como exploración de un formato interactivo.</p>
-</article>
-<article class="work-service-card">
-<p class="work-card__id">02 · Aplicado</p>
-<h4>Sitios corporativos y profesionales</h4>
-<p>
-<strong>Resuelve:</strong> información dispersa, presencia digital inexistente o una presentación que no explica servicios y contacto.</p>
-<ul>
-<li>Sitio multipágina responsive, navegación y contenido organizado.</li>
-<li>Servicios, contacto, redes y analítica básica.</li>
-<li>Versión bilingüe cuando el contenido esté disponible.</li>
-</ul>
-<p class="work-service-card__meta">
-<strong>Ideal para:</strong> profesionales y pequeños negocios con una oferta clara.</p>
-<p class="work-service-card__meta">
-<strong>Evidencia:</strong> portfolio multipágina y tarjeta digital.</p>
-</article>
-<article class="work-service-card" data-work-pair="portfolio">
-<p class="work-card__id">03 · Aplicado</p>
-<h4>Portfolios y marca profesional</h4>
-<p>
-<strong>Resuelve:</strong> perfiles genéricos, proyectos sin contexto o falta de evidencia visual del trabajo.</p>
-<ul>
-<li>Arquitectura de contenido y portfolio responsive.</li>
-<li>Página de proyectos, casos de estudio y enlaces profesionales.</li>
-<li>Tema visual y versión bilingüe según alcance.</li>
-</ul>
-<p class="work-service-card__meta">
-<strong>Ideal para:</strong> profesionales que necesitan explicar su trabajo con claridad.</p>
-<p class="work-service-card__meta">
-<strong>Evidencia:</strong> <a href="../projects/portfolio/">portfolio de Alfredo</a>.</p>
-</article>
-<article class="work-service-card" data-work-pair="digital-card">
-<p class="work-card__id">04 · Aplicado</p>
-<h4>Tarjetas digitales</h4>
-<p>
-<strong>Resuelve:</strong> compartir contacto y servicios de una forma móvil, directa y más práctica que una tarjeta impresa.</p>
-<ul>
-<li>Página móvil con datos de contacto, redes y servicios.</li>
-<li>Identidad visual y enlaces a WhatsApp, correo o redes.</li>
-<li>Código QR cuando se defina como parte del alcance.</li>
-</ul>
-<p class="work-service-card__meta">
-<strong>Ideal para:</strong> profesionales independientes y servicios locales.</p>
-<p class="work-service-card__meta">
-<strong>Evidencia:</strong> <a href="https://tarjeta-presentacion-iota.vercel.app/" target="_blank" rel="noopener noreferrer">tarjeta digital para servicios profesionales</a>.</p>
-</article>
-<article class="work-service-card work-service-card--industrial" data-work-pair="industrial">
-<p class="work-card__id">05 · Alcance definido</p>
-<h4>Aplicaciones web con alcance definido</h4>
-<p>
-<strong>Resuelve:</strong> consultar información, organizar datos, capturar entradas o ejecutar flujos simples.</p>
-<ul>
-<li>Interfaz web, interacción, formularios y navegación.</li>
-<li>Consumo de APIs y backend sencillo cuando el alcance lo requiera.</li>
-<li>Documentación básica del trabajo realizado.</li>
-</ul>
-<p class="work-service-card__meta">
-<strong>Ideal para:</strong> equipos o negocios con una herramienta interna pequeña y una necesidad concreta.</p>
-<p class="work-service-card__meta">
-<strong>Evidencia:</strong> proyectos React y JavaScript; plataforma industrial en desarrollo.</p>
-</article>
-<article class="work-service-card">
-<p class="work-card__id">06 · Proyecto en desarrollo</p>
-<h4>Dashboards y visualización de datos</h4>
-<p>
-<strong>Resuelve:</strong> datos difíciles de interpretar, falta de visibilidad sobre estados o información distribuida.</p>
-<ul>
-<li>Tarjetas de indicadores, tablas, gráficas y estados.</li>
-<li>Filtros básicos cuando el alcance lo defina.</li>
-<li>Integración con una fuente de datos disponible.</li>
-</ul>
-<p class="work-service-card__meta">
-<strong>Nota de alcance:</strong> depende de disponibilidad, estructura y permisos de la fuente de datos.</p>
-<p class="work-service-card__meta">
-<strong>Evidencia:</strong> plataforma web de monitoreo industrial en desarrollo.</p>
-</article>
-<article class="work-service-card">
-<p class="work-card__id">07 · Aplicado</p>
-<h4>Integración de APIs y servicios web</h4>
-<p>
-<strong>Resuelve:</strong> mostrar información externa, conectar una interfaz con un servicio documentado o centralizar datos.</p>
-<ul>
-<li>Consumo y transformación de datos.</li>
-<li>Manejo básico de estados y errores.</li>
-<li>Conexión frontend–backend y variables de entorno cuando correspondan.</li>
-</ul>
-<p class="work-service-card__meta">
-<strong>Ideal para:</strong> proyectos con una API documentada y acceso disponible.</p>
-<p class="work-service-card__meta">
-<strong>Evidencia:</strong> APIs públicas y plataforma en desarrollo.</p>
-</article>
-<article class="work-service-card">
-<p class="work-card__id">08 · Aplicado</p>
-<h4>Mantenimiento y evolución de sitios</h4>
-<p>
-<strong>Resuelve:</strong> sitios funcionales pero desorganizados, navegación confusa, diseño inconsistente o contenido difícil de mantener.</p>
-<ul>
-<li>Revisión inicial y lista de prioridades.</li>
-<li>Correcciones, refactorización controlada y mejora responsive.</li>
-<li>Ajustes de accesibilidad básica y documentación de cambios.</li>
-</ul>
-<p class="work-service-card__meta">
-<strong>Ideal para:</strong> sitios existentes que necesitan orden y mejoras por etapas.</p>
-<p class="work-service-card__meta">
-<strong>Evidencia:</strong> evolución del portfolio actual.</p>
-</article>
-<article class="work-evidence-bridge" data-work-pair="valentine">
-<p class="work-evidence-bridge__label">Formato relacionado</p>
-<div class="work-evidence-bridge__body">
-<h4>Invitaciones web personalizadas</h4>
-<p>Be My Valentine explora un formato adaptable a invitaciones digitales para bodas, XV años, fiestas, aniversarios y otros eventos especiales. No es un proyecto de cliente.</p>
-<a href="https://bemyvalentine-flax.vercel.app/" target="_blank" rel="noopener noreferrer">Ver la exploración Be My Valentine</a>
-</div>
-</article>
-</div>
-</section>
-          <section class="work-transfer__process" aria-labelledby="process-title">
-<div class="work-view__section-heading">
-<p class="eyebrow">Cómo trabajo un proyecto</p>
-<h4 id="process-title">Una conversación antes de una solución</h4>
-</div>
-<ol class="service-process service-process--flow">
-<li>
-<h3>Conversación inicial</h3>
-<p>Escucho el objetivo y el contexto.</p>
-</li>
-<li>
-<h3>Problema</h3>
-<p>Definimos qué debe resolver la solución.</p>
-</li>
-<li>
-<h3>Alcance y restricciones</h3>
-<p>Revisamos datos, accesos, contenido y límites.</p>
-</li>
-<li>
-<h3>Propuesta</h3>
-<p>Planteo una estructura de solución por etapas cuando conviene.</p>
-</li>
-<li>
-<h3>Implementación</h3>
-<p>Construyo y reviso avances en bloques manejables.</p>
-</li>
-<li>
-<h3>Revisión y entrega</h3>
-<p>Validamos criterios acordados y documentamos lo necesario.</p>
-</li>
-<li>
-<h3>Mantenimiento</h3>
-<p>Puede continuar si se contrata como parte del siguiente alcance.</p>
-</li>
-</ol>
-</section>
-          <section class="work-transfer__conditions" aria-labelledby="conditions-title">
-<div class="work-view__section-heading">
-<p class="eyebrow">Condiciones de colaboración</p>
-<h4 id="conditions-title">Información y límites antes de comprometer una solución</h4>
-</div>
-<div class="service-two-column">
-<article class="card">
-<p class="card__label">Qué necesito del cliente</p>
-<h3>Información que mejora la conversación</h3>
-<ul class="list">
-<li>Objetivo y público.</li>
-<li>Contenido y referencias visuales disponibles.</li>
-<li>Funciones necesarias y fecha deseada.</li>
-<li>Accesos o documentación de servicios externos.</li>
-<li>Restricciones y responsable de aprobación.</li>
-</ul>
-</article>
-<article class="card">
-<p class="card__label">Alcance y límites</p>
-<h3>Validar antes de comprometer</h3>
-<p>Antes de comprometer una solución, reviso el alcance, las fuentes de datos, los servicios externos, los permisos y los criterios de validación.</p>
-<p>Proyectos de mayor complejidad pueden requerir etapas, pruebas adicionales, servicios externos, infraestructura o colaboración con otros perfiles.</p>
-</article>
-</div>
-<ul class="service-modes" aria-label="Modalidades">
-<li class="tag tag--category">Proyecto completo</li>
-<li class="tag tag--category">Desarrollo por etapas</li>
-<li class="tag tag--category">Mantenimiento</li>
-<li class="tag tag--category">Colaboración técnica</li>
-<li class="tag tag--category">Trabajo remoto</li>
-</ul>
-</section>
-          <section class="work-transfer__closing">
-<p class="eyebrow">Siguiente paso</p>
-<h3>Una buena solución empieza por entender qué necesitas resolver.</h3>
-<div class="button-row">
-<a class="button button--primary" href="../contact/">Iniciar una conversación</a>
-</div>
-</section>
-        </section>
+
+        <div class="signal-field" id="proyectos" data-signal-field>
+          <div class="signal-field__distribution" aria-hidden="true">
+            <span class="signal-field__feed signal-field__feed--applied" data-field-route="applied"></span>
+            <span class="signal-field__feed signal-field__feed--lab" data-field-route="lab"></span>
+          </div>
+
+          <section class="signal-branch signal-branch--applied" data-evidence-zone="applied" aria-labelledby="applied-title">
+            <span class="signal-branch__rail" data-field-route="applied" aria-hidden="true"></span>
+            <header class="signal-branch__header">
+              <p>Salida A · evidencia aplicada</p>
+              <h2 id="applied-title">Construido, activo o en desarrollo real</h2>
+            </header>
+            <div class="signal-branch__evidence">
+              <article class="signal-evidence signal-evidence--industrial" data-evidence-layout="confidential" data-evidence-id="industrial" data-terminal-index="01" data-capabilities="backend visualization integrations">
+                <span class="signal-evidence__node" data-signal-node aria-hidden="true"><b>01</b></span>
+                <div class="signal-evidence__artifact signal-evidence__artifact--reserved" aria-hidden="true"><span>Vista reservada</span><i>Proyecto industrial · acceso restringido</i></div>
+                <div class="signal-evidence__metadata"><p class="signal-evidence__meta"><span>Aplicado · en desarrollo</span><span>Confidencial</span></p><h3>Plataforma web de monitoreo industrial</h3><p>Frontend, backend y dashboard para visualizar datos de proceso expuestos por una integración técnica existente.</p><ul aria-label="Tecnologías confirmadas"><li>JavaScript</li><li>Node.js</li><li>Express</li></ul><p class="signal-evidence__note">Las vistas y detalles técnicos permanecen reservados mientras se obtiene autorización para compartirlos.</p></div>
+              </article>
+              <article class="signal-evidence signal-evidence--wide" data-evidence-layout="wide" data-evidence-id="kyk" data-terminal-index="02" data-capabilities="interfaces integrations">
+                <span class="signal-evidence__node" data-signal-node aria-hidden="true"><b>02</b></span>
+                <div class="signal-evidence__artifact"><img src="../assets/img/project-kyk-webinar.webp" width="1765" height="835" loading="lazy" alt="Vista previa de la landing KYK Webinar"></div>
+                <div class="signal-evidence__metadata"><p class="signal-evidence__meta"><span>Aplicado · completado</span><span>Web</span></p><h3>KYK Webinar</h3><p>Landing de registro para presentar la propuesta, orientar la inscripción y medir interacción con Google Analytics.</p><ul aria-label="Capacidades relacionadas"><li>Interfaz</li><li>Analítica</li></ul><a href="https://kyk-webinar.vercel.app/" target="_blank" rel="noopener noreferrer">Abrir evidencia <span aria-hidden="true">↗</span></a></div>
+              </article>
+              <article class="signal-evidence signal-evidence--portrait" data-evidence-layout="portrait" data-evidence-id="digital-card" data-terminal-index="03" data-capabilities="interfaces">
+                <span class="signal-evidence__node" data-signal-node aria-hidden="true"><b>03</b></span>
+                <div class="signal-evidence__artifact"><img src="../assets/img/project-digital-card.webp" width="807" height="850" loading="lazy" alt="Vista previa de la tarjeta de presentación digital"></div>
+                <div class="signal-evidence__metadata"><p class="signal-evidence__meta"><span>Aplicado · completado</span><span>Web móvil</span></p><h3>Tarjeta digital</h3><p>Presencia móvil para comunicar servicios, contacto y enlaces de una profesional de seguros.</p><ul aria-label="Tecnologías confirmadas"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul><a href="https://tarjeta-presentacion-iota.vercel.app/" target="_blank" rel="noopener noreferrer">Abrir evidencia <span aria-hidden="true">↗</span></a></div>
+              </article>
+              <article class="signal-evidence signal-evidence--feature" data-evidence-layout="feature" data-evidence-id="portfolio" data-terminal-index="04" data-capabilities="interfaces evolution ai-process">
+                <span class="signal-evidence__node" data-signal-node aria-hidden="true"><b>04</b></span>
+                <div class="signal-evidence__artifact"><img src="../assets/img/project-portfolio.webp" width="1286" height="856" loading="lazy" alt="Vista previa del portfolio de Alfredo Brambila"></div>
+                <div class="signal-evidence__metadata"><p class="signal-evidence__meta"><span>Aplicado · activo</span><span>Producto propio</span></p><h3>Portfolio de Alfredo</h3><p>Arquitectura multipágina bilingüe, interacción, accesibilidad y evolución visual controlada. La IA apoya auditoría y prototipado; Alfredo valida las decisiones.</p><ul aria-label="Decisiones visibles"><li>HTML/CSS/JS</li><li>i18n</li><li>GSAP</li></ul><div class="signal-evidence__links"><a href="../">Ver sitio</a><a href="../projects/portfolio/">Ver caso</a></div></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="signal-branch signal-branch--lab" data-evidence-zone="lab" aria-labelledby="lab-title">
+            <span class="signal-branch__rail" data-field-route="lab" aria-hidden="true"></span>
+            <header class="signal-branch__header">
+              <p>Salida B · lab / exploración</p>
+              <h2 id="lab-title">Práctica técnica sin presentarla como cliente</h2>
+            </header>
+            <div class="signal-branch__evidence signal-branch__evidence--lab">
+              <article class="signal-evidence signal-evidence--app" data-evidence-layout="app" data-evidence-id="rick-morty" data-terminal-index="05" data-capabilities="backend integrations">
+                <span class="signal-evidence__node" data-signal-node aria-hidden="true"><b>05</b></span>
+                <div class="signal-evidence__artifact"><img src="../assets/img/project1.jpg" width="1898" height="852" loading="lazy" alt="Vista de Rick and Morty Character Explorer"></div>
+                <div class="signal-evidence__metadata"><p class="signal-evidence__meta"><span>Lab · proyecto técnico</span><span>API pública</span></p><h3>Rick and Morty Explorer</h3><p>Explorador de personajes construido con React y una API pública.</p><ul aria-label="Tecnologías confirmadas"><li>React</li><li>REST API</li></ul><div class="signal-evidence__links"><a href="https://rick-morty-steel-seven.vercel.app/" target="_blank" rel="noopener noreferrer">Demo</a><a href="https://github.com/alfreolico/rick-morty" target="_blank" rel="noopener noreferrer">Código</a></div></div>
+              </article>
+              <article class="signal-evidence signal-evidence--app" data-evidence-layout="app" data-evidence-id="pokedex" data-terminal-index="06" data-capabilities="backend integrations">
+                <span class="signal-evidence__node" data-signal-node aria-hidden="true"><b>06</b></span>
+                <div class="signal-evidence__artifact"><img src="../assets/img/project3.jpg" width="1752" height="812" loading="lazy" alt="Vista de Pokédex"></div>
+                <div class="signal-evidence__metadata"><p class="signal-evidence__meta"><span>Lab · aprendizaje</span><span>PokeAPI</span></p><h3>Pokédex</h3><p>Aplicación React para consultar y organizar información obtenida desde PokeAPI.</p><ul aria-label="Tecnologías confirmadas"><li>React</li><li>PokeAPI</li></ul><div class="signal-evidence__links"><a href="https://poke-ek.vercel.app/" target="_blank" rel="noopener noreferrer">Demo</a><a href="https://github.com/alfreolico/POKE-EK" target="_blank" rel="noopener noreferrer">Código</a></div></div>
+              </article>
+              <article class="signal-evidence signal-evidence--showcase" data-evidence-layout="showcase" data-evidence-id="valentine" data-terminal-index="07" data-capabilities="interfaces">
+                <span class="signal-evidence__node signal-evidence__node--final" data-signal-node aria-hidden="true"><b>07</b></span>
+                <div class="signal-evidence__artifact"><img src="../assets/img/project2.png" width="1621" height="865" loading="lazy" alt="Vista de Be My Valentine"></div>
+                <div class="signal-evidence__metadata"><p class="signal-evidence__meta"><span>Lab · experimento</span><span>Interacción</span></p><h3>Be My Valentine</h3><p>Exploración de animación y narrativa para un formato de invitación digital. No es un proyecto de cliente.</p><ul aria-label="Tecnologías confirmadas"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul><div class="signal-evidence__links"><a href="https://bemyvalentine-flax.vercel.app/" target="_blank" rel="noopener noreferrer">Demo</a><a href="https://github.com/alfreolico/BeStrong" target="_blank" rel="noopener noreferrer">Código</a></div></div>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <footer class="evidence-field__footer">
+          <p><span>Condición de trabajo</span> Antes de comprometer una solución reviso alcance, datos, accesos, restricciones y criterios de validación.</p>
+          <a class="button button--primary" href="../contact/">Conversar sobre una necesidad</a>
+        </footer>
       </div>
-    </div>
-</section>
+    </section>
   </main>
   <div class="floating-actions" role="group" aria-label="Acciones rápidas">
     <button class="floating-actions__button floating-actions__button--top" type="button" data-scroll-top aria-label="Volver al inicio de la página" hidden>

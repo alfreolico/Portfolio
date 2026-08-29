@@ -12,6 +12,9 @@ function initOrbit() {
     isFrontLayer: orbit.classList.contains('orbit--front'),
   }));
   const visual = orbits[0].closest('.hero-visual');
+  // The rebooted Home uses these nodes as fixed hardware on its signal rail.
+  // Other visual owners retain the orbital lifecycle below.
+  if (visual?.classList.contains('boot-visual')) return;
   let dimensions = { x: 138, y: 70, lift: 14 };
   let frameId = 0;
 

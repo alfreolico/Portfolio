@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="contact-character" viewBox="0 0 338.9 257.8" role="img">
+  <style>
+    :root{--character-neutral:#8fa0ad;--character-accent:#2fd8ff}
+    .character-line{fill:none;stroke:var(--character-neutral);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}
+    .character-accent{stroke:var(--character-accent)}
+  </style>
+  <g id="character-body" data-draw-stage="body">
+    <path class="character-line character-accent" d="M237.8 170.5c-2.9 6.7-4.5 14.1-4.5 21.9 0 14.2 5.3 27.1 14 37"/>
+    <circle class="character-line character-accent" cx="221.8" cy="219.5" r="5.5"/>
+    <path class="character-line character-accent" d="M218.5 157.7c-.8 44.6-37.2 80.5-82 80.5-42.1 0-76.9-31.8-81.5-72.7"/>
+    <path class="character-line character-accent" d="M39.8 178.5c2.9 6.7 4.5 14.1 4.5 21.9 0 14.2-5.3 27.1-14 37"/>
+    <circle class="character-line character-accent" cx="55.8" cy="227.5" r="5.5"/>
+    <path class="character-line" d="M1 236.2c11.6-32.4 34.1-59.6 62.9-77.3M206.1 150.6c24.1 11.2 44.7 28.5 59.9 50"/>
+  </g>
+  <g id="character-clothing" data-draw-stage="clothing">
+    <path class="character-line" d="M82 190c7 10 11 21 12 34M190 190c-7 10-11 21-12 34"/>
+    <path class="character-line character-accent" d="M130 216l4-8 4 8m-5-3h3"/>
+  </g>
+  <g id="character-head" data-draw-stage="head">
+    <g id="character-hair">
+      <path class="character-line character-accent" d="M133.9 1c-29.2 0-54.8 15.2-69.4 38.2h138.8C188.7 16.2 163.1 1 133.9 1Z"/>
+      <path class="character-line" d="M64.5 39.2s-19.1-4.2-24.9 14.3c14.6-5.7 19.7-2.5 19.7-2.5S44.1 59.2 53 83.4M137.7 39.2s0 18.8 12 21.2c0 0-3.5-11.2 2-12.2s1.8 5.5 1.8 5.5 9.8-1.2 10-6.5"/>
+      <path class="character-line character-accent" d="M212.9 69.8c23 0 43.2-11.6 54.4-30.6H158.5c11.2 19 31.4 30.6 54.4 30.6Z"/>
+    </g>
+    <g id="character-face" data-draw-stage="face">
+      <path class="character-line" d="M68.1 107.3c-2.2 1.4-4.7 2.2-7.5 2.2-7.7 0-14-6.3-14-14s6.3-14 14-14c2.8 0 5.3.8 7.5 2.2 0 0 22.6-15 15.5-44.5M202.5 115.2V69.5M62.2 121.6c0 35.2 28.8 64 64 64h12.2c28.5 0 52.8-18.9 61-44.7M97.5 137.2s-7.7-22.2 38-26.5M207.9 137.2s8.3-23.8-43-26.9M142.3 109.7c0 4.5 3.7 8.1 8.2 8.1 4.5 0 8.2-3.7 8.2-8.2s-3.7-8.2-8.2-8.2v-6.2"/>
+      <polyline class="character-line" points="207.5,137.2 202.5,133.2 197.5,137.2 192.5,133.2 187.5,137.2 182.6,133.2 177.5,137.2 172.5,133.2 167.5,137.2 162.5,133.2 157.5,137.2 152.6,133.2 147.5,137.2 142.5,133.2 137.5,137.2 132.5,133.2 127.5,137.2 122.5,133.2 117.5,137.2 112.5,133.2 107.5,137.2 102.5,133.2 97.5,137.2"/>
+      <path class="character-line" d="M140.6 139.2c0 5 4.1 9 9.1 9 5 0 9.1-4 9.1-9"/>
+    </g>
+    <g id="character-eyes" data-draw-stage="details">
+      <circle class="character-line" cx="114.1" cy="100.2" r="3.3"/>
+      <circle class="character-line" cx="187.1" cy="100.2" r="3.3"/>
+      <path class="character-line" d="M119.8 91.5c-2.2-1.4-4.8-2-7.6-1.5-2.8.5-5.1 2.2-6.6 4.4M195.6 94.3c-1.5-2.1-3.7-3.7-6.5-4.2-2.8-.5-5.6.1-7.8 1.6"/>
+    </g>
+  </g>
+  <g id="character-arm" data-draw-stage="arm">
+    <path class="character-line" d="M286.2 189.6c-3.2-.5-5.4-3.5-5-6.7l7.7-51c10.7 1.6 18.1 11.7 16.5 22.4l-1.5 10.1M281.4 192.5s-29 25.9-32.1 54.1M309 205.1s-2.1 42-18.6 51.8"/>
+    <g id="character-hand" data-draw-stage="hand">
+      <path class="character-line" d="M310.1 156c2.2-.3 4.6-.3 6.9.1 13.4 2 22.7 14.6 20.7 28-2 13.4-14.6 22.7-28 20.7"/>
+    </g>
+  </g>
+  <g id="character-accent" data-draw-stage="accent">
+    <path class="character-line character-accent" d="M32 246h72M174 246h91" opacity=".65"/>
+    <circle class="character-line character-accent" cx="136" cy="246" r="4"/>
+  </g>
+</svg>

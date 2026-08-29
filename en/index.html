@@ -56,6 +56,7 @@
   <link rel="icon" href="../assets/img/logo.png" type="image/png">
   
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/machine-system.css">
   <link rel="stylesheet" href="../assets/css/home-v2.css">
   <script type="module" src="../assets/js/main.js"></script>
   <script src="../assets/vendor/gsap/gsap.min.js" defer></script>
@@ -64,9 +65,111 @@
   <script src="../assets/vendor/gsap/DrawSVGPlugin.min.js" defer></script>
   <script src="../assets/vendor/gsap/MotionPathPlugin.min.js" defer></script>
   <script src="../assets/js/home-boot.js" defer></script>
+  <script src="../assets/js/components/home-signal-field.js" defer></script>
 </head>
 <body class="home-v2"><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><nav class="site-nav" aria-label="Primary navigation"><a class="brand" href="./"><span class="brand__mark" aria-hidden="true">A</span>Alfreolico</a><div id="site-menu" class="site-menu" data-site-menu data-open="false"><ul class="site-menu__list"><li><a class="site-menu__link" href="./" aria-current="page">Home</a></li><li><a class="site-menu__link" href="approach/">Approach</a></li><li><a class="site-menu__link" href="work/">Work</a></li><li><a class="site-menu__link" href="notes/">Engineering Notes</a></li><li><a class="site-menu__link" href="contact/">Contact</a></li></ul><a class="site-menu__language" href="../" lang="es" aria-label="Switch language to Spanish">ES</a></div><div class="nav-actions"><button class="theme-toggle" type="button" data-theme-toggle aria-pressed="true" aria-label="Change color theme"><svg class="icon theme-toggle__icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#icon-moon"></use></svg></button><button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#icon-menu"></use></svg></button></div></nav></header>
-<main id="main-content" class="page-main"><section class="hero hero--boot" data-system-boot><div class="page-shell hero__grid"><div class="boot-copy"><p class="eyebrow boot-reference">Engineering + web development</p><h1 class="hero__title boot-title"><span class="boot-title__word">Alfredo</span> <span class="boot-title__word">Brambila</span></h1><p class="hero__meta boot-descriptor">Web developer for applications and web platforms</p><p class="hero__lead boot-lead">I turn processes, data, and technical needs into functional web applications. I combine web development, engineering thinking, and AI tools to build interfaces, dashboards, and integrations for real needs.</p><div class="button-row boot-actions"><a class="button button--primary" href="approach/">Explore my approach</a><a class="button button--secondary" href="work/">View my work</a></div><div class="hero__links boot-links"><a class="social-link" href="https://www.linkedin.com/in/alfredo-brambila-arias" target="_blank" rel="noopener noreferrer" aria-label="Alfredo Brambila on LinkedIn"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#icon-linkedin"></use></svg></a><a class="social-link" href="https://github.com/alfreolico" target="_blank" rel="noopener noreferrer" aria-label="Alfredo Brambila on GitHub"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#icon-github"></use></svg></a></div></div><div class="hero-visual boot-visual" aria-hidden="true"><svg class="hero-instrument boot-instrument" viewBox="0 0 520 420" focusable="false" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" vector-effect="non-scaling-stroke"><path data-boot-trace="primary" d="M57 280C70 95 255 8 435 120" stroke-width="1.2" opacity=".72"/><path data-boot-trace="secondary" d="M112 347C257 419 448 338 472 198" stroke-width="1" opacity=".42"/><path data-boot-trace="ticks" d="M82 237l18 4M91 196l17 6M111 157l16 8M142 123l14 11M181 94l12 14M224 72l9 16M270 58l5 18M318 60l-2 18M363 74l-7 16M403 96l-11 14M438 128l-14 11M466 165l-16 7" stroke-width="1" opacity=".68"/><path data-boot-trace="marks" d="M67 263l28 6M282 46l7 26" stroke-width="1.8"/><path data-boot-trace="connectors" d="M94 276h22M406 126h24M440 273h23" stroke-width="1" opacity=".54"/><circle cx="94" cy="276" r="3" fill="currentColor" stroke="none"/><circle cx="430" cy="126" r="3" fill="currentColor" stroke="none"/><circle cx="440" cy="273" r="3" fill="currentColor" stroke="none"/><circle class="boot-signal" data-boot-signal r="3.5" opacity="0"/></g></svg><div class="orbit orbit--back boot-orbit" data-orbit><div class="orbit__track"><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-html5"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-css3"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-javascript"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-typescript"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-react"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-nodejs"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-git"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-postgresql"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-mongodb"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-code"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-tailwind-css"></use></svg></span></div></div><div class="boot-photo-frame"><img class="hero-visual__photo boot-photo" src="../assets/img/profile.png" width="306" height="391" alt=""></div><div class="orbit orbit--front boot-orbit" data-orbit><div class="orbit__track"><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-html5"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-css3"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-javascript"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-typescript"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-react"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-nodejs"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-git"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-postgresql"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-mongodb"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-code"></use></svg></span><span class="orbit__icon" aria-hidden="true"><svg class="icon"><use href="../assets/icons/sprite.svg#icon-tailwind-css"></use></svg></span></div></div></div></div></section></main><div class="floating-actions" role="group" aria-label="Quick actions">
+<main id="main-content" class="page-main">
+    <section class="hero hero--boot" data-system-boot>
+      <div class="home-core">
+        <p class="eyebrow boot-reference">Engineering + web development</p>
+        <h1 class="hero__title boot-title" aria-label="Alfredo Brambila">
+          <span class="boot-title__word boot-title__word--alfredo" aria-hidden="true">Alfredo</span>
+          <span class="boot-title__word boot-title__word--brambila" aria-hidden="true">Brambila</span>
+        </h1>
+
+        <div class="hero-visual boot-visual" aria-hidden="true" data-machine-core>
+          <svg class="hero-instrument boot-instrument" viewBox="0 0 1440 760" preserveAspectRatio="none" focusable="false">
+            <g fill="none" stroke="currentColor" vector-effect="non-scaling-stroke">
+              <path data-boot-trace="rail-upper" d="M0 351H470L500 326H602L624 351H816L838 326H940L970 351H1440"/>
+              <path data-boot-trace="primary" d="M0 380H585L612 365H828L855 380H1440"/>
+              <path data-boot-trace="rail-lower" d="M0 409H470L500 434H602L624 409H816L838 434H940L970 409H1440"/>
+              <path data-boot-trace="core-left" d="M518 335A248 248 0 0 1 690 126"/>
+              <path data-boot-trace="core-right" d="M750 126A248 248 0 0 1 922 335"/>
+              <path data-boot-trace="core-return" d="M535 424A248 248 0 0 0 694 628M746 628A248 248 0 0 0 905 424"/>
+              <path data-boot-trace="terminal-stem" d="M720 604V668"/>
+              <path data-boot-trace="terminal-process" d="M720 668L680 704H572"/>
+              <path data-boot-trace="terminal-evidence" d="M720 668L760 704H868"/>
+              <path data-boot-trace="ticks" d="M550 304l-22-12M572 260l-20-16M602 222l-17-19M638 190l-12-22M890 304l22-12M868 260l20-16M838 222l17-19M802 190l12-22"/>
+              <circle cx="720" cy="380" r="164" opacity=".28"/>
+              <circle cx="720" cy="380" r="205" opacity=".18"/>
+              <circle data-boot-signal r="5" opacity="0" fill="currentColor" stroke="none"/>
+              <circle data-boot-route-signal="process" r="4" opacity="0" fill="currentColor" stroke="none"/>
+              <circle data-boot-route-signal="evidence" r="4" opacity="0" fill="currentColor" stroke="none"/>
+            </g>
+          </svg>
+          <canvas class="home-signal-field" aria-hidden="true"></canvas>
+          <div class="boot-rail" data-machine-channel></div>
+            <div class="boot-tech-group boot-tech-group--left">
+            <span class="boot-tech-node boot-tech-node--1" data-tech="typescript" title="TypeScript">
+              <span class="boot-tech-node__glyph"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#icon-typescript"></use></svg></span>
+              <span class="visually-hidden">TypeScript</span>
+            </span>
+            <span class="boot-tech-node boot-tech-node--2" data-tech="javascript" title="JavaScript">
+              <span class="boot-tech-node__glyph"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#icon-javascript"></use></svg></span>
+              <span class="visually-hidden">JavaScript</span>
+            </span>
+            <span class="boot-tech-node boot-tech-node--3" data-tech="react" title="React">
+              <span class="boot-tech-node__glyph"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#icon-react"></use></svg></span>
+              <span class="visually-hidden">React</span>
+            </span>
+            <span class="boot-tech-node boot-tech-node--4" data-tech="nodejs" title="Node.js">
+              <span class="boot-tech-node__glyph"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#icon-nodejs"></use></svg></span>
+              <span class="visually-hidden">Node.js</span>
+            </span>
+            <span class="boot-tech-node boot-tech-node--5" data-tech="mongodb" title="MongoDB">
+              <span class="boot-tech-node__glyph"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#icon-mongodb"></use></svg></span>
+              <span class="visually-hidden">MongoDB</span>
+            </span>
+            </div>
+            <div class="boot-tech-group boot-tech-group--right">
+            <span class="boot-tech-node boot-tech-node--6" data-tech="html5" title="HTML5">
+              <span class="boot-tech-node__glyph"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#icon-html5"></use></svg></span>
+              <span class="visually-hidden">HTML5</span>
+            </span>
+            <span class="boot-tech-node boot-tech-node--7" data-tech="css3" title="CSS3">
+              <span class="boot-tech-node__glyph"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#icon-css3"></use></svg></span>
+              <span class="visually-hidden">CSS3</span>
+            </span>
+            <span class="boot-tech-node boot-tech-node--8" data-tech="tailwind" title="Tailwind CSS">
+              <span class="boot-tech-node__glyph"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#icon-tailwind-css"></use></svg></span>
+              <span class="visually-hidden">Tailwind CSS</span>
+            </span>
+            <span class="boot-tech-node boot-tech-node--9" data-tech="postgresql" title="PostgreSQL">
+              <span class="boot-tech-node__glyph"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#icon-postgresql"></use></svg></span>
+              <span class="visually-hidden">PostgreSQL</span>
+            </span>
+            <span class="boot-tech-node boot-tech-node--10" data-tech="docker" title="Docker">
+              <span class="boot-tech-node__glyph"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#icon-docker"></use></svg></span>
+              <span class="visually-hidden">Docker</span>
+            </span>
+            </div>
+          <div class="boot-photo-frame"><img class="hero-visual__photo boot-photo" src="../assets/img/profile.png" width="306" height="391" alt=""></div>
+          <span class="boot-core-node" aria-hidden="true"></span>
+        </div>
+
+        <div class="boot-copy">
+          <p class="hero__meta boot-descriptor">Web developer for applications and web platforms</p>
+          <p class="hero__lead boot-lead">I turn processes, data, and technical needs into functional web applications. I combine web development, engineering thinking, and AI tools to build interfaces, dashboards, and integrations for real needs.</p>
+        </div>
+
+        <nav class="boot-actions" aria-label="Explore the portfolio">
+          <a class="boot-terminal boot-terminal--process" href="approach/" data-machine-port data-machine-terminal>
+            <span class="boot-terminal__label"><span aria-hidden="true">01 · </span>Process</span>
+            <strong class="boot-terminal__title">Explore my approach</strong>
+          </a>
+          <a class="boot-terminal boot-terminal--evidence" href="work/" data-machine-port data-machine-terminal>
+            <span class="boot-terminal__label"><span aria-hidden="true">02 · </span>Evidence</span>
+            <strong class="boot-terminal__title">View my work</strong>
+          </a>
+        </nav>
+
+        <div class="hero__links boot-links">
+          <a class="social-link" href="https://www.linkedin.com/in/alfredo-brambila-arias" target="_blank" rel="noopener noreferrer" aria-label="Alfredo Brambila on LinkedIn"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#icon-linkedin"></use></svg></a>
+          <a class="social-link" href="https://github.com/alfreolico" target="_blank" rel="noopener noreferrer" aria-label="Alfredo Brambila on GitHub"><svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#icon-github"></use></svg></a>
+        </div>
+      </div>
+    </section>
+  </main><div class="floating-actions" role="group" aria-label="Quick actions">
   <button class="floating-actions__button floating-actions__button--top" type="button" data-scroll-top aria-label="Back to the top of the page" hidden>
     <svg class="icon" aria-hidden="true"><use href="../assets/icons/sprite.svg#icon-chevron-up"></use></svg>
   </button>

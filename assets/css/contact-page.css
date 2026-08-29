@@ -1,0 +1,93 @@
+.contact-page__hero { overflow: clip; }
+.contact-page__hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(22rem,30vw);
+  gap: clamp(2rem,5vw,6rem);
+  align-items: center;
+  min-height: min(46rem,calc(100svh - 5rem));
+}
+.contact-page__hero-copy { position: relative; z-index: 2; }
+.contact-page__hero-copy .page-hero__title { max-width: 13ch; }
+.contact-page__hero-copy .button-row { margin-top: 1.8rem; }
+
+.contact-character-stage {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  isolation: isolate;
+}
+.contact-character-stage::before {
+  position: absolute;
+  inset: 18% 8% 8%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(circle,color-mix(in srgb,var(--color-accent) 8%,transparent),transparent 68%);
+  content: "";
+}
+.contact-character {
+  display: block;
+  width: clamp(22rem,30vw,30rem);
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.contact-character:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: .45rem;
+  border-radius: 42% 42% 18% 18%;
+}
+.contact-character__svg {
+  display: block;
+  width: 100%;
+  aspect-ratio: 338.9 / 257.8;
+  pointer-events: none;
+  filter: drop-shadow(0 1rem 1.6rem rgb(0 0 0 / 18%));
+}
+.character-line,.character-soft {
+  fill: none;
+  stroke: var(--color-text-muted);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.character-soft {
+  fill: color-mix(in srgb,var(--color-surface-raised) 34%,transparent);
+  stroke-width: 1.5;
+}
+.character-accent { stroke: var(--color-accent); }
+.contact-character-stage__ground {
+  width: 72%;
+  height: 1px;
+  margin-top: -.2rem;
+  background: linear-gradient(90deg,transparent,var(--color-accent),transparent);
+  opacity: .42;
+  box-shadow: 0 0 .8rem color-mix(in srgb,var(--color-accent) 38%,transparent);
+}
+.contact-character[data-character-state="email"] + .contact-character-stage__ground,
+.contact-character[data-character-state="whatsapp"] + .contact-character-stage__ground {
+  opacity: .8;
+}
+
+@media (max-width: 899px) {
+  .contact-page__hero-grid { grid-template-columns: minmax(0,1fr) minmax(18rem,32vw); gap: 2rem; min-height: auto; }
+  .contact-character { width: min(24rem,34vw); }
+}
+
+@media (max-width: 767px) {
+  .contact-page__hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .contact-character-stage { margin-inline: auto; }
+  .contact-character { width: min(20rem,80vw); }
+  .contact-character-stage::before { inset: 16% 4% 4%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-character,.contact-character__svg,.contact-character-stage__ground { transition: none; }
+  .contact-character__svg { filter: none; }
+  .contact-character[data-character-state] .contact-character__svg { filter: contrast(1.08) saturate(1.08); }
+}

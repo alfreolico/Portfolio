@@ -1,61 +1,82 @@
-/* Route-specific presentation for the V2 Home System Boot. */
+/* Home — Core Portrait Break. One coordinate source per breakpoint. */
 .home-v2 { overflow-x: clip; }
-.hero--boot { min-height: calc(100svh - var(--header-height)); }
-.boot-copy { position: relative; }
-.boot-title__word { display: inline-block; }
-.boot-visual { isolation: isolate; }
-.boot-photo-frame {
-  position: absolute;
-  z-index: 2;
-  inset: 50% auto auto 50%;
-  width: 306px;
-  height: 391px;
-  overflow: hidden;
-  transform: translate(-50%, -50%);
-  border-radius: 46% 46% 34% 34%;
+.home-v2 .hero--boot { min-height: calc(100svh - var(--header-height)); padding: 0; overflow: clip; isolation: isolate; }
+.home-v2 .site-header[data-home-scrolled] { border-bottom-color: color-mix(in srgb, var(--machine-active) 42%, var(--color-border)); background: color-mix(in srgb, var(--color-bg) 94%, transparent); }
+
+/* Desktop authored artboard. Core-owned objects all use --core-x. */
+.home-core {
+  --core-x: 50%; --core-y: 45.5%; --hero-name-size: clamp(7.5rem, 11.5vw, 13.5rem); --hero-name-width: .82;
+  --hero-surname-size: .76em; --hero-surname-width: .84; --portrait-width: min(31vw, 30rem); --portrait-offset-x: .25rem; --portrait-offset-y: .2rem;
+  --terminal-width: clamp(32rem, 48vw, 56rem); --terminal-height: 5.25rem; --route-junction-width: 6.5rem;
+  --tech-core-clearance: clamp(9rem, 16vw, 17rem); --tech-gap: clamp(.65rem, 1.4vw, 1.6rem); --tech-socket-size: clamp(3.75rem, 4.2vw, 4.6rem); --tech-glyph-box: 72%;
+  position: relative; min-height: clamp(46rem, calc(100svh - var(--header-height)), 58rem); overflow: clip;
+  background: radial-gradient(circle at var(--core-x) var(--core-y), color-mix(in srgb, var(--color-accent) 10%, transparent), transparent 29%);
 }
-.boot-photo { display: block; width: 100%; height: 100%; object-fit: cover; }
-.boot-instrument { z-index: 0; overflow: visible; }
-.boot-signal { fill: var(--mechanical-marker); stroke: var(--color-bg); stroke-width: 1.5; pointer-events: none; vector-effect: non-scaling-stroke; }
-.boot-reference::after {
-  display: inline-block;
-  width: 4rem;
-  height: 1px;
-  margin-left: .7rem;
-  vertical-align: middle;
-  background: var(--mechanical-connector);
-  content: "";
+.home-core::before { position: absolute; z-index: 0; inset: 0; background-image: linear-gradient(color-mix(in srgb, var(--machine-line-dormant) 18%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--machine-line-dormant) 16%, transparent) 1px, transparent 1px); background-size: 5rem 5rem; mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 75%, transparent); content: ""; pointer-events: none; }
+
+.boot-reference { position: absolute; z-index: 9; top: 12%; left: 9%; margin: 0; padding-left: 2.2rem; color: var(--machine-active); font-size: .78rem; letter-spacing: .16em; }
+.boot-reference::before { position: absolute; top: 50%; left: 0; width: 1.6rem; border-top: 3px solid currentColor; content: ""; }
+.boot-title { max-width: none; margin: 0; font-size: var(--hero-name-size); line-height: .7; letter-spacing: -.095em; }
+.boot-title__word { position: absolute; display: block; white-space: nowrap; text-transform: uppercase; }
+.boot-title__word--alfredo { z-index: 8; top: 18%; left: clamp(3.5rem, 7vw, 9rem); color: var(--machine-active); text-shadow: 0 0 2.2rem color-mix(in srgb, var(--machine-active) 20%, transparent); transform: scaleX(var(--hero-name-width)); transform-origin: left top; }
+.boot-title__word--brambila { z-index: 3; top: 58%; left: 56%; color: color-mix(in srgb, var(--color-text) 12%, var(--machine-active)); font-size: var(--hero-surname-size); transform: translateX(-4%) scaleX(var(--hero-surname-width)); transform-origin: left top; }
+
+.boot-visual { position: absolute; inset: 0; display: block; width: 100%; pointer-events: none; }
+.home-signal-field { position: absolute; z-index: 1; inset: 0; width: 100%; height: 100%; opacity: .52; }
+.boot-instrument { position: absolute; z-index: 2; top: var(--core-y); left: var(--core-x); width: 100%; height: 95%; overflow: visible; color: var(--machine-active); translate: -50% -50%; }
+.boot-instrument [data-boot-trace] { stroke-width: 1.4; opacity: .72; }
+.boot-instrument [data-boot-trace^="terminal-"] { stroke-width: 2.7; opacity: 1; }
+/* This is a motion guide only: no permanent cyan stroke reaches the portrait. */
+.boot-instrument [data-boot-trace="primary"] { stroke: transparent; opacity: 0; pointer-events: none; }
+.boot-instrument circle { stroke-width: 1.2; }
+
+.boot-rail { position: absolute; z-index: 4; top: 43.5%; left: 0; width: 100%; height: 6rem; border-block: 2px solid var(--machine-active); background: repeating-linear-gradient(90deg, transparent 0 4.3rem, color-mix(in srgb, var(--machine-active) 28%, transparent) 4.3rem 4.42rem), linear-gradient(90deg, color-mix(in srgb, var(--color-bg) 87%, var(--machine-active)) 0 42%, color-mix(in srgb, var(--machine-active) 12%, transparent) 42% 58%, color-mix(in srgb, var(--color-bg) 87%, var(--machine-active)) 58% 100%); box-shadow: inset 0 1px color-mix(in srgb, var(--machine-active) 32%, transparent), inset 0 -1px color-mix(in srgb, var(--machine-active) 32%, transparent); }
+.boot-rail::before, .boot-rail::after { position: absolute; top: 50%; width: 18%; height: 2.45rem; border: 1px solid color-mix(in srgb, var(--machine-active) 66%, transparent); background: color-mix(in srgb, var(--color-bg) 82%, transparent); content: ""; transform: translateY(-50%); }
+.boot-rail::before { left: 34%; clip-path: polygon(0 0, 92% 0, 100% 50%, 92% 100%, 0 100%, 8% 50%); }.boot-rail::after { right: 34%; clip-path: polygon(8% 0, 100% 0, 92% 50%, 100% 100%, 8% 100%, 0 50%); }
+
+/* Two balanced 5-item banks, anchored from the centered Core instead of viewport coordinates. */
+.boot-tech-group { position: absolute; z-index: 7; top: 50%; display: flex; align-items: center; gap: var(--tech-gap); translate: 0 -50%; }
+.boot-tech-group--left { right: calc(50% + var(--tech-core-clearance)); }.boot-tech-group--right { left: calc(50% + var(--tech-core-clearance)); }
+.boot-tech-node { --tech-glyph-optical-scale: 1; --tech-glyph-size: calc(var(--tech-socket-size) * .52); position: relative; display: grid; flex: 0 0 auto; inline-size: var(--tech-socket-size); block-size: var(--tech-socket-size); place-items: center; clip-path: polygon(24% 0, 76% 0, 100% 24%, 100% 76%, 76% 100%, 24% 100%, 0 76%, 0 24%); background: var(--machine-active); color: var(--machine-active); }
+.boot-tech-node::before { position: absolute; inset: 2px; clip-path: inherit; background: var(--color-bg); content: ""; }
+.boot-tech-node__glyph { position: absolute; z-index: 1; inset: 0; display: grid; place-items: center; overflow: visible; line-height: 0; pointer-events: none; }
+.boot-tech-node__glyph .icon { position: static; inset: auto; display: block; inline-size: var(--tech-glyph-size); block-size: var(--tech-glyph-size); margin: 0; fill: currentColor; overflow: visible; translate: none; vertical-align: middle; transform: scale(var(--tech-glyph-optical-scale)); transform-origin: 50% 50%; }
+.boot-tech-node[data-tech="typescript"] { --tech-glyph-optical-scale: 1.20; }.boot-tech-node[data-tech="javascript"] { --tech-glyph-optical-scale: 1.20; }.boot-tech-node[data-tech="react"] { --tech-glyph-optical-scale: 1.30; }.boot-tech-node[data-tech="nodejs"] { --tech-glyph-optical-scale: 1.28; }.boot-tech-node[data-tech="mongodb"] { --tech-glyph-optical-scale: 1.30; }.boot-tech-node[data-tech="html5"] { --tech-glyph-optical-scale: 1.18; }.boot-tech-node[data-tech="css3"] { --tech-glyph-optical-scale: 1.18; }.boot-tech-node[data-tech="tailwind"] { --tech-glyph-optical-scale: 1.38; }.boot-tech-node[data-tech="postgresql"] { --tech-glyph-optical-scale: 1.34; }.boot-tech-node[data-tech="docker"] { --tech-glyph-optical-scale: 1.40; }
+
+.boot-photo-frame { position: absolute; z-index: 6; top: var(--core-y); left: var(--core-x); width: var(--portrait-width); margin: 0; clip-path: inset(0); translate: -50% -50%; }
+.boot-photo { display: block; width: 100%; height: auto; filter: drop-shadow(0 1.15rem 1.7rem color-mix(in srgb, #000 56%, transparent)); translate: var(--portrait-offset-x) var(--portrait-offset-y); }
+.boot-core-node { position: absolute; z-index: 9; top: 69%; left: var(--core-x); width: 1.3rem; aspect-ratio: 1; border: 3px solid var(--machine-active); border-radius: 50%; background: var(--color-bg); box-shadow: 0 0 0 .34rem color-mix(in srgb, var(--machine-active) 14%, var(--color-bg)); translate: -50% -50%; }
+
+.boot-copy { position: absolute; z-index: 9; bottom: 10.5%; left: 6%; width: min(29rem, 29vw); }.boot-descriptor { margin: 0; color: var(--color-text); font-size: clamp(1.12rem, 1.42vw, 1.46rem); font-weight: 700; line-height: 1.36; }.boot-lead { max-width: 28rem; margin: 1.55rem 0 0; color: var(--color-text-muted); font-size: clamp(.94rem, 1.02vw, 1.06rem); line-height: 1.62; }
+.boot-actions { position: absolute; z-index: 10; bottom: 4.5%; left: var(--core-x); display: grid; width: var(--terminal-width); padding-top: 2.55rem; grid-template-columns: minmax(0, 1fr) var(--route-junction-width) minmax(0, 1fr); margin: 0; translate: -50% 0; }
+.boot-actions::before { position: absolute; top: 0; left: 50%; width: 2px; height: 2.55rem; background: linear-gradient(var(--machine-active), color-mix(in srgb, var(--machine-active) 42%, transparent)); box-shadow: 0 0 .5rem color-mix(in srgb, var(--machine-active) 42%, transparent); content: ""; translate: -50% 0; }.boot-actions::after { position: absolute; top: 2.05rem; left: 50%; width: 1.35rem; aspect-ratio: 1; border: 2px solid var(--machine-active); border-radius: 50%; background: var(--color-bg); box-shadow: 0 0 0 .35rem color-mix(in srgb, var(--machine-active) 13%, var(--color-bg)); content: ""; translate: -50% 0; }
+.boot-terminal { position: relative; display: flex; min-width: 0; min-height: var(--terminal-height); flex-direction: column; justify-content: center; padding: 1rem 3.3rem; border-bottom: 2px solid color-mix(in srgb, var(--machine-active) 60%, transparent); background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--machine-active) 8%, transparent) 26% 74%, transparent); color: var(--color-text); text-decoration: none; transition: opacity .18s ease, filter .18s ease, background-color .18s ease; }.boot-terminal--process { grid-column: 1; text-align: right; }.boot-terminal--evidence { grid-column: 3; }
+.boot-terminal::before { position: absolute; top: 50%; width: 1.25rem; aspect-ratio: 1; border: 2px solid var(--machine-active); border-radius: 50%; background: var(--color-bg); box-shadow: 0 0 0 .34rem color-mix(in srgb, var(--machine-active) 13%, var(--color-bg)); content: ""; transform: translateY(-50%); transition: box-shadow .16s ease, background-color .16s ease; }.boot-terminal--process::before { right: -.63rem; }.boot-terminal--evidence::before { left: -.63rem; }.boot-terminal::after { position: absolute; right: 0; bottom: -2px; left: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--machine-active) 16% 84%, transparent); content: ""; opacity: .62; transform: scaleX(.6); transition: opacity .16s ease, transform .2s ease, filter .16s ease; }.boot-terminal--process::after { transform-origin: right; }.boot-terminal--evidence::after { transform-origin: left; }
+.boot-terminal__label { display: block; color: var(--machine-active); font: .76rem/1.25 var(--font-display); letter-spacing: .14em; text-transform: uppercase; transition: color .16s ease, text-shadow .16s ease; }.boot-terminal__title { display: block; margin-top: .5rem; color: var(--machine-active); font: 700 clamp(1.18rem, 1.55vw, 1.46rem)/1.15 var(--font-display); transition: color .16s ease, text-shadow .16s ease; }.boot-terminal__title::after { display: inline-block; margin-left: .55rem; color: var(--machine-active); content: "›››"; font-size: .72em; letter-spacing: .08em; opacity: .42; transition: opacity .16s ease, text-shadow .16s ease; }.boot-terminal--process .boot-terminal__title::after { content: "‹‹‹"; margin-right: .55rem; margin-left: 0; }.boot-terminal:hover, .boot-terminal:focus-visible { color: var(--color-text); filter: brightness(1.24); outline: 2px solid var(--machine-active); outline-offset: 5px; }
+.home-core[data-active-route="process"] .boot-terminal--evidence, .home-core[data-active-route="evidence"] .boot-terminal--process { opacity: .5; }.home-core[data-active-route="process"] .boot-terminal--process, .home-core[data-active-route="evidence"] .boot-terminal--evidence, .home-core[data-attract-route="process"] .boot-terminal--process, .home-core[data-attract-route="evidence"] .boot-terminal--evidence { background-color: color-mix(in srgb, var(--machine-active) 9%, transparent); filter: brightness(1.16); }.home-core[data-active-route="process"] .boot-terminal--process::before, .home-core[data-active-route="evidence"] .boot-terminal--evidence::before, .home-core[data-attract-route="process"] .boot-terminal--process::before, .home-core[data-attract-route="evidence"] .boot-terminal--evidence::before { background: var(--machine-active); box-shadow: 0 0 0 .38rem color-mix(in srgb, var(--machine-active) 18%, var(--color-bg)), 0 0 .9rem color-mix(in srgb, var(--machine-active) 64%, transparent); }.home-core[data-active-route="process"] .boot-terminal--process::after, .home-core[data-active-route="evidence"] .boot-terminal--evidence::after, .home-core[data-attract-route="process"] .boot-terminal--process::after, .home-core[data-attract-route="evidence"] .boot-terminal--evidence::after { opacity: 1; filter: drop-shadow(0 0 .45rem var(--machine-active)); transform: scaleX(1); }.home-core[data-active-route="process"] .boot-terminal--process :is(.boot-terminal__label,.boot-terminal__title), .home-core[data-active-route="evidence"] .boot-terminal--evidence :is(.boot-terminal__label,.boot-terminal__title), .home-core[data-attract-route="process"] .boot-terminal--process :is(.boot-terminal__label,.boot-terminal__title), .home-core[data-attract-route="evidence"] .boot-terminal--evidence :is(.boot-terminal__label,.boot-terminal__title) { color: #e9fbff; text-shadow: 0 0 .75rem color-mix(in srgb, var(--machine-active) 60%, transparent); }.home-core[data-active-route="process"] .boot-terminal--process .boot-terminal__title::after, .home-core[data-active-route="evidence"] .boot-terminal--evidence .boot-terminal__title::after, .home-core[data-attract-route="process"] .boot-terminal--process .boot-terminal__title::after, .home-core[data-attract-route="evidence"] .boot-terminal--evidence .boot-terminal__title::after { opacity: 1; text-shadow: 0 0 .5rem var(--machine-active); }.boot-links { position: absolute; z-index: 9; right: 4%; bottom: 2.5%; margin: 0; opacity: .65; }
+.home-core[data-active-route] .boot-actions::after, .home-core[data-attract-route] .boot-actions::after { border-color: #e9fbff; box-shadow: 0 0 0 .48rem color-mix(in srgb, var(--machine-active) 18%, var(--color-bg)), 0 0 1.1rem color-mix(in srgb, var(--machine-active) 64%, transparent); }
+@media (max-width: 767px) { .hero[data-route-attract="true"] .boot-terminal { animation: terminal-attract-mobile 5.4s ease-in-out infinite; }.hero[data-route-attract="true"] .boot-terminal--evidence { animation-delay: .88s; }.hero[data-route-attract-paused="true"] .boot-terminal { animation-play-state: paused; }.boot-terminal--process .boot-terminal__title::after { content: "⌄"; } .boot-terminal--evidence .boot-terminal__title::after { content: "⌄"; } }
+@keyframes terminal-attract-mobile { 0%, 72%, 100% { filter: brightness(1); } 9%, 20% { filter: brightness(1.16) drop-shadow(0 0 .45rem color-mix(in srgb, var(--machine-active) 44%, transparent)); } }
+
+.boot-enhanced .boot-reference, .boot-enhanced .boot-actions, .boot-enhanced .boot-links, .boot-enhanced .boot-rail { opacity: 0; }.boot-enhanced .boot-copy { opacity: 1; }.boot-enhanced .boot-descriptor, .boot-enhanced .boot-lead { opacity: 0; transform: translateY(.6rem); }.boot-enhanced .boot-instrument { opacity: 0; }.boot-enhanced .boot-photo-frame { clip-path: inset(0 50%); }.boot-enhanced .boot-tech-node { opacity: 0; }
+
+/* Tablet: a distinct compressed composition, not desktop values scaled down. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .home-core { --core-y: 42%; --hero-name-size: clamp(5.7rem, 11.2vw, 8.8rem); --hero-name-width: .87; --hero-surname-size: .76em; --portrait-width: min(38vw, 25rem); --tech-core-clearance: clamp(7.75rem, 17vw, 11rem); --tech-gap: clamp(.35rem, .8vw, .7rem); --tech-socket-size: clamp(3rem, 4.7vw, 3.75rem); --terminal-width: min(76vw, 42rem); --terminal-height: 4.75rem; --route-junction-width: 4rem; min-height: max(48rem, calc(100svh - var(--header-height))); }
+  .boot-reference { top: 8%; left: 5%; }.boot-title__word--alfredo { top: 14%; left: 4%; }.boot-title__word--brambila { top: 50%; left: 55%; transform: translateX(-4%) scaleX(.8); }.boot-instrument { height: 88%; }.boot-rail { top: 40%; height: 5rem; }.boot-tech-group { top: 46.5%; }.boot-photo-frame { width: var(--portrait-width); }.boot-core-node { top: 65%; }.boot-copy { bottom: 16%; left: 4%; width: min(30rem, 36vw); }.boot-actions { bottom: 3.5%; }.boot-terminal { padding-inline: 2.3rem; }.boot-links { display: none; }
 }
 
-/* The complete Hero is the default. Only initialized motion may prepare it. */
-.boot-enhanced .boot-reference,
-.boot-enhanced .boot-descriptor,
-.boot-enhanced .boot-lead,
-.boot-enhanced .boot-actions,
-.boot-enhanced .boot-links { opacity: 0; }
-.boot-enhanced .boot-instrument { opacity: 0; transform: scale(.93); transform-origin: center; }
-.boot-enhanced .boot-photo-frame { clip-path: inset(0 50% 0 50% round 46%); }
-.boot-enhanced .boot-orbit { opacity: 0; }
-
-@media (max-width: 899px) {
-  .hero--boot { min-height: auto; }
-  .boot-photo-frame { width: min(58vw, 306px); height: auto; aspect-ratio: 306 / 391; }
-  .boot-photo { position: absolute; inset: 0; }
-  .boot-reference::after { width: 2rem; }
+/* Mobile abandons the desktop artboard for normal document flow. */
+@media (max-width: 767px) {
+  .home-v2 .hero--boot { min-height: 0; overflow: visible; }
+  .home-core { --hero-name-size: clamp(3.7rem, 15vw, 5.45rem); --hero-name-width: .92; --hero-surname-size: .72em; --portrait-width: min(72vw, 20.5rem); --portrait-offset-x: 0; --portrait-offset-y: .1rem; --tech-socket-size: clamp(3rem, 14vw, 3.35rem); --tech-glyph-box: 72%; display: grid; min-height: 0; padding: clamp(2rem, 7vw, 3.25rem) clamp(1rem, 5vw, 1.5rem) 3rem; grid-template-columns: minmax(0, 1fr); overflow: hidden; }
+  .home-core::before { background-size: 3.5rem 3.5rem; }.boot-reference, .boot-title, .boot-visual, .boot-copy, .boot-actions, .boot-links { position: relative; inset: auto; right: auto; bottom: auto; left: auto; top: auto; translate: none; width: auto; }
+  .boot-reference { z-index: 2; order: 0; margin: 0 0 1rem; }.boot-title { z-index: 3; order: 1; min-height: clamp(8rem, 31vw, 10rem); font-size: var(--hero-name-size); }.boot-title__word { position: relative; top: auto; left: auto; transform: none; }.boot-title__word--alfredo { z-index: 2; display: block; text-shadow: none; transform: scaleX(var(--hero-name-width)); transform-origin: left top; }.boot-title__word--brambila { z-index: 1; display: block; margin-top: .15rem; color: color-mix(in srgb, var(--color-text) 18%, var(--machine-active)); transform: scaleX(.88); transform-origin: left top; }
+  .boot-visual { z-index: 1; order: 2; display: grid; min-height: clamp(30rem, 125vw, 37rem); margin: 0 -1.5rem; padding: 0 1rem; grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-rows: minmax(23rem, 79vw) auto auto; align-items: center; overflow: hidden; }.home-signal-field { display: none; }.boot-instrument { position: absolute; top: 0; left: 50%; width: 115%; height: 67%; translate: -50% 0; }.boot-instrument [data-boot-trace="rail-upper"], .boot-instrument [data-boot-trace="rail-lower"] { opacity: .2; }
+  .boot-rail { position: absolute; top: 0; left: 50%; width: 4.1rem; height: 67%; border-block: 0; border-inline: 2px solid var(--machine-active); background: repeating-linear-gradient(0deg, transparent 0 2rem, color-mix(in srgb, var(--machine-active) 24%, transparent) 2rem 2.08rem), linear-gradient(90deg, transparent 0 18%, color-mix(in srgb, var(--color-bg) 90%, var(--machine-active)) 18% 82%, transparent 82%); translate: -50% 0; }.boot-rail::before, .boot-rail::after { left: 50%; width: 3rem; height: 18%; transform: translate(-50%, -50%); }.boot-rail::before { top: 18%; }.boot-rail::after { top: 82%; }
+  .boot-photo-frame { position: absolute; z-index: 6; top: 1.25rem; left: 50%; width: var(--portrait-width); translate: -50% 0; }.boot-core-node { position: absolute; z-index: 8; top: 59%; left: 50%; translate: -50% -50%; }
+  .boot-tech-group { position: relative; z-index: 9; top: auto; right: auto; bottom: auto; left: auto; display: grid; width: 100%; grid-column: 1 / -1; grid-template-columns: repeat(5, minmax(0, 1fr)); justify-items: center; gap: clamp(.3rem, 1.7vw, .65rem); translate: none; }.boot-tech-group--left { grid-row: 2; }.boot-tech-group--right { grid-row: 3; margin-top: .65rem; }
+  .boot-copy { z-index: 2; order: 4; margin-top: 1.5rem; }.boot-descriptor { font-size: 1.15rem; }.boot-lead { max-width: 34rem; margin-top: 1.1rem; font-size: 1rem; }.boot-actions { z-index: 3; order: 3; display: grid; margin-top: 1rem; padding-top: 1.75rem; grid-template-columns: 1fr; gap: .5rem; }.boot-actions::before { height: 1.75rem; }.boot-actions::after { top: 1.3rem; }.boot-terminal--process, .boot-terminal--evidence { grid-column: 1; text-align: left; }.boot-terminal { min-height: 4.7rem; padding: .85rem 2rem; }.boot-terminal--process::before { right: auto; left: -.63rem; }.boot-links { z-index: 2; order: 5; display: flex; margin-top: 1.5rem; opacity: .7; }
 }
 
-@media (max-width: 599px) {
-  .boot-photo-frame { width: min(64vw, 260px); }
-  .boot-reference::after { width: 1.2rem; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .boot-enhanced .boot-reference,
-  .boot-enhanced .boot-descriptor,
-  .boot-enhanced .boot-lead,
-  .boot-enhanced .boot-actions,
-  .boot-enhanced .boot-links,
-  .boot-enhanced .boot-instrument,
-  .boot-enhanced .boot-orbit { opacity: 1; transform: none; }
-  .boot-enhanced .boot-photo-frame { clip-path: none; }
-}
+@media (prefers-reduced-motion: reduce) { .home-signal-field { display: none; }.boot-enhanced .boot-reference, .boot-enhanced .boot-copy, .boot-enhanced .boot-actions, .boot-enhanced .boot-links, .boot-enhanced .boot-instrument, .boot-enhanced .boot-tech-node { opacity: 1; transform: none; }.boot-enhanced .boot-photo-frame { clip-path: none; }.hero[data-route-attract="true"] .boot-terminal, .hero[data-route-attract="true"] .boot-actions::after { animation: none; } }

@@ -107,7 +107,7 @@ button { cursor: pointer; }
   .no-js .site-header { height: auto; }
   .no-js .site-nav { min-height: var(--header-height); flex-wrap: wrap; padding-block: var(--space-2); }
   .no-js .nav-actions { display: none; }
-  .no-js .site-menu { position: static; display: block; flex: 1 0 100%; max-height: none; overflow: visible; padding: var(--space-2) 0 0; border: 0; background: transparent; box-shadow: none; }
+  .no-js .site-menu { position: static; display: block; flex: 1 0 100%; min-width: 0; max-height: none; overflow: visible; padding: var(--space-2) 0 0; border: 0; background: transparent; box-shadow: none; }
   .no-js .site-menu__list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr)); gap: .35rem; }
   .no-js .site-menu__link { padding: .7rem var(--space-2); }
   .no-js .site-menu__language { margin: var(--space-2) 0 0; }
